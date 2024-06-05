@@ -6,11 +6,11 @@ from selenium.webdriver.common.by import By
 def test_setup_and_setdown(request):
     browser=read_config.get_config("basic info","browser")
     driver=None
-    if browser._eq_("chrome"):
+    if browser.__eq__("chrome"):
         driver=webdriver.Chrome()
-    elif browser._eq_("firefox"):
+    elif browser.__eq__("firefox"):
         driver=webdriver.Firefox
-    elif browser._eq_("edge"):
+    elif browser.__eq__("edge"):
         driver=webdriver.Edge
     else:
         print("Other browser")
