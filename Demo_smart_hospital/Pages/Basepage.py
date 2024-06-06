@@ -81,9 +81,7 @@ class BasePage:
         return (self.wait_for_element(self.required_password_message)).text
 
     def verify_unsuccessfull_login_using_invalid_credentials(self):
-<<<<<<< main
-        return self.find_element_text(self.invalid_credentials_message)
-
+        return (self.wait_for_element(self.invalid_credentials_message)).text
 
     def click_Admin_signin_button(self):
         self.for_click(self.wait_for_element(self.Admin_signin_button))
@@ -107,6 +105,5 @@ class BasePage:
     def enter_login_details(self,username,password):
         self.for_send_keys(self.wait_for_element(self.username_field),username)
         self.for_send_keys(self.wait_for_element(self.password_field),password)
-=======
-        return (self.wait_for_element(self.invalid_credentials_message)).text
->>>>>>> KarthiPriya
+
+
