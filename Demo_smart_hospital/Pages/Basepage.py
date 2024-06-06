@@ -2,6 +2,8 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import NoAlertPresentException, TimeoutException
+import time
 
 class BasePage:
     def __init__(self,driver):
@@ -49,3 +51,6 @@ class BasePage:
     
     def switch_to_window(self):
         self._driver.switch_to.window(self._driver.window_handles[1]) 
+
+   
+
