@@ -78,7 +78,6 @@ class DoctorPage(BasePage):
     consultant_select_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-consultant_doctor-container']"
     bed_status_save_button=By.CSS_SELECTOR,"button[id='formaddbtn']" 
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
-<<<<<<< main
     add_patient_name=By.XPATH,"//li[@class='select2-results__option select2-results__option--highlighted']"
 
     
