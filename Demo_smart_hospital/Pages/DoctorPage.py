@@ -172,15 +172,6 @@ class DoctorPage(BasePage):
     def Assert_variable_id(self):
         element=self.wait_for_element(self.patient_not_found).text
         assert element._eq_("Case Id Not Valid")
-
-    def Assert_empty_Field(self):
-        element=self.wait_for_element(self.patient_not_found).text
-        assert element.eq("Patient Not Found")
-        
-    def Assert_variable_id(self):
-        element=self.wait_for_element(self.patient_not_found).text
-        assert element.eq("Case Id Not Valid")
-
     
     def Enter_death_date(self,deathDate):
         element = self.wait_for_element(self.death_date)
@@ -210,14 +201,6 @@ class DoctorPage(BasePage):
     def Assert_valid_death_search_assert(self):
         element = self.wait_for_element(self.valid_death_search_assert).text
         assert element._eq_("DREF50")
-
-    def Assert_valid_birth_search_assert(self):
-        element = self.wait_for_element(self.valid_birth_search_assert).text
-        assert element.eq("BREF62")
-
-    def Assert_valid_death_search_assert(self):
-        element = self.wait_for_element(self.valid_death_search_assert).text
-        assert element.eq("DREF50")
         
     def successfull_update_of_the_bedstatus(self):
         self.for_click(self.wait_for_element(self.betstatus_icon))
