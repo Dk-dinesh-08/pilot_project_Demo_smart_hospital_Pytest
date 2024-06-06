@@ -52,16 +52,16 @@ class DoctorPage(BasePage):
     add_patient_name=By.XPATH,"//li[@class='select2-results__option select2-results__option--highlighted']"
 
     def successfull_update_of_the_bedstatus(self):
-        self.click_element(self.betstatus_icon)
-        self.click_element(self.bed_145)
-        self.click_element(self.patientSelect_field)
-        self.for_send_keys(self.patientinput_field,"Elvio")
-        self.click_element(self.add_patient_name)
-        self.click_element(self.Addmision_date)
-        select_element=self.find(self.doctal_consultant_select)
+        self.for_click(self.wait_for_element(self.betstatus_icon))
+        self.for_click(self.wait_for_element(self.bed_145))
+        self.for_click(self.wait_for_element(self.patientSelect_field))
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),"Elvio")
+        self.for_click(self.wait_for_element(self.add_patient_name))
+        self.for_click(self.wait_for_element(self.Addmision_date))
+        select_element=self.wait_for_element(self.doctal_consultant_select)
         select=Select(select_element)
         select.select_by_value("11")
-        self.click_element(self.bed_status_save_button)
-        
+        self.for_click(self.wait_for_element(self.bed_status_save_button))
+
     def verify_the_successfull_updation_of_the_bedstatus(self):
-        return self.find_element_text((By.CSS_SELECTOR,"div[class='toast-message']"))
+        return (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text

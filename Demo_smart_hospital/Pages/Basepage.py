@@ -22,17 +22,9 @@ class BasePage:
     required_password_message=By.CSS_SELECTOR,"input[name='password']+span>p"
     invalid_credentials_message=By.CSS_SELECTOR,"div[class='alert alert-danger']" 
 
-    def for_send_keys(self,element_e,value):
-        #element=self.find(element_e)
-        element=self.wait_for_element(element_e)
+    def for_send_keys(self,element,value):
         element.send_keys(value)
     def for_click(self,element):
-        element.click()
-    def find_element_text(self,element_e):
-        element=self.wait_for_element(element_e)
-        return element.text
-    def click_element(self,element_e):
-        element=self.wait_for_element(element_e)
         element.click()
     def find(self,locator):
         return self._driver.find_element(*locator)
@@ -48,8 +40,6 @@ class BasePage:
         self.for_click(self.wait_for_element(self.Sign_in_button))    
     def switch_to_window(self):
         self._driver.switch_to.window(self._driver.window_handles[1])
-    #def click_login_button(self):
-       # self.for_click(self.login_button_xpath)
     def click_invalid_doctorlogin_button(self):
         self.for_click(self.wait_for_element(self.invalid_doctor_button))
     def verify_successfull_login(self):
@@ -58,14 +48,14 @@ class BasePage:
         element=self.wait_for_element(self.profile_name)
         return element.text
     def fill_login_using_login_credentials(self,username,password):
-        self.for_send_keys(self.username_field,username)
-        self.for_send_keys(self.password_field,password)
+        self.for_send_keys(self.wait_for_element(self.username_field),username)
+        self.for_send_keys(self.wait_for_element(self.password_field),password)
 
     def verify_unsuccessfull_login_using_blank_username(self):
-        return self.find_element_text(self.required_username_message)
+        return (self.wait_for_element(self.required_username_message)).text
 
     def verify_unsuccessfull_login_using_blank_password(self):
-        return self.find_element_text(self.required_password_message)
+        return (self.wait_for_element(self.required_password_message)).text
 
     def verify_unsuccessfull_login_using_invalid_credentials(self):
-        return self.find_element_text(self.invalid_credentials_message)
+        return (self.wait_for_element(self.invalid_credentials_message)).text
