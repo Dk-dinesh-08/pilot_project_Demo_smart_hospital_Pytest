@@ -75,13 +75,13 @@ class BasePage:
         self.for_send_keys(self.wait_for_element(self.password_field),password)
 
     def verify_unsuccessfull_login_using_blank_username(self):
-        return (self.wait_for_element(self.required_username_message)).text
+        assert (self.wait_for_element(self.required_username_message)).text=="The Username field is required."
 
     def verify_unsuccessfull_login_using_blank_password(self):
-        return (self.wait_for_element(self.required_password_message)).text
+        assert (self.wait_for_element(self.required_password_message)).text=="The Password field is required."
 
     def verify_unsuccessfull_login_using_invalid_credentials(self):
-        return (self.wait_for_element(self.invalid_credentials_message)).text
+        assert (self.wait_for_element(self.invalid_credentials_message)).text=="Invalid Username or Password"
 
     def click_Admin_signin_button(self):
         self.for_click(self.wait_for_element(self.Admin_signin_button))
@@ -106,4 +106,7 @@ class BasePage:
         self.for_send_keys(self.wait_for_element(self.username_field),username)
         self.for_send_keys(self.wait_for_element(self.password_field),password)
 
-
+    def handle_alert(self):
+        alert = WebDriverWait(self._driver, 10).until(EC.alert_is_present())
+        assert alert is not None
+        alert.accept()

@@ -1,5 +1,4 @@
 import pytest
-import time
 from Pages.Basepage import BasePage
 from Pages.DoctorPage import DoctorPage
 from Utility import read_config
@@ -7,8 +6,8 @@ from selenium.webdriver.common.by import By
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
 
-class TestValidUpdateBedstatus:
-    def test_valid_update_bedstatus(self):
+class TestValidNotificationDelete:
+    def test_valid_notification_delete(self):
         Basepage =BasePage(self.driver)
         Basepage.click_Home_login_button()
         Basepage.click_Admin_login_button()
@@ -18,6 +17,6 @@ class TestValidUpdateBedstatus:
         result=Basepage.verify_successfull_login()
         assert result.__eq__("Doctor")
         Doctorpage=DoctorPage(self.driver)
-        Doctorpage.successfull_update_of_the_bedstatus()
-        Doctorpage.verify_the_successfull_updation_of_the_bedstatus()
+        Doctorpage.successfull_notification_delete()
+        Doctorpage.verify_successfull_notification_delete()
         
