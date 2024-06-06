@@ -1,0 +1,45 @@
+2024-06-06 12:49:09,856 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:22:45,231 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:23:13,843 : INFO : test_Invalid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:23:58,612 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:27:04,333 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:29:04,865 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:30:32,524 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:31:09,727 : INFO : test_Invalid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:34:34,337 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:36:03,019 : INFO : test_Invalid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 14:50:28,000 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 14:52:05,856 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 14:53:26,047 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 14:55:55,844 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 14:59:38,170 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 14:59:55,095 : INFO : setup_method : Invalid birth record Assert successfully
+2024-06-06 14:59:55,095 : INFO : setup_method : Invalid birth record Assert successfully
+2024-06-06 15:11:12,772 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 15:15:58,240 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 15:23:34,272 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 15:24:47,147 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 15:25:00,418 : INFO : setup_method : Invalid birth record Assert successfully
+2024-06-06 15:25:00,418 : INFO : setup_method : Invalid birth record Assert successfully
+2024-06-06 16:17:09,644 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 16:17:23,161 : INFO : setup_method : Invalid birth record Assert successfully
+2024-06-06 16:17:23,161 : INFO : setup_method : Invalid birth record Assert successfully
+2024-06-06 16:17:52,353 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 16:29:34,508 : INFO : setup_method : Birth Record Added successfully
+2024-06-06 16:36:23,746 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 16:39:22,343 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 16:39:56,548 : INFO : test_Invalid_add_birth_record : Invalid birth record Assert sucessfully
+2024-06-06 16:59:30,244 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 17:00:21,731 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-06 17:00:54,621 : INFO : test_Invalid_add_birth_record : Invalid birth record Assert sucessfully
+2024-06-06 17:07:32,680 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-06-06 17:11:55,692 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-06-06 17:24:05,353 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-06-06 17:32:20,560 : INFO : test_Invalid_case_Id : Invalid case Id Asserted sucessfully
+2024-06-06 19:34:28,380 : INFO : test_valid_add_death_record : death record Added sucessfully
+2024-06-06 19:43:00,765 : INFO : test_valid_add_death_record : death record Added sucessfully
+2024-06-06 19:43:25,873 : INFO : test_Invalid_add_death_record : Invalid death record Asserted sucessfully
+2024-06-06 19:43:53,449 : INFO : test_Invalid_case_Id : Invalid case ID death record Asserted sucessfully
+2024-06-06 19:47:45,351 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-06-06 20:41:34,555 : INFO : test_valid_birth_search_record : Searched Birth Record Sucessfully
+2024-06-06 22:13:33,137 : INFO : test_Invalid_birth_search_record : Searched Invalid Birth Record asserted Sucessfully
