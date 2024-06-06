@@ -1,10 +1,16 @@
 from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
 from selenium.webdriver.support.ui import Select
+<<<<<<< main
 
 class DoctorPage(BasePage):
 
     def _init_(self, driver):
+=======
+class DoctorPage(BasePage):
+
+    def init(self, driver):
+>>>>>>> KarthiPriya
         super().__init__(driver)
         self.driver = driver
 
@@ -77,6 +83,7 @@ class DoctorPage(BasePage):
     consultant_select_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-consultant_doctor-container']"
     bed_status_save_button=By.CSS_SELECTOR,"button[id='formaddbtn']" 
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
+<<<<<<< main
     add_patient_name=By.XPATH,"//li[@class='select2-results__option select2-results__option--highlighted']"
 
     
@@ -105,6 +112,9 @@ class DoctorPage(BasePage):
     Pathologist_check_box  =By.XPATH,'(//input[@type="checkbox"])[8]]'   
     Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
     assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
+=======
+    add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
+>>>>>>> KarthiPriya
 
     def click_Birth_and_death_record(self):
         self.for_click(self.wait_for_element(self.Birth_and_death_record))   
@@ -162,6 +172,7 @@ class DoctorPage(BasePage):
       
     def Assert_patient_not_found(self):
         element=self.wait_for_element(self.patient_not_found).text
+<<<<<<< main
         assert element._eq_("Patient Not Found")
 
     def Assert_empty_Field(self):
@@ -171,6 +182,17 @@ class DoctorPage(BasePage):
     def Assert_variable_id(self):
         element=self.wait_for_element(self.patient_not_found).text
         assert element._eq_("Case Id Not Valid")
+=======
+        assert element.eq("Patient Not Found")
+
+    def Assert_empty_Field(self):
+        element=self.wait_for_element(self.patient_not_found).text
+        assert element.eq("Patient Not Found")
+        
+    def Assert_variable_id(self):
+        element=self.wait_for_element(self.patient_not_found).text
+        assert element.eq("Case Id Not Valid")
+>>>>>>> KarthiPriya
     
     def Enter_death_date(self,deathDate):
         element = self.wait_for_element(self.death_date)
@@ -182,7 +204,11 @@ class DoctorPage(BasePage):
 
     def Assert_death_Empty_record(self):
         element = self.wait_for_element(self.empty_assert).text
+<<<<<<< main
         assert element._eq_("The Patient field is required.")
+=======
+        assert element.eq("The Patient field is required.")
+>>>>>>> KarthiPriya
 
     def search_record(self,record):
         element = self.wait_for_element(self.Search_record)
@@ -190,6 +216,7 @@ class DoctorPage(BasePage):
 
     def Assert_no_data_availble(self):
         element = self.wait_for_element(self.no_data_available).text
+<<<<<<< main
         assert element._eq_("Add new record or search with different criteria.")
 
     def Assert_valid_birth_search_assert(self):
@@ -199,6 +226,17 @@ class DoctorPage(BasePage):
     def Assert_valid_death_search_assert(self):
         element = self.wait_for_element(self.valid_death_search_assert).text
         assert element._eq_("DREF50")
+=======
+        assert element.eq("Add new record or search with different criteria.")
+
+    def Assert_valid_birth_search_assert(self):
+        element = self.wait_for_element(self.valid_birth_search_assert).text
+        assert element.eq("BREF62")
+
+    def Assert_valid_death_search_assert(self):
+        element = self.wait_for_element(self.valid_death_search_assert).text
+        assert element.eq("DREF50")
+>>>>>>> KarthiPriya
         
     def successfull_update_of_the_bedstatus(self):
         self.for_click(self.wait_for_element(self.betstatus_icon))
@@ -213,6 +251,7 @@ class DoctorPage(BasePage):
         self.for_click(self.wait_for_element(self.bed_status_save_button))
         
     def verify_the_successfull_updation_of_the_bedstatus(self):
+<<<<<<< main
         return (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text
    
 
@@ -254,3 +293,6 @@ class DoctorPage(BasePage):
         self.for_click(self.wait_for_element(self.send_sms_btn))
     
  
+=======
+        return (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text
+>>>>>>> KarthiPriya

@@ -37,24 +37,19 @@ class BasePage:
     
     
     def for_send_keys(self,element,value):
-       element.send_keys(value)
-
+        element.send_keys(value)
 
     def for_click(self,element):
         element.click()
-    
 
     def wait_for_element(self, locator):
         return self._wait.until(EC.visibility_of_element_located(locator))
-
-
+    
     def click_Home_login_button(self):
-        self.for_click(self.wait_for_element(self.Home_login_button))   
-
+        self.for_click(self.wait_for_element(self.Home_login_button))
 
     def click_Admin_login_button(self):
         self.for_click(self.wait_for_element(self.Admin_login_button))
-
 
     def click_Doctor_login_button(self):
         self.for_click(self.wait_for_element(self.Doctor_login_button))
@@ -62,12 +57,10 @@ class BasePage:
 
     def click_Sign_in_button(self):
         self.for_click(self.wait_for_element(self.Sign_in_button))
-
     
     def switch_to_window(self):
-        self._driver.switch_to.window(self._driver.window_handles[1]) 
-            
- 
+        self._driver.switch_to.window(self._driver.window_handles[1])
+        
     def click_invalid_doctorlogin_button(self):
         self.for_click(self.wait_for_element(self.invalid_doctor_button))
       
@@ -78,16 +71,17 @@ class BasePage:
         return element.text
       
     def fill_login_using_login_credentials(self,username,password):
-        self.for_send_keys(self.username_field,username)
-        self.for_send_keys(self.password_field,password)
+        self.for_send_keys(self.wait_for_element(self.username_field),username)
+        self.for_send_keys(self.wait_for_element(self.password_field),password)
 
     def verify_unsuccessfull_login_using_blank_username(self):
-        return self.find_element_text(self.required_username_message)
+        return (self.wait_for_element(self.required_username_message)).text
 
     def verify_unsuccessfull_login_using_blank_password(self):
-        return self.find_element_text(self.required_password_message)
+        return (self.wait_for_element(self.required_password_message)).text
 
     def verify_unsuccessfull_login_using_invalid_credentials(self):
+<<<<<<< main
         return self.find_element_text(self.invalid_credentials_message)
 
 
@@ -113,3 +107,6 @@ class BasePage:
     def enter_login_details(self,username,password):
         self.for_send_keys(self.wait_for_element(self.username_field),username)
         self.for_send_keys(self.wait_for_element(self.password_field),password)
+=======
+        return (self.wait_for_element(self.invalid_credentials_message)).text
+>>>>>>> KarthiPriya
