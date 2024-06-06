@@ -106,7 +106,6 @@ class DoctorPage(BasePage):
     Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
     assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
 
-    
     def click_Birth_and_death_record(self):
         self.for_click(self.wait_for_element(self.Birth_and_death_record))   
 
@@ -122,6 +121,100 @@ class DoctorPage(BasePage):
     def click_add_birth_record(self):
         self.for_click(self.wait_for_element(self.Add_birth_record))   
 
+    def Enter_child_name(self,childname):
+        element = self.wait_for_element(self.Child_name)
+        self.for_send_keys(element, childname)
+      
+    def click_gender(self):
+        self.for_click(self.wait_for_element(self.Gender_drop_down))
+        self.for_click(self.wait_for_element(self.Male_gender_option))
+    
+    def Enter_weight(self,weight):
+        element = self.wait_for_element(self.weight)
+        self.for_send_keys(element, weight)
+
+    def Enter_birth_date(self,birthDate):
+        element = self.wait_for_element(self.birth_date)
+        self.for_send_keys(element, birthDate)
+
+    def Enter_contact(self,phone):
+        element = self.wait_for_element(self.contact)
+        self.for_send_keys(element, phone)
+                           
+    def Enter_address(self,address):
+        element = self.wait_for_element(self.adress)
+        self.for_send_keys(element, address)
+
+    def Enter_case_id(self,caseId):
+        element = self.wait_for_element(self.case_id)
+        self.for_send_keys(element, caseId)
+
+    def Enter_Father_name(self,fatherName):
+        element = self.wait_for_element(self.fathers_name)
+        self.for_send_keys(element, fatherName)
+
+    def Enter_report(self,report):
+        element = self.wait_for_element(self.birth_Report)
+        self.for_send_keys(element, report)
+
+    def click_save_button(self):
+        self.for_click(self.wait_for_element(self.save_button))
+      
+    def Assert_patient_not_found(self):
+        element=self.wait_for_element(self.patient_not_found).text
+        assert element._eq_("Patient Not Found")
+
+    def Assert_empty_Field(self):
+        element=self.wait_for_element(self.patient_not_found).text
+        assert element._eq_("Patient Not Found")
+        
+    def Assert_variable_id(self):
+        element=self.wait_for_element(self.patient_not_found).text
+        assert element._eq_("Case Id Not Valid")
+    
+    def Enter_death_date(self,deathDate):
+        element = self.wait_for_element(self.death_date)
+        self.for_send_keys(element, deathDate)
+
+    def Enter_death_report(self,deathreport):
+        element = self.wait_for_element(self.death_report)
+        self.for_send_keys(element, deathreport)
+
+    def Assert_death_Empty_record(self):
+        element = self.wait_for_element(self.empty_assert).text
+        assert element._eq_("The Patient field is required.")
+
+    def search_record(self,record):
+        element = self.wait_for_element(self.Search_record)
+        self.for_send_keys(element,record)
+
+    def Assert_no_data_availble(self):
+        element = self.wait_for_element(self.no_data_available).text
+        assert element._eq_("Add new record or search with different criteria.")
+
+    def Assert_valid_birth_search_assert(self):
+        element = self.wait_for_element(self.valid_birth_search_assert).text
+        assert element._eq_("BREF62")
+
+    def Assert_valid_death_search_assert(self):
+        element = self.wait_for_element(self.valid_death_search_assert).text
+        assert element._eq_("DREF50")
+        
+    def successfull_update_of_the_bedstatus(self):
+        self.for_click(self.wait_for_element(self.betstatus_icon))
+        self.for_click(self.wait_for_element(self.bed_145))
+        self.for_click(self.wait_for_element(self.patientSelect_field))
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),"Elvio")
+        self.for_click(self.wait_for_element(self.add_patient_name))
+        self.for_click(self.wait_for_element(self.Addmision_date))
+        select_element=self.wait_for_element(self.doctal_consultant_select)
+        select=Select(select_element)
+        select.select_by_value("11")
+        self.for_click(self.wait_for_element(self.bed_status_save_button))
+        
+    def verify_the_successfull_updation_of_the_bedstatus(self):
+        return (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text
+   
 
     def click_messaging_btn(self):
         self.scroll_upto_element(self.messaging_btn)
@@ -148,24 +241,6 @@ class DoctorPage(BasePage):
         search_result_text = self.wait_for_element(self.assert_sms).text
         return search_result_text == self.verification_text
     
-    def Assert_valid_death_search_assert(self):
-        element = self.wait_for_element(self.valid_death_search_assert).text
-        assert element.__eq__("DREF50")
-        
-    def successfull_update_of_the_bedstatus(self):
-        self.for_click(self.wait_for_element(self.betstatus_icon))
-        self.for_click(self.wait_for_element(self.bed_145))
-        self.for_click(self.wait_for_element(self.patientSelect_field))
-        self.for_send_keys(self.wait_for_element(self.patientinput_field),"Elvio")
-        self.for_click(self.wait_for_element(self.add_patient_name))
-        self.for_click(self.wait_for_element(self.Addmision_date))
-        select_element=self.wait_for_element(self.doctal_consultant_select)
-        select=Select(select_element)
-        select.select_by_value("11")
-        self.for_click(self.wait_for_element(self.bed_status_save_button))
-        
-    def verify_the_successfull_updation_of_the_bedstatus(self):
-        return (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text
     
     def fill_send_sms_form(self):
         self.for_click(self.wait_for_element(self.send_sms))
