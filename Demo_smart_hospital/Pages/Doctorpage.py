@@ -51,6 +51,71 @@ class DoctorPage(BasePage):
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
     add_patient_name=By.XPATH,"//li[@class='select2-results__option select2-results__option--highlighted']"
 
+     #post-msg
+    messaging_btn=By.XPATH,"//span[text()='Messaging']"
+    post_new_message=By.XPATH,"(//a[@class='btn btn-primary btn-sm'])[1]"
+    send_sms=By.XPATH," (//a[@class='btn btn-primary btn-sm'])[2]"
+
+    title_locator = By.XPATH,'//div[@class="col-md-9"]//input[@name="title"]'
+    notice_date  = By.XPATH,'(//input[@class="form-control date"])[1]'
+    messaging_frame = By.XPATH,'//iframe[@class="wysihtml5-sandbox"]'   
+    msg_body = By.XPATH,'//body[@class="form-control wysihtml5-editor"]'
+    publish_on =  By.XPATH,'(//input[@class="form-control date"])[2]'
+    send_btn =  By.XPATH,'(//div[@class="pull-right"])[2]/button'
+    sucess_msg =  By.XPATH,'//div[@class="alert alert-success"]'
+    verification_text= "Record Saved Successfully"
+
+    #send_sms
+    sms_title =By.XPATH,'//div[@class="form-group"]//input[@name="group_title"]'
+    sms_template =By.XPATH,'//input[@name="group_template_id"]'   
+    sms_checkbox  =By.XPATH,'(//label[@class="checkbox-inline"]/input)[1]' 
+    text_area  =By.XPATH,' //textarea[@name="group_message"]'  
+    send_sms_btn  =By.XPATH,'//button[@class="btn btn-primary submit_group"]'  
+    admin_check_box  =By.XPATH,'(//input[@type="checkbox"])[4]'   
+    doctor_check_box =By.XPATH,'(//input[@type="checkbox"])[6]'   
+    Pathologist_check_box  =By.XPATH,'(//input[@type="checkbox"])[8]]'   
+    Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
+    assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
+
+
+
+    def click_messaging_btn(self):
+        self.scroll_upto_element(self.messaging_btn)
+        self.for_click(self.wait_for_element(self.messaging_btn))
+
+    def fill_post_new_message_form(self):
+        self.for_click(self.wait_for_element(self.post_new_message))
+        self.for_send_keys(self.wait_for_element(self.title_locator),"Hii all")
+        self.for_send_keys(self.wait_for_element(self.notice_date),"25/06/2024")
+        self.for_send_keys(self.wait_for_element(self.publish_on),"30/06/2024")
+        self._driver.switch_to.frame(self.wait_for_element(self.messaging_frame))
+        self.for_send_keys(self.wait_for_element(self.msg_body),"sample message to all")
+        self._driver.switch_to.default_content()
+        self.for_click(self.wait_for_element(self.send_btn))
+
+    def verify_record_saved_successfully(self):
+        self.wait_for_element(self.sucess_msg)
+        search_result_text = self.wait_for_element(self.sucess_msg).text
+        return search_result_text == self.verification_text
+    
+    
+    def verify_sms_record_saved_successfully(self):
+        self.wait_for_element(self.assert_sms)
+        search_result_text = self.wait_for_element(self.assert_sms).text
+        return search_result_text == self.verification_text
+    
+
+    def fill_send_sms_form(self):
+        self.for_click(self.wait_for_element(self.send_sms))
+        self.for_send_keys(self.wait_for_element(self.sms_title),"Hiii")
+        self.for_send_keys(self.wait_for_element(self.sms_template),"0001")
+        self.for_click(self.wait_for_element(self.sms_checkbox))
+        self.for_send_keys(self.wait_for_element(self.text_area),"hello everyone")
+        self.for_click(self.wait_for_element(self.admin_check_box))
+        self.for_click(self.wait_for_element(self.doctor_check_box))
+        self.for_click(self.wait_for_element(self.Pharmacist_check_box))
+        self.for_click(self.wait_for_element(self.send_sms_btn))
+    
     def successfull_update_of_the_bedstatus(self):
         self.click_element(self.betstatus_icon)
         self.click_element(self.bed_145)
