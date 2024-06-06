@@ -1,11 +1,39 @@
 from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
 from selenium.webdriver.support.ui import Select
+
 class DoctorPage(BasePage):
 
     def _init_(self, driver):
         super().__init__(driver)
         self.driver = driver
+
+    
+    Birth_and_death_record=(By.XPATH,"//a/i[@class='fa fa-birthday-cake']")
+    Birth_record=(By.XPATH,"//a[text()= ' Birth Record ']")
+    Death_record=(By.XPATH,"//a[text()= ' Death Record']")
+    Add_birth_record=(By.XPATH,"//a[@class='btn btn-primary btn-sm birthrecord']")
+    Add_death_record=(By.XPATH,"//a[@class='btn btn-primary btn-sm deathrecord']")
+    Child_name=(By.NAME,"child_name")
+    Gender_drop_down=(By.XPATH,"(//select[@class='form-control'])[1]")
+    Male_gender_option=(By.XPATH,"//select[@class='form-control']/option[text()='Male                                                ']")
+    weight=(By.NAME,"weight")
+    birth_date=(By.ID,"birth_date")
+    death_date=(By.ID,"death_date")
+    contact=(By.ID,"contact")
+    adress=(By.ID,"address")
+    case_id=(By.ID,"case_id")
+    fathers_name=(By.ID,"father_name")
+    birth_Report=(By.ID,"birth_report")
+    death_report=(By.ID,"death_report")
+    save_button=(By.ID,"formaddbtn")
+    patient_not_found=(By.CLASS_NAME,"toast-message")
+    empty_assert=(By.XPATH,"//div[@class='toast-message']/p[1]")
+    search_feild_death_record=(By.XPATH,"//div[@class='toast-message']/p[1]")
+    Search_record=(By.CSS_SELECTOR,"input[type='search']")
+    no_data_available = (By.XPATH, "//span[@class='text-success bolds']")
+    valid_birth_search_assert=(By.XPATH,"//td[text()='BREF62']")
+    valid_death_search_assert=(By.XPATH,"//td[text()='DREF50']")
 
     #Home page 
     Dashboard=By.CSS_SELECTOR,"i[class='fas fa-television']"
@@ -51,7 +79,8 @@ class DoctorPage(BasePage):
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
     add_patient_name=By.XPATH,"//li[@class='select2-results__option select2-results__option--highlighted']"
 
-     #post-msg
+    
+      #post-msg
     messaging_btn=By.XPATH,"//span[text()='Messaging']"
     post_new_message=By.XPATH,"(//a[@class='btn btn-primary btn-sm'])[1]"
     send_sms=By.XPATH," (//a[@class='btn btn-primary btn-sm'])[2]"
@@ -77,6 +106,21 @@ class DoctorPage(BasePage):
     Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
     assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
 
+    
+    def click_Birth_and_death_record(self):
+        self.for_click(self.wait_for_element(self.Birth_and_death_record))   
+
+    def click_birth_record(self):
+        self.for_click(self.wait_for_element(self.Birth_record))   
+
+    def click_death_record(self):
+        self.for_click(self.wait_for_element(self.Death_record))   
+
+    def click_add_death_record(self):
+        self.for_click(self.wait_for_element(self.Add_death_record))   
+        
+    def click_add_birth_record(self):
+        self.for_click(self.wait_for_element(self.Add_birth_record))   
 
 
     def click_messaging_btn(self):
@@ -104,7 +148,25 @@ class DoctorPage(BasePage):
         search_result_text = self.wait_for_element(self.assert_sms).text
         return search_result_text == self.verification_text
     
-
+    def Assert_valid_death_search_assert(self):
+        element = self.wait_for_element(self.valid_death_search_assert).text
+        assert element.__eq__("DREF50")
+        
+    def successfull_update_of_the_bedstatus(self):
+        self.for_click(self.wait_for_element(self.betstatus_icon))
+        self.for_click(self.wait_for_element(self.bed_145))
+        self.for_click(self.wait_for_element(self.patientSelect_field))
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),"Elvio")
+        self.for_click(self.wait_for_element(self.add_patient_name))
+        self.for_click(self.wait_for_element(self.Addmision_date))
+        select_element=self.wait_for_element(self.doctal_consultant_select)
+        select=Select(select_element)
+        select.select_by_value("11")
+        self.for_click(self.wait_for_element(self.bed_status_save_button))
+        
+    def verify_the_successfull_updation_of_the_bedstatus(self):
+        return (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text
+    
     def fill_send_sms_form(self):
         self.for_click(self.wait_for_element(self.send_sms))
         self.for_send_keys(self.wait_for_element(self.sms_title),"Hiii")
@@ -116,17 +178,4 @@ class DoctorPage(BasePage):
         self.for_click(self.wait_for_element(self.Pharmacist_check_box))
         self.for_click(self.wait_for_element(self.send_sms_btn))
     
-    def successfull_update_of_the_bedstatus(self):
-        self.click_element(self.betstatus_icon)
-        self.click_element(self.bed_145)
-        self.click_element(self.patientSelect_field)
-        self.for_send_keys(self.patientinput_field,"Elvio")
-        self.click_element(self.add_patient_name)
-        self.click_element(self.Addmision_date)
-        select_element=self.find(self.doctal_consultant_select)
-        select=Select(select_element)
-        select.select_by_value("11")
-        self.click_element(self.bed_status_save_button)
-        
-    def verify_the_successfull_updation_of_the_bedstatus(self):
-        return self.find_element_text((By.CSS_SELECTOR,"div[class='toast-message']"))
+ 
