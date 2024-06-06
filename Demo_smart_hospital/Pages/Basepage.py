@@ -2,6 +2,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoAlertPresentException, TimeoutException
 
 
@@ -24,6 +25,17 @@ class BasePage:
     required_password_message=By.CSS_SELECTOR,"input[name='password']+span>p"
     invalid_credentials_message=By.CSS_SELECTOR,"div[class='alert alert-danger']" 
 
+
+    Admin_signin_button=(By.XPATH,"(//a[@class='btn btn-primary width50'])[1]")
+    admin_img_icon = By.XPATH,"//img[@class='topuser-image']"
+    admin_text = By.XPATH,"//div[@class='sstopuser-test']/h5"
+    expected_text = "Admin"
+
+    username_field = By.XPATH,"//input[@name='username']"
+    password_field = By.XPATH,"//input[@name='password']"
+    signin_button  = By.XPATH,"//button[@class='btn']"
+    
+    
     def for_send_keys(self,element,value):
        element.send_keys(value)
 
@@ -60,7 +72,7 @@ class BasePage:
         self.for_click(self.wait_for_element(self.invalid_doctor_button))
       
     def verify_successfull_login(self):
-        element=self.find(self.pofile_icon)
+        element=self.wait_for_element(self.pofile_icon)
         element.click()
         element=self.wait_for_element(self.profile_name)
         return element.text
@@ -77,3 +89,27 @@ class BasePage:
 
     def verify_unsuccessfull_login_using_invalid_credentials(self):
         return self.find_element_text(self.invalid_credentials_message)
+
+
+    def click_Admin_signin_button(self):
+        self.for_click(self.wait_for_element(self.Admin_signin_button))
+
+
+    def select_element_by_visible_text(self,locator,text):
+        select = Select(self.wait_for_element(locator))
+        select.select_by_visible_text(text)
+
+    def select_element_by_value(self,locator,text):
+        select = Select(self.wait_for_element(locator))
+        select.select_by_value(text)
+
+    def scroll_upto_element(self,locator):
+        self._driver.execute_script("arguments[0].scrollIntoView(true);", self.wait_for_element(locator))
+    
+    def verify_admin_page_opens(self):
+        self.for_click(self.wait_for_element(self.admin_img_icon))
+        return self.wait_for_element(self.admin_text).text
+    
+    def enter_login_details(self,username,password):
+        self.for_send_keys(self.wait_for_element(self.username_field),username)
+        self.for_send_keys(self.wait_for_element(self.password_field),password)
