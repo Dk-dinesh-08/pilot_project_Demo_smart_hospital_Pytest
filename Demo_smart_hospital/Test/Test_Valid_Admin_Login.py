@@ -6,6 +6,7 @@ from Pages.Adminpage import AdminPage
 @pytest.mark.usefixtures("test_setup_and_setdown")
 
 class TestLogin():
+    @pytest.mark.confirmation
     def test_valid_login(self):
 
         admin=AdminPage(self.driver)
