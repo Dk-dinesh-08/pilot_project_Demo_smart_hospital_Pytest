@@ -5,7 +5,7 @@ from Pages.DoctorPage import DoctorPage
 from Utility import read_config
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
-class AddDeathRecord:
+class TestAddDeathRecord:
     @pytest.mark.regression
     def test_valid_add_death_record(self):
         Doctor_page=DoctorPage(self.driver)

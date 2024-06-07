@@ -1,5 +1,5 @@
 import pytest
-from Pages.Doctorpage import DoctorPage
+from Pages.DoctorPage import DoctorPage
 
 
 @pytest.mark.usefixtures("test_setup_and_setdown")

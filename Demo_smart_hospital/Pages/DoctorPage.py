@@ -4,8 +4,8 @@ from selenium.webdriver.support.ui import Select
 
 class DoctorPage(BasePage):
 
-    def _init_(self, driver):
-        super().__init__(driver)
+    def init(self, driver):
+        super()._init_(driver)
         self.driver = driver
 
     Birth_and_death_record=(By.XPATH,"//a/i[@class='fa fa-birthday-cake']")
@@ -41,9 +41,7 @@ class DoctorPage(BasePage):
     notification_icon=By.XPATH,"//i[@class='fa fa-bell-o']//parent::a"
     language_icon=By.XPATH,"//button[@class='btn dropdown-toggle selectpicker btn-default']"
     betstatus_icon=By.XPATH,"//i[@class='fas fa-bed cal15']//parent::a"
-
     delete_notification_button=By.XPATH,"//i[@class='fa fa-trash']//parent::button"
-
     valid_hindi_language=By.XPATH,"//a[normalize-space()='Hindi']"
     invalid_hindi_language=By.XPATH,"//a[normalize-space()='Spanish']"
     #add new patient form
@@ -65,7 +63,6 @@ class DoctorPage(BasePage):
     national_identity_number_field=By.CSS_SELECTOR,"input[name='identification_number']"
     alternate_number_field=By.CSS_SELECTOR,"input[id='custom_fields[patient][3]']"
     save_button=By.CSS_SELECTOR,"button[id='formaddpabtn']"
-
     addnewpatient_validalert=By.CSS_SELECTOR,"div[class='toast-message']"
     addnewpatient_invalidalert=By.CSS_SELECTOR,"div[class='toast-message'] p"
     #betstatus
@@ -76,7 +73,7 @@ class DoctorPage(BasePage):
     consultant_select_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-consultant_doctor-container']"
     bed_status_save_button=By.CSS_SELECTOR,"button[id='formaddbtn']" 
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
-    add_patient_name=By.XPATH,"//li[@class='select2-results__option select2-results__option--highlighted']"
+    add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
 
     
       #post-msg
@@ -160,15 +157,15 @@ class DoctorPage(BasePage):
       
     def Assert_patient_not_found(self):
         element=self.wait_for_element(self.patient_not_found).text
-        assert element._eq_("Patient Not Found")
+        assert element.eq("Patient Not Found")
 
     def Assert_empty_Field(self):
         element=self.wait_for_element(self.patient_not_found).text
-        assert element._eq_("Patient Not Found")
+        assert element.eq("Patient Not Found")
         
     def Assert_variable_id(self):
         element=self.wait_for_element(self.patient_not_found).text
-        assert element._eq_("Case Id Not Valid")
+        assert element.eq("Case Id Not Valid")
     
     def Enter_death_date(self,deathDate):
         element = self.wait_for_element(self.death_date)
@@ -180,8 +177,7 @@ class DoctorPage(BasePage):
 
     def Assert_death_Empty_record(self):
         element = self.wait_for_element(self.empty_assert).text
-
-        assert element._eq_("The Patient field is required.")
+        assert element.eq("The Patient field is required.")
 
     def search_record(self,record):
         element = self.wait_for_element(self.Search_record)
@@ -189,15 +185,15 @@ class DoctorPage(BasePage):
 
     def Assert_no_data_availble(self):
         element = self.wait_for_element(self.no_data_available).text
-        assert element._eq_("Add new record or search with different criteria.")
+        assert element.eq("Add new record or search with different criteria.")
 
     def Assert_valid_birth_search_assert(self):
         element = self.wait_for_element(self.valid_birth_search_assert).text
-        assert element._eq_("BREF62")
+        assert element.eq("BREF62")
 
     def Assert_valid_death_search_assert(self):
         element = self.wait_for_element(self.valid_death_search_assert).text
-        assert element._eq_("DREF50")
+        assert element.eq("DREF50")
         
     def successfull_update_of_the_bedstatus(self):
         self.for_click(self.wait_for_element(self.betstatus_icon))
@@ -303,4 +299,3 @@ class DoctorPage(BasePage):
         self.for_click(self.wait_for_element(self.doctor_check_box))
         self.for_click(self.wait_for_element(self.Pharmacist_check_box))
         self.for_click(self.wait_for_element(self.send_sms_btn))
-    

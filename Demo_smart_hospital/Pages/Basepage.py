@@ -96,7 +96,8 @@ class BasePage:
         select.select_by_value(text)
 
     def scroll_upto_element(self,locator):
-        self._driver.execute_script("arguments[0].scrollIntoView(true);", self.wait_for_element(locator))
+        element=self._driver.find_element(*locator)
+        self._driver.execute_script("arguments[0].scrollIntoView(true);", element)
     
     def verify_admin_page_opens(self):
         self.for_click(self.wait_for_element(self.admin_img_icon))
