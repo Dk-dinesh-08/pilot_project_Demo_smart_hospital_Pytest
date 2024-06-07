@@ -1,7 +1,6 @@
 from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
 
-
 class DoctorPage(BasePage):
 
     def __init__(self, driver):
@@ -25,7 +24,7 @@ class DoctorPage(BasePage):
     fathers_name=(By.ID,"father_name")
     birth_Report=(By.ID,"birth_report")
     death_report=(By.ID,"death_report")
-    Doctor_save_btn=(By.ID,"formaddbtn")
+    save_button=(By.ID,"formaddbtn")
     patient_not_found=(By.CLASS_NAME,"toast-message")
     empty_assert=(By.XPATH,"//div[@class='toast-message']/p[1]")
     search_feild_death_record=(By.XPATH,"//div[@class='toast-message']/p[1]")
