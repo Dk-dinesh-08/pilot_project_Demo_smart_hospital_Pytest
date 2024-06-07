@@ -1,6 +1,6 @@
 import pytest
 from Pages.Basepage import BasePage
-from Pages.Doctorpage import DoctorPage
+from Pages.DoctorPage import DoctorPage
 from Utility import read_config
 from selenium.webdriver.common.by import By
 
