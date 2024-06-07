@@ -1,14 +1,12 @@
 from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
-from selenium.webdriver.support.ui import Select
 
 
 class DoctorPage(BasePage):
 
-    def _init_(self, driver):
+    def __init__(self, driver):
         super().__init__(driver)
         self.driver = driver
-
     
     Birth_and_death_record=(By.XPATH,"//a/i[@class='fa fa-birthday-cake']")
     Birth_record=(By.XPATH,"//a[text()= ' Birth Record ']")
@@ -107,6 +105,7 @@ class DoctorPage(BasePage):
     Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
     assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
     add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
+
     def click_Birth_and_death_record(self):
         self.for_click(self.wait_for_element(self.Birth_and_death_record))   
 
@@ -163,15 +162,15 @@ class DoctorPage(BasePage):
       
     def Assert_patient_not_found(self):
         element=self.wait_for_element(self.patient_not_found).text
-        assert element._eq_("Patient Not Found")
+        assert element.__eq__("Patient Not Found")
 
     def Assert_empty_Field(self):
-        element=self.wait_for_element(self.patient_not_found).text
-        assert element._eq_("Patient Not Found")
+        element = self.wait_for_element(self.empty_assert).text
+        assert element.__eq__("The Child Name field is required.")
         
     def Assert_variable_id(self):
         element=self.wait_for_element(self.patient_not_found).text
-        assert element._eq_("Case Id Not Valid")
+        assert element.__eq__("Case Id Not Valid")
     
     def Enter_death_date(self,deathDate):
         element = self.wait_for_element(self.death_date)
@@ -183,8 +182,8 @@ class DoctorPage(BasePage):
 
     def Assert_death_Empty_record(self):
         element = self.wait_for_element(self.empty_assert).text
+        assert element.__eq__("The Patient field is required.")
 
-        assert element._eq_("The Patient field is required.")
 
     def search_record(self,record):
         element = self.wait_for_element(self.Search_record)
@@ -192,11 +191,11 @@ class DoctorPage(BasePage):
 
     def Assert_no_data_availble(self):
         element = self.wait_for_element(self.no_data_available).text
-        assert element._eq_("Add new record or search with different criteria.")
+        assert element.__eq__("Add new record or search with different criteria.")
 
     def Assert_valid_birth_search_assert(self):
         element = self.wait_for_element(self.valid_birth_search_assert).text
-        assert element._eq_("BREF62")
+        assert element.__eq__("BREF62")
 
     def Assert_valid_death_search_assert(self):
         element = self.wait_for_element(self.valid_death_search_assert).text
@@ -255,3 +254,5 @@ class DoctorPage(BasePage):
         self.for_click(self.wait_for_element(self.Pharmacist_check_box))
         self.for_click(self.wait_for_element(self.send_sms_btn))
     
+
+
