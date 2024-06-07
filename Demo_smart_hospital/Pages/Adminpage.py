@@ -161,7 +161,7 @@ class AdminPage(BasePage):
        
 
 
-    def verify_supplier_additionof_stock(self):
+    def verify_supplier_field_required_msg_in_additionof_stock(self):
         self.wait_for_element(self.table_result)
         search_result_text = self.wait_for_element(self.table_result).text
         return search_result_text == "Bed Sheet"
