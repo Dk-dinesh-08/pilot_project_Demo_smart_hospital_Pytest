@@ -255,4 +255,21 @@ class DoctorPage(BasePage):
         self.for_click(self.wait_for_element(self.send_sms_btn))
     
 
+    def verify_unsucessful_message_for_send_through_sms(self):
+        search_result_text = self.wait_for_element(self.assert_sms).text
+        return search_result_text == "The Send Through field is required."
+    
+    def fill_send_sms_form_without_title(self):
+        self.for_click(self.wait_for_element(self.send_sms))
+        self.for_send_keys(self.wait_for_element(self.sms_template),"0001")
+        self.for_send_keys(self.wait_for_element(self.text_area),"hello everyone")
+        self.for_click(self.wait_for_element(self.sms_checkbox))
+        self.for_click(self.wait_for_element(self.admin_check_box))
+        self.for_click(self.wait_for_element(self.Pharmacist_check_box))
+        self.for_click(self.wait_for_element(self.send_sms_btn))
+
+    def verify_unsucessful_message_for_sms_title(self):
+        search_result_text = self.wait_for_element(self.assert_sms).text
+        return search_result_text == "The Title field is required."
+
 
