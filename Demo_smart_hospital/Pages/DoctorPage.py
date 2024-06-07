@@ -1,14 +1,14 @@
 from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
-
+from selenium.webdriver.support.ui import Select
 
 
 class DoctorPage(BasePage):
 
-    def __init__(self, driver):
-        super().__init__(driver)
+    def init(self, driver):
+        super()._init_(driver)
         self.driver = driver
-    
+
     Birth_and_death_record=(By.XPATH,"//a/i[@class='fa fa-birthday-cake']")
     Birth_record=(By.XPATH,"//a[text()= ' Birth Record ']")
     Death_record=(By.XPATH,"//a[text()= ' Death Record']")
@@ -42,9 +42,7 @@ class DoctorPage(BasePage):
     notification_icon=By.XPATH,"//i[@class='fa fa-bell-o']//parent::a"
     language_icon=By.XPATH,"//button[@class='btn dropdown-toggle selectpicker btn-default']"
     betstatus_icon=By.XPATH,"//i[@class='fas fa-bed cal15']//parent::a"
-
     delete_notification_button=By.XPATH,"//i[@class='fa fa-trash']//parent::button"
-
     valid_hindi_language=By.XPATH,"//a[normalize-space()='Hindi']"
     invalid_hindi_language=By.XPATH,"//a[normalize-space()='Spanish']"
     #add new patient form
@@ -66,7 +64,6 @@ class DoctorPage(BasePage):
     national_identity_number_field=By.CSS_SELECTOR,"input[name='identification_number']"
     alternate_number_field=By.CSS_SELECTOR,"input[id='custom_fields[patient][3]']"
     save_button=By.CSS_SELECTOR,"button[id='formaddpabtn']"
-
     addnewpatient_validalert=By.CSS_SELECTOR,"div[class='toast-message']"
     addnewpatient_invalidalert=By.CSS_SELECTOR,"div[class='toast-message'] p"
     #betstatus
@@ -77,7 +74,7 @@ class DoctorPage(BasePage):
     consultant_select_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-consultant_doctor-container']"
     bed_status_save_button=By.CSS_SELECTOR,"button[id='formaddbtn']" 
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
-    add_patient_name=By.XPATH,"//li[@class='select2-results__option select2-results__option--highlighted']"
+    add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
 
     
       #post-msg
@@ -106,11 +103,8 @@ class DoctorPage(BasePage):
     Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
     assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
     add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
-
-
     required_notice_date=By.XPATH,'(//span[@class="text-danger"])[3]'
     required_msg_body=By.XPATH,'(//span[@class="text-danger"])[2]'
-
 
     def click_Birth_and_death_record(self):
         self.for_click(self.wait_for_element(self.Birth_and_death_record))   
@@ -168,15 +162,15 @@ class DoctorPage(BasePage):
       
     def Assert_patient_not_found(self):
         element=self.wait_for_element(self.patient_not_found).text
-        assert element.__eq__("Patient Not Found")
+        assert element.eq("Patient Not Found")
 
     def Assert_empty_Field(self):
-        element = self.wait_for_element(self.empty_assert).text
-        assert element.__eq__("The Child Name field is required.")
+        element=self.wait_for_element(self.patient_not_found).text
+        assert element.eq("Patient Not Found")
         
     def Assert_variable_id(self):
         element=self.wait_for_element(self.patient_not_found).text
-        assert element.__eq__("Case Id Not Valid")
+        assert element.eq("Case Id Not Valid")
     
     def Enter_death_date(self,deathDate):
         element = self.wait_for_element(self.death_date)
@@ -188,8 +182,7 @@ class DoctorPage(BasePage):
 
     def Assert_death_Empty_record(self):
         element = self.wait_for_element(self.empty_assert).text
-        assert element.__eq__("The Patient field is required.")
-
+        assert element.eq("The Patient field is required.")
 
     def search_record(self,record):
         element = self.wait_for_element(self.Search_record)
@@ -197,15 +190,15 @@ class DoctorPage(BasePage):
 
     def Assert_no_data_availble(self):
         element = self.wait_for_element(self.no_data_available).text
-        assert element.__eq__("Add new record or search with different criteria.")
+        assert element.eq("Add new record or search with different criteria.")
 
     def Assert_valid_birth_search_assert(self):
         element = self.wait_for_element(self.valid_birth_search_assert).text
-        assert element.__eq__("BREF62")
+        assert element.eq("BREF62")
 
     def Assert_valid_death_search_assert(self):
         element = self.wait_for_element(self.valid_death_search_assert).text
-        assert element._eq_("DREF50")
+        assert element.eq("DREF50")
         
     def successfull_update_of_the_bedstatus(self):
         self.for_click(self.wait_for_element(self.betstatus_icon))
@@ -220,8 +213,60 @@ class DoctorPage(BasePage):
         self.for_click(self.wait_for_element(self.bed_status_save_button))
         
     def verify_the_successfull_updation_of_the_bedstatus(self):
-        return (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text
-   
+        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="Patient Added Successfully"
+    
+    def unsuccessfull_update_of_the_bedstatus(self):
+        self.for_click(self.wait_for_element(self.betstatus_icon))
+        self.for_click(self.wait_for_element(self.bed_145))
+        self.for_click(self.wait_for_element(self.patientSelect_field))
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),"Jamesh Wood")
+        self.for_click(self.wait_for_element(self.add_patient_name))
+        self.for_click(self.wait_for_element(self.Addmision_date))
+        select_element=self.wait_for_element(self.doctal_consultant_select)
+        select=Select(select_element)
+        select.select_by_value("11")
+        self.for_click(self.wait_for_element(self.bed_status_save_button))
+    
+    def verify_the_unsuccessfull_updation_of_the_bedstatus(self):
+        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text!="Patient Added Successfully"
+    
+    def successfull_notification_delete(self):
+        self.for_click(self.wait_for_element(self.notification_icon))
+        self.for_click(self.wait_for_element(self.delete_notification_button))
+        self.handle_alert()
+    
+    def verify_successfull_notification_delete(self):
+        self.for_click(self.wait_for_element(self.notification_icon))
+        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='alert alert-danger']"))).text=="No Record Found"
+    
+    def go_to_new_patient_form(self):
+        self.for_click(self.wait_for_element(self.IPD_in_patient))
+        self.for_click(self.wait_for_element(self.add_patient_button))
+        self.for_click(self.wait_for_element(self.new_patient_button))
+        
+    def fill_new_patient_form(self,patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number):
+        self.for_send_keys(self.wait_for_element(self.name_field),patient_name)
+        self.for_send_keys(self.wait_for_element(self.guardian_name_field),guardian_name)
+        self.for_send_keys(self.wait_for_element(self.dob_field),dob)
+        self.for_send_keys(self.wait_for_element(self.phone_number_field),phone_number)
+        self.for_send_keys(self.wait_for_element(self.email_field),email)
+        self.for_send_keys(self.wait_for_element(self.address_field),address)
+        self.for_send_keys(self.wait_for_element(self.known_allergies_field),known_allergies)
+        self.for_send_keys(self.wait_for_element(self.TPA_ID_field),TPA_ID)
+        self.for_send_keys(self.wait_for_element(self.TPA_validity_field),TPA_Validity)
+        self.for_send_keys(self.wait_for_element(self.national_identity_number_field),ni_number)
+        self.for_send_keys(self.wait_for_element(self.alternate_number_field),alternate_number)
+        self.for_click(self.wait_for_element(self.save_button))
+    
+    def verify_successfull_addnewpatient(self):
+        result_element=self.wait_for_element(self.addnewpatient_validalert).text
+        expected_text="Record Saved Successfully"
+        assert result_element==expected_text
+    
+    def verify_unsuccessfull_addnewpatient(self):
+        result_element=self.wait_for_element(self.addnewpatient_invalidalert).text
+        expected_text="The Name field is required."
+        assert result_element==expected_text
 
     def click_messaging_btn(self):
         self.scroll_upto_element(self.messaging_btn)
