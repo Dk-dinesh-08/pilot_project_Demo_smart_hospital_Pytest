@@ -53,7 +53,6 @@ class UserPage(BasePage):
     view_detail_assert=By.XPATH,"//h5[text()='Bill No : PHARMAB307']"
     norecord=By.XPATH,"//td[@class='dataTables_empty']"
     card_pincode=By.CSS_SELECTOR,"input[id='billing-zip']"
-
     def test_next_page_button(self):
         element = self.wait_for_element(self.next_page_button)
         self.for_click(element)

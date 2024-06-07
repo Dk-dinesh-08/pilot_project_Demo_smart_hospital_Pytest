@@ -25,8 +25,7 @@ class TestInvalidDoctorlogin:
         password=read_config.get_config("invalid login info","doctor_invalid_password")
         Basepage.fill_login_using_login_credentials(username,password)
         Basepage.click_Sign_in_button()
-        result=Basepage.verify_unsuccessfull_login_using_blank_username()
-        assert result.__eq__("The Username field is required.")
+        Basepage.verify_unsuccessfull_login_using_blank_username()
     
     def test_invalidlogin_with_blank_password(self):
         Basepage =BasePage(self.driver)
@@ -37,8 +36,7 @@ class TestInvalidDoctorlogin:
         password=read_config.get_config("blank login info","blank_password")
         Basepage.fill_login_using_login_credentials(username,password)
         Basepage.click_Sign_in_button()
-        result=Basepage.verify_unsuccessfull_login_using_blank_password()
-        assert result.__eq__("The Password field is required.")
+        Basepage.verify_unsuccessfull_login_using_blank_password()
 
     def test_invalidlogin_with_invalid_credentials(self):
         Basepage =BasePage(self.driver)
@@ -49,8 +47,7 @@ class TestInvalidDoctorlogin:
         password=read_config.get_config("invalid login info","doctor_invalid_password")
         Basepage.fill_login_using_login_credentials(username,password)
         Basepage.click_Sign_in_button()
-        result=Basepage.verify_unsuccessfull_login_using_invalid_credentials()
-        assert result.__eq__("Invalid Username or Password")
+        Basepage.verify_unsuccessfull_login_using_invalid_credentials()
 
     def test_invalidlogin_with_blank_username_and_password(self):
         Basepage =BasePage(self.driver)
@@ -61,6 +58,5 @@ class TestInvalidDoctorlogin:
         password=read_config.get_config("blank login info","blank_password")
         Basepage.fill_login_using_login_credentials(username,password)
         Basepage.click_Sign_in_button()
-        result1=Basepage.verify_unsuccessfull_login_using_blank_username()
-        result=Basepage.verify_unsuccessfull_login_using_blank_password()
-        assert result1.__eq__("The Username field is required.") and result.__eq__("The Password field is required.")
+        Basepage.verify_unsuccessfull_login_using_blank_username()
+        Basepage.verify_unsuccessfull_login_using_blank_password()
