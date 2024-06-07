@@ -106,5 +106,7 @@ class BasePage:
     def enter_login_details(self,username,password):
         self.for_send_keys(self.wait_for_element(self.username_field),username)
         self.for_send_keys(self.wait_for_element(self.password_field),password)
+        self.click_Sign_in_button()
+
 
 

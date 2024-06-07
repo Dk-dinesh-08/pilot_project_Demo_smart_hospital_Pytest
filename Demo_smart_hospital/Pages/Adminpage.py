@@ -60,6 +60,15 @@ class AdminPage(BasePage):
     invalid_slot_field=By.XPATH,'(//span[@class="text-danger"])[4]'
     invalid_slot_field_text="The Slot field is required."
 
+    incorrect_admin_login=By.CSS_SELECTOR,'div[class="alert alert-danger"]'
+    incorrect_admin_login_txt="Invalid Username or Password"
+
+    required_username_field=By.XPATH,'(//span[@class="text-danger"])[1]'
+    required_username_text="The Username field is required."
+
+    required_password_field=By.XPATH,'(//span[@class="text-danger"])[2]'
+    required_password_text="The Password field is required."
+    
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -103,12 +112,10 @@ class AdminPage(BasePage):
 
 
     def verify_search_results(self):
-        self.wait_for_element(self.search_result)
         search_result_text = self.wait_for_element(self.search_result).text
         return search_result_text == self.verify_text
     
     def verify_invalid_search_results(self):
-        self.wait_for_element(self.invalid_search_loc)
         search_result_text = self.wait_for_element(self.invalid_search_loc).text
         return search_result_text == self.invalid_search_text
     
@@ -154,3 +161,22 @@ class AdminPage(BasePage):
     def verify_invalid_queue_search_result(self):
         search_result_text = self.wait_for_element(self.invalid_slot_field).text
         return search_result_text == self.invalid_slot_field_text
+    
+
+    def verify_incorrect_admin_login(self):
+        search_result_text = self.wait_for_element(self.incorrect_admin_login).text
+        return search_result_text == self.incorrect_admin_login_txt
+    
+    def verify_login_with_blank_username_and_valid_password(self):
+        search_result_text = self.wait_for_element(self.required_username_field).text
+        return search_result_text == self.required_username_text
+    
+    def verify_login_with_valid_username_and_blank_password(self):
+        search_result_text = self.wait_for_element(self.required_password_field).text
+        return search_result_text == self.required_password_text
+    
+    def verify_login_with_blank_username_and_blank_password(self):
+        search_result_text_username = self.wait_for_element(self.required_username_field).text
+        search_result_text_password = self.wait_for_element(self.required_password_field).text
+        assert search_result_text_username == self.required_username_text
+        assert search_result_text_password == self.required_password_text
