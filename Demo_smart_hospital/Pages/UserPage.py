@@ -25,6 +25,7 @@ class UserPage(BasePage):
     view_detail_assert=By.XPATH,"//h5[text()='Bill No : PHARMAB307']"
     norecord=By.XPATH,"//td[@class='dataTables_empty']"
     card_pincode=By.CSS_SELECTOR,"input[id='billing-zip']"
+    bill_records=By.XPATH,"//tbody//tr[@role='row']"
 
 
     def successfull_search_by_bill_number(self):
@@ -51,3 +52,10 @@ class UserPage(BasePage):
         detail_element = self.wait_for_element(self.view_detail_assert)
         expected_text = "Bill No : PHARMAB307"
         assert detail_element.text == expected_text
+
+    def total_count_of_bill_records_assert(self):
+        self.for_click(self.wait_for_element(self.pharmacy_option))
+        rows = self.wait_for_elements(self.bill_records)
+        total_records = len(rows)
+        print("Total number of bills:", total_records)
+        assert total_records >0

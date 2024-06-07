@@ -211,9 +211,16 @@ class DoctorPage(BasePage):
         select.select_by_value("11")
         self.for_click(self.wait_for_element(self.bed_status_save_button))
         
-    def verify_the_successfull_updation_of_the_bedstatus(self):
-        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="Patient Added Successfully"
+    #def verify_the_successfull_updation_of_the_bedstatus(self):
+     #   assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="Patient Added Successfully"
     
+    def verify_the_successfull_updation_of_the_bedstatus(self):
+        toast_message_element = self.wait_for_element((By.CSS_SELECTOR, "div[class='toast-message']"))
+        actual_message = toast_message_element.text
+        print("Actual message:", actual_message)  # Add debug output
+        expected_message = "Patient Added Successfully"
+        assert actual_message == expected_message, f"Expected message: {expected_message}, Actual message: {actual_message}"
+
     def unsuccessfull_update_of_the_bedstatus(self):
         self.for_click(self.wait_for_element(self.betstatus_icon))
         self.for_click(self.wait_for_element(self.bed_145))

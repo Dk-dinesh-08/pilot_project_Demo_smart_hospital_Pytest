@@ -45,6 +45,12 @@ class BasePage:
     def wait_for_element(self, locator):
         return self._wait.until(EC.visibility_of_element_located(locator))
     
+    #def wait_for_elements(self, parent_element, locator):
+     #   return self._wait.until(EC.visibility_of_all_elements_located((By.XPATH, parent_element + locator)))
+
+    def wait_for_elements(self,locator):
+        return self._wait.until(EC.visibility_of_all_elements_located(locator))
+    
     def click_Home_login_button(self):
         self.for_click(self.wait_for_element(self.Home_login_button))
 
