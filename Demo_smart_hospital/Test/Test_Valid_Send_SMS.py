@@ -6,6 +6,7 @@ from Utility import excel_reader
 @pytest.mark.usefixtures("test_setup_and_setdown")
 @pytest.mark.parametrize("title,template_id,sms_text",excel_reader.get_data( "D:\\Branch_kiruthika\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","SendSMS"))
 class TestValidSendSMS:
+    @pytest.mark.confirmation
     def test_valid_send_sms(self,title,template_id,sms_text):
         Doctor_page=DoctorPage(self.driver)
         Doctor_page.click_Home_login_button()

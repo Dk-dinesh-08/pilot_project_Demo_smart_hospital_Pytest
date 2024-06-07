@@ -6,6 +6,7 @@ from Pages.Adminpage import AdminPage
 @pytest.mark.usefixtures("test_setup_and_setdown")
 
 class TestValidPatientSearch():
+    @pytest.mark.confirmation
     def test_invalid_patient_search(self):
         admin=AdminPage(self.driver)
         admin.click_Home_login_button()
