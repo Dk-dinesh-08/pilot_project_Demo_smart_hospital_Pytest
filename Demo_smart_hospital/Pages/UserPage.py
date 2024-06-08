@@ -6,7 +6,7 @@ from Pages.Basepage import BasePage
 class UserPage(BasePage):
 
     def _init_(self, driver):
-        super()._init_(driver)
+        super().__init__(driver)
         self.driver = driver
     #dinesh
     User_my_appointment = (By.CSS_SELECTOR, "i[class='fas fa-hospital-alt']+span")
