@@ -149,7 +149,23 @@ class AdminPage(BasePage):
         self.for_send_keys(self.wait_for_element(self.quantity),Quantity)
         self.for_send_keys(self.wait_for_element(self.puchase_price),Price)
         self.for_click(self.wait_for_element(self.save_btn))
+
+    def fill_add_stock_item_form_with_invalid_supplier(self,ItemCategory,Item,Supplier,Store,Quantity,Price):
+        self.for_click(self.wait_for_element(self.item_category))
+        self.select_element_by_visible_text(self.item_category,ItemCategory)
+        self.select_element_by_visible_text(self.item,Item)
+        self.for_send_keys(self.wait_for_element(self.store),Store)
+        self.for_send_keys(self.wait_for_element(self.quantity),Quantity)
+        self.for_send_keys(self.wait_for_element(self.puchase_price),Price)
+        self.for_click(self.wait_for_element(self.save_btn))
        
+
+
+    def verify_supplier_field_required_msg_in_additionof_stock(self):
+        self.wait_for_element(self.table_result)
+        search_result_text = self.wait_for_element(self.table_result).text
+        return search_result_text == "Bed Sheet"
+
     def verify_successful_additionof_stock(self):
         self.wait_for_element(self.table_result)
         search_result_text = self.wait_for_element(self.table_result).text
