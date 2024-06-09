@@ -1,7 +1,7 @@
 import pytest
 import time
 from Utility import Consolelogger
-from Pages.Userpage import UserPage
+from Pages.UserPage import UserPage
 from Utility import read_config
 
 @pytest.mark.usefixtures("test_setup_and_setdown")

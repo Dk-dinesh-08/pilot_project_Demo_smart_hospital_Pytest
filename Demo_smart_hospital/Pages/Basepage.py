@@ -4,13 +4,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoAlertPresentException, TimeoutException
-
+from selenium.webdriver import ActionChains
 
 class BasePage:
     def __init__(self,driver):
         self._driver=driver
         self._wait=WebDriverWait(self._driver,20)
-        self.action=ActionChains(self._driver)
+        self.action = ActionChains(self._driver)
     
     Home_login_button=(By.XPATH,"//ul[@class='top-right']//a")
     Admin_login_button=(By.XPATH,"(//a[@class='forgot pull-right'])[1]")
@@ -24,7 +24,6 @@ class BasePage:
     required_username_message=By.CSS_SELECTOR,"input[name='username']+span>p"
     required_password_message=By.CSS_SELECTOR,"input[name='password']+span>p"
     invalid_credentials_message=By.CSS_SELECTOR,"div[class='alert alert-danger']" 
-
 
     Admin_signin_button=(By.XPATH,"(//a[@class='btn btn-primary width50'])[1]")
     admin_img_icon = By.XPATH,"//img[@class='topuser-image']"
@@ -44,6 +43,9 @@ class BasePage:
 
     def wait_for_element(self, locator):
         return self._wait.until(EC.visibility_of_element_located(locator))
+
+    def wait_for_elements(self,locator):
+        return self._wait.until(EC.visibility_of_all_elements_located(locator))
     
     def click_Home_login_button(self):
         self.for_click(self.wait_for_element(self.Home_login_button))
@@ -69,7 +71,10 @@ class BasePage:
         element.click()
         element=self.wait_for_element(self.profile_name)
         return element.text
-      
+    def clear_login_field(self):
+        self.wait_for_element(self.username_field).clear()
+        self.wait_for_element(self.password_field).clear()
+        
     def fill_login_using_login_credentials(self,username,password):
         self.for_send_keys(self.wait_for_element(self.username_field),username)
         self.for_send_keys(self.wait_for_element(self.password_field),password)
@@ -108,8 +113,13 @@ class BasePage:
         self.for_send_keys(self.wait_for_element(self.password_field),password)
         self.click_Sign_in_button()
 
+    def click_alert_ok(self):
+        try:
+            alert = self._wait.until(EC.alert_is_present())
+            alert.accept()
+        except TimeoutException:
+            print(f"No alert present within ")
 
-    def handle_alert(self):
-        alert = WebDriverWait(self._driver, 10).until(EC.alert_is_present())
-        assert alert is not None
-        alert.accept()
+    def Double_Click(self, element):
+        action = ActionChains(self._driver)
+        action.double_click(element).perform()

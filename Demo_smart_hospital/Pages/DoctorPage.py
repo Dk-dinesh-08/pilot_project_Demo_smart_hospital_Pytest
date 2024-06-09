@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import Select
 class DoctorPage(BasePage):
 
     def init(self, driver):
-        super()._init_(driver)
+        super().__init__(driver)
         self.driver = driver
 
     Birth_and_death_record=(By.XPATH,"//a/i[@class='fa fa-birthday-cake']")
@@ -68,13 +68,14 @@ class DoctorPage(BasePage):
     addnewpatient_invalidalert=By.CSS_SELECTOR,"div[class='toast-message'] p"
     #betstatus
     bed_145=By.XPATH,"//div[text()='FF - 145']"
+    bed_146=By.XPATH,"//div[text()='FF - 146']"
     Addmision_date=By.CSS_SELECTOR,"input[id='admission_date']"
     patientSelect_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-addpatient_id-container']"
     patientinput_field=By.CSS_SELECTOR,"input[class='select2-search__field']"
     consultant_select_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-consultant_doctor-container']"
     bed_status_save_button=By.CSS_SELECTOR,"button[id='formaddbtn']" 
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
-    add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
+    add_patient_name=By.XPATH,"//span[@class='select2-results']//ul//li[@class='select2-results__option select2-results__option--highlighted']"
 
     
       #post-msg
@@ -214,11 +215,11 @@ class DoctorPage(BasePage):
         element = self.wait_for_element(self.valid_death_search_assert).text
         assert element.eq("DREF50")
         
-    def successfull_update_of_the_bedstatus(self):
+    def successfull_update_of_the_bedstatus(self,patient_name):
         self.for_click(self.wait_for_element(self.betstatus_icon))
         self.for_click(self.wait_for_element(self.bed_145))
         self.for_click(self.wait_for_element(self.patientSelect_field))
-        self.for_send_keys(self.wait_for_element(self.patientinput_field),"Elvio")
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
         self.for_click(self.wait_for_element(self.add_patient_name))
         self.for_click(self.wait_for_element(self.Addmision_date))
         select_element=self.wait_for_element(self.doctal_consultant_select)
@@ -226,14 +227,21 @@ class DoctorPage(BasePage):
         select.select_by_value("11")
         self.for_click(self.wait_for_element(self.bed_status_save_button))
         
-    def verify_the_successfull_updation_of_the_bedstatus(self):
-        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="Patient Added Successfully"
+    #def verify_the_successfull_updation_of_the_bedstatus(self):
+     #   assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="Patient Added Successfully"
     
-    def unsuccessfull_update_of_the_bedstatus(self):
+    def verify_the_successfull_updation_of_the_bedstatus(self):
+        toast_message_element = self.wait_for_element((By.CSS_SELECTOR, "div[class='toast-message']"))
+        actual_message = toast_message_element.text
+        print("Actual message:", actual_message)  # Add debug output
+        expected_message = "Patient Added Successfully"
+        assert actual_message == expected_message, f"Expected message: {expected_message}, Actual message: {actual_message}"
+
+    def unsuccessfull_update_of_the_bedstatus_with_existing_patient(self,patient_name):
         self.for_click(self.wait_for_element(self.betstatus_icon))
-        self.for_click(self.wait_for_element(self.bed_145))
+        self.for_click(self.wait_for_element(self.bed_146))
         self.for_click(self.wait_for_element(self.patientSelect_field))
-        self.for_send_keys(self.wait_for_element(self.patientinput_field),"Jamesh Wood")
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
         self.for_click(self.wait_for_element(self.add_patient_name))
         self.for_click(self.wait_for_element(self.Addmision_date))
         select_element=self.wait_for_element(self.doctal_consultant_select)
@@ -241,9 +249,46 @@ class DoctorPage(BasePage):
         select.select_by_value("11")
         self.for_click(self.wait_for_element(self.bed_status_save_button))
     
-    def verify_the_unsuccessfull_updation_of_the_bedstatus(self):
-        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text!="Patient Added Successfully"
+    def unsuccessfull_update_of_the_bedstatus_without_consultant(self,patient_name):
+        self.for_click(self.wait_for_element(self.betstatus_icon))
+        self.for_click(self.wait_for_element(self.bed_146))
+        self.for_click(self.wait_for_element(self.patientSelect_field))
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
+        self.for_click(self.wait_for_element(self.add_patient_name))
+        self.for_click(self.wait_for_element(self.Addmision_date))
+        self.for_click(self.wait_for_element(self.bed_status_save_button))
+
+    def unsuccessfull_update_of_the_bedstatus_without_appointment_date(self,patient_name):
+        self.for_click(self.wait_for_element(self.betstatus_icon))
+        self.for_click(self.wait_for_element(self.bed_146))
+        self.for_click(self.wait_for_element(self.patientSelect_field))
+        self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
+        self.for_click(self.wait_for_element(self.add_patient_name))
+        select_element=self.wait_for_element(self.doctal_consultant_select)
+        select=Select(select_element)
+        select.select_by_value("11")
+        self.for_click(self.wait_for_element(self.bed_status_save_button))
+
+    def unsuccessfull_update_of_the_bedstatus_without_patient(self):
+        self.for_click(self.wait_for_element(self.betstatus_icon))
+        self.for_click(self.wait_for_element(self.bed_146))
+        select_element=self.wait_for_element(self.doctal_consultant_select)
+        select=Select(select_element)
+        select.select_by_value("11")
+        self.for_click(self.wait_for_element(self.bed_status_save_button))
+
+    def verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient(self):
+        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="The Patient field is required."
     
+    def verify_the_unsuccessfull_updation_of_the_bedstatus_with_existing_patient(self):
+        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="Patient already in IPD"
+
+    def verify_the_unsuccessfull_updation_of_the_bedstatus_without_consultant(self):
+        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="The Consultant Doctor field is required."
+
+    def verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date(self):
+        assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="The Appointment Date field is required."
+
     def successfull_notification_delete(self):
         self.for_click(self.wait_for_element(self.notification_icon))
         self.for_click(self.wait_for_element(self.delete_notification_button))
@@ -277,10 +322,15 @@ class DoctorPage(BasePage):
         expected_text="Record Saved Successfully"
         assert result_element==expected_text
     
-    def verify_unsuccessfull_addnewpatient(self):
+    def verify_unsuccessfull_addnewpatient_without_patient_name(self):
         result_element=self.wait_for_element(self.addnewpatient_invalidalert).text
         expected_text="The Name field is required."
         assert result_element==expected_text
+
+    def verify_unsuccessfull_addnewpatient_without_patient_age(self):
+        result_element=self.wait_for_element(self.addnewpatient_invalidalert).text
+        expected_text="The Age field is required.The Year field is required.The Month field is required.The Day field is required."
+        assert result_element in expected_text
 
     def click_messaging_btn(self):
         self.scroll_upto_element(self.messaging_btn)
