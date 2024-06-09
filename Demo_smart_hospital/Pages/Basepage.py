@@ -4,13 +4,13 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoAlertPresentException, TimeoutException
-
+from selenium.webdriver import ActionChains
 
 class BasePage:
     def __init__(self,driver):
         self._driver=driver
         self._wait=WebDriverWait(self._driver,20)
-        self.action=ActionChains(self._driver)
+        self.action = ActionChains(self._driver)
     
     Home_login_button=(By.XPATH,"//ul[@class='top-right']//a")
     Admin_login_button=(By.XPATH,"(//a[@class='forgot pull-right'])[1]")
@@ -108,8 +108,13 @@ class BasePage:
         self.for_send_keys(self.wait_for_element(self.password_field),password)
         self.click_Sign_in_button()
 
+    def click_alert_ok(self):
+        try:
+            alert = self._wait.until(EC.alert_is_present())
+            alert.accept()
+        except TimeoutException:
+            print(f"No alert present within ")
 
-    def handle_alert(self):
-        alert = WebDriverWait(self._driver, 10).until(EC.alert_is_present())
-        assert alert is not None
-        alert.accept()
+    def Double_Click(self, element):
+        action = ActionChains(self._driver)
+        action.double_click(element).perform()

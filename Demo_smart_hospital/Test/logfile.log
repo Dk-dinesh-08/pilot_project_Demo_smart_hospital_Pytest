@@ -58,103 +58,22 @@
 2024-06-07 19:44:16,335 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
 2024-06-07 19:51:21,356 : INFO : test_valid_search_user_appointment : Record Search sucessfully
 2024-06-07 19:51:40,888 : INFO : test_Invalid_search_user_appointmen : Invalid Record Search sucessfully
-2024-06-08 10:47:33,765 : INFO : test_valid_login : Login with valid username and Password
-2024-06-08 10:47:44,110 : INFO : test_valid_login : Successfully logged in as admin
-2024-06-08 10:50:12,542 : INFO : test_valid_login : Login with valid username and Password
-2024-06-08 10:50:21,793 : INFO : test_valid_login : Successfully logged in as admin
-2024-06-08 10:50:35,758 : INFO : test_invalid_login_with_invalid_data : Login with invalid data /nUsername: jasson@gmail.com and password: passsword
-2024-06-08 10:50:42,319 : INFO : test_invalid_login_with_invalid_data : Verified incorrect admin login
-2024-06-08 10:50:57,871 : INFO : test_login_with_blank_username_and_valid_password : Login with blank username /nUsername:  and password: password
-2024-06-08 10:51:04,936 : INFO : test_login_with_blank_username_and_valid_password : Verified login with blank username and valid password
-2024-06-08 10:51:18,303 : INFO : test_login_with_valid_username_and_blank_password : Login with blank password /nUsername: jason@gmail.com and password: 
-2024-06-08 10:51:25,326 : INFO : test_login_with_valid_username_and_blank_password : Verified login with valid username and blank password
-2024-06-08 10:51:39,654 : INFO : test_login_with_blank_username_and_blank_password : Login with blank data /nUsername:  and password: 
-2024-06-08 10:51:46,790 : INFO : test_login_with_blank_username_and_blank_password : Verified login with blank username and blank password
-2024-06-08 11:04:58,583 : INFO : test_valid_appointment_search : To test invalid appointment search results using doctor info
-2024-06-08 11:05:13,017 : INFO : test_valid_appointment_search : Invalid appointment search results using doctor info is verified successfully
-2024-06-08 11:06:10,090 : INFO : test_valid_appointment_search : To test valid appointment search results using doctor info
-2024-06-08 11:06:24,474 : INFO : test_valid_appointment_search : valid appointment search results using doctor info is verified successfully
-2024-06-08 11:06:37,986 : INFO : test_invalid_appointment_search : To test invalid appointment search results using doctor info
-2024-06-08 11:06:51,375 : INFO : test_invalid_appointment_search : Invalid appointment search results using doctor info is verified successfully
-2024-06-08 11:22:54,523 : INFO : test_valid_appointment_search : To test valid Queue search results
-2024-06-08 11:23:09,926 : INFO : test_valid_appointment_search : valid queue search results is verified successfully
-2024-06-08 11:23:23,069 : INFO : test_invalid_queue_search : To test invalid Queue search results
-2024-06-08 11:23:37,009 : INFO : test_invalid_queue_search : valid Queue search results is verified successfully
-2024-06-08 11:53:37,714 : INFO : test_valid_patient_search : To test search results by patient name
-2024-06-08 11:53:51,704 : INFO : test_valid_patient_search : search results by patient name is verified successfully
-2024-06-08 11:54:06,852 : INFO : test_invalid_patient_search : To test search results by invalid patient name
-2024-06-08 11:54:25,918 : INFO : test_invalid_patient_search : search results by invalid patient name is verified successfully
-2024-06-08 14:33:34,650 : INFO : test_valid_send_sms : To test send sms functionality
-2024-06-08 14:33:48,860 : INFO : test_valid_send_sms : send sms functionality is verified successfully
-2024-06-08 14:34:02,501 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
-2024-06-08 14:34:50,172 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
-2024-06-08 14:35:07,709 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
-2024-06-08 14:41:45,165 : INFO : test_valid_send_sms : To test send sms functionality
-2024-06-08 14:42:00,379 : INFO : test_valid_send_sms : send sms functionality is verified successfully
-2024-06-08 14:42:14,163 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
-2024-06-08 14:42:58,335 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
-2024-06-08 14:43:08,999 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
-2024-06-08 14:44:03,426 : INFO : test_valid_send_sms : To test send sms functionality
-2024-06-08 14:44:16,403 : INFO : test_valid_send_sms : send sms functionality is verified successfully
-2024-06-08 14:44:30,153 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
-2024-06-08 14:44:45,964 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
-2024-06-08 14:45:00,436 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
-2024-06-08 14:45:15,435 : INFO : test_invalid_send_sms_without_sendthrough : Unsucessful send sms functionality is verified
-2024-06-08 14:45:28,738 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
-2024-06-08 14:45:41,997 : INFO : test_invalid_send_sms_without_title : Unsucessful send sms functionality is verified
-2024-06-08 15:01:31,257 : INFO : test_valid_send_sms : To test send sms functionality
-2024-06-08 15:02:17,710 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
-2024-06-08 15:02:32,977 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
-2024-06-08 15:02:46,424 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
-2024-06-08 15:02:59,751 : INFO : test_invalid_send_sms_without_sendthrough : Unsucessful send sms functionality is verified
-2024-06-08 15:03:13,021 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
-2024-06-08 15:03:28,129 : INFO : test_invalid_send_sms_without_title : Unsucessful send sms functionality is verified
-2024-06-08 15:16:10,477 : INFO : test_valid_send_sms : To test send sms functionality
-2024-06-08 15:16:26,014 : INFO : test_valid_send_sms : send sms functionality is verified successfully
-2024-06-08 15:16:39,558 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
-2024-06-08 15:16:58,411 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
-2024-06-08 15:17:11,628 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
-2024-06-08 15:17:27,853 : INFO : test_invalid_send_sms_without_sendthrough : Unsucessful send sms functionality is verified
-2024-06-08 15:17:38,808 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
-2024-06-08 15:17:51,566 : INFO : test_invalid_send_sms_without_title : Unsucessful send sms functionality is verified
-2024-06-08 15:20:21,894 : INFO : test_valid_appointment_search : To test valid Queue search results
-2024-06-08 15:20:35,351 : INFO : test_valid_appointment_search : valid queue search results is verified successfully
-2024-06-08 15:20:49,233 : INFO : test_invalid_queue_search : To test invalid Queue search results
-2024-06-08 15:21:03,173 : INFO : test_invalid_queue_search : valid Queue search results is verified successfully
-2024-06-08 15:23:28,696 : INFO : test_valid_post_new_message : To test post new message functionality
-2024-06-08 15:23:42,452 : INFO : test_valid_post_new_message : Notification send successfully
-2024-06-08 15:23:55,925 : INFO : test_invalid_post_new_message : To test unsucessful post new message functionality
-2024-06-08 15:24:09,631 : INFO : test_invalid_post_new_message : unsucessful post new message is verified
-2024-06-08 15:24:22,592 : INFO : test_invalid_post_new_message_for_msg_body : To test unsucessful post new message functionality
-2024-06-08 15:24:37,957 : INFO : test_invalid_post_new_message_for_msg_body : unsucessful post new message is verified
-2024-06-08 15:27:14,220 : INFO : test_valid_post_new_message : To test post new message functionality
-2024-06-08 15:27:30,461 : INFO : test_valid_post_new_message : Notification send successfully
-2024-06-08 15:27:41,731 : INFO : test_invalid_post_new_message : To test unsucessful post new message functionality
-2024-06-08 15:27:55,985 : INFO : test_invalid_post_new_message : unsucessful post new message is verified
-2024-06-08 15:28:07,069 : INFO : test_invalid_post_new_message_for_msg_body : To test unsucessful post new message functionality
-2024-06-08 15:28:22,465 : INFO : test_invalid_post_new_message_for_msg_body : unsucessful post new message is verified
-2024-06-08 15:29:17,216 : INFO : test_valid_patient_search : To test search results by patient name
-2024-06-08 15:29:32,601 : INFO : test_valid_patient_search : search results by patient name is verified successfully
-2024-06-08 15:29:46,454 : INFO : test_invalid_patient_search : To test search results by invalid patient name
-2024-06-08 15:29:59,593 : INFO : test_invalid_patient_search : search results by invalid patient name is verified successfully
-2024-06-08 15:30:58,484 : INFO : test_valid_appointment_search : To test valid appointment search results using doctor info
-2024-06-08 15:31:12,560 : INFO : test_valid_appointment_search : valid appointment search results using doctor info is verified successfully
-2024-06-08 15:31:25,416 : INFO : test_invalid_appointment_search : To test invalid appointment search results using doctor info
-2024-06-08 15:31:38,352 : INFO : test_invalid_appointment_search : Invalid appointment search results using doctor info is verified
-2024-06-08 15:32:16,949 : INFO : test_valid_login : Login with valid username and Password
-2024-06-08 15:32:26,961 : INFO : test_valid_login : Successfully logged in as admin
-2024-06-08 15:32:40,582 : INFO : test_invalid_login_with_invalid_data : Login with invalid data /nUsername: jasson@gmail.com and password: passsword
-2024-06-08 15:32:46,820 : INFO : test_invalid_login_with_invalid_data : Verified incorrect admin login
-2024-06-08 15:33:02,499 : INFO : test_login_with_blank_username_and_valid_password : Login with blank username /nUsername:  and password: password
-2024-06-08 15:33:09,167 : INFO : test_login_with_blank_username_and_valid_password : Verified login with blank username and valid password
-2024-06-08 15:33:23,288 : INFO : test_login_with_valid_username_and_blank_password : Login with blank password /nUsername: jason@gmail.com and password: 
-2024-06-08 15:33:30,619 : INFO : test_login_with_valid_username_and_blank_password : Verified login with valid username and blank password
-2024-06-08 15:33:45,850 : INFO : test_login_with_blank_username_and_blank_password : Login with blank data /nUsername:  and password: 
-2024-06-08 15:33:52,982 : INFO : test_login_with_blank_username_and_blank_password : Verified login with blank username and blank password
-2024-06-08 15:34:38,470 : INFO : test_valid_add_stock_item : To test add stock item
-2024-06-08 15:35:02,045 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
-2024-06-08 15:35:14,947 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
-2024-06-08 15:36:16,356 : INFO : test_valid_add_stock_item : To test add stock item
-2024-06-08 15:36:30,250 : INFO : test_valid_add_stock_item : Stock item is added sucessfully
-2024-06-08 15:36:43,336 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
-2024-06-08 15:37:00,085 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+2024-06-08 15:39:33,021 : INFO : test_valid_add_appointment : New appointment Added Successfully
+2024-06-08 15:53:52,995 : INFO : test_Invalid_add_appointment : New appointment Added Successfully
+2024-06-08 15:56:22,243 : INFO : test_Invalid_add_appointment : New appointment Added Successfully
+2024-06-08 17:39:31,179 : INFO : test_Empty_add_appointment : empty assert sucessfully
+2024-06-08 19:24:39,004 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:44:06,222 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:46:33,014 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 19:50:31,082 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 19:54:31,646 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:54:58,533 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 19:55:33,079 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:56:00,752 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 23:45:19,008 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 23:46:09,289 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 23:46:55,543 : INFO : test_empty_Payment : Empty Payment sucessfully
+2024-06-09 20:23:13,661 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-09 20:23:36,226 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-09 20:23:58,928 : INFO : test_empty_Payment : Empty Payment sucessfully
+2024-06-09 20:43:09,642 : INFO : test_valid_Delete_appointment : appointment Delted sucessfully
