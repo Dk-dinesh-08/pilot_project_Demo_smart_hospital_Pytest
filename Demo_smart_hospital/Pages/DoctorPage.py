@@ -2,6 +2,7 @@ from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
 from selenium.webdriver.support.ui import Select
 
+
 class DoctorPage(BasePage):
 
     def init(self, driver):
@@ -102,6 +103,24 @@ class DoctorPage(BasePage):
     Pathologist_check_box  =By.XPATH,'(//input[@type="checkbox"])[8]]'   
     Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
     assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
+    add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
+    required_notice_date=By.XPATH,'(//span[@class="text-danger"])[3]'
+    required_msg_body=By.XPATH,'(//span[@class="text-danger"])[2]'
+    
+    individual_msg=By.XPATH,'(//ul[@class="nav nav-tabs pull-right"]//a)[1]'
+    individual_title=By.XPATH,'//input[@name="individual_title"]'
+    sendthrough_check_box=By.XPATH,'(//input[@name="individual_send_by[]"])[1]'
+    individual_text_area=By.XPATH,'//textarea[@id="individual_msg_text"]'
+    individual_template_id=By.XPATH,'//input[@name="individual_template_id"]'
+    sms_search_box=By.XPATH,'//input[@id="search-query"]'
+    select_send_to=By.XPATH,'(//ul[@class="selector-list"]/li)[1]'
+    add_button=By.XPATH,'//button[@class="btn btn-primary btn-searchsm add-btn"]'
+    send_sms_individual=By.XPATH,'//button[@class="btn btn-primary submit_individual"]'
+    select_msg_group=By.XPATH,'//div[@class="input-group-btn bs-dropdown-to-select-group"]/button'
+    select_patient_droup=By.XPATH,'//ul[@class="dropdown-menu"]//a[text()="Patient"]'
+
+
+
     def click_Birth_and_death_record(self):
         self.for_click(self.wait_for_element(self.Birth_and_death_record))   
 
@@ -317,13 +336,13 @@ class DoctorPage(BasePage):
         self.scroll_upto_element(self.messaging_btn)
         self.for_click(self.wait_for_element(self.messaging_btn))
 
-    def fill_post_new_message_form(self):
+    def fill_post_new_message_form(self,title,notification_date,publish_date,message_body):
         self.for_click(self.wait_for_element(self.post_new_message))
-        self.for_send_keys(self.wait_for_element(self.title_locator),"Hii all")
-        self.for_send_keys(self.wait_for_element(self.notice_date),"25/06/2024")
-        self.for_send_keys(self.wait_for_element(self.publish_on),"30/06/2024")
+        self.for_send_keys(self.wait_for_element(self.title_locator),title)
+        self.for_send_keys(self.wait_for_element(self.notice_date),notification_date)
+        self.for_send_keys(self.wait_for_element(self.publish_on),publish_date)
         self._driver.switch_to.frame(self.wait_for_element(self.messaging_frame))
-        self.for_send_keys(self.wait_for_element(self.msg_body),"sample message to all")
+        self.for_send_keys(self.wait_for_element(self.msg_body),message_body)
         self._driver.switch_to.default_content()
         self.for_click(self.wait_for_element(self.send_btn))
 
@@ -338,12 +357,93 @@ class DoctorPage(BasePage):
         search_result_text = self.wait_for_element(self.assert_sms).text
         return search_result_text == self.verification_text
     
-    def fill_send_sms_form(self):
+    
+    def fill_send_sms_form(self,title,template_id,sms_text):
         self.for_click(self.wait_for_element(self.send_sms))
-        self.for_send_keys(self.wait_for_element(self.sms_title),"Hiii")
-        self.for_send_keys(self.wait_for_element(self.sms_template),"0001")
+        self.for_send_keys(self.wait_for_element(self.sms_title),title)
+        self.for_send_keys(self.wait_for_element(self.sms_template),template_id)
         self.for_click(self.wait_for_element(self.sms_checkbox))
-        self.for_send_keys(self.wait_for_element(self.text_area),"hello everyone")
+        self.for_send_keys(self.wait_for_element(self.text_area),sms_text)
+        self.for_click(self.wait_for_element(self.admin_check_box))
+        self.for_click(self.wait_for_element(self.doctor_check_box))
+        self.for_click(self.wait_for_element(self.Pharmacist_check_box))
+        self.for_click(self.wait_for_element(self.send_sms_btn))
+    
+
+    def fill_send_sms_form_to_individual(self,Title,Template_id,Message_text):
+        self.for_click(self.wait_for_element(self.send_sms))
+        self.for_click(self.wait_for_element(self.individual_msg))
+        self.for_send_keys(self.wait_for_element(self.individual_title),Title)
+        self.for_click(self.wait_for_element(self.sendthrough_check_box))
+        self.for_send_keys(self.wait_for_element(self.individual_template_id),Template_id)
+        self.for_send_keys(self.wait_for_element(self.individual_text_area),Message_text)
+        self.for_click(self.wait_for_element(self.select_msg_group))
+        self.for_click(self.wait_for_element(self.select_patient_droup))
+        self.for_click(self.wait_for_element(self.sms_search_box))
+        self.for_send_keys(self.wait_for_element(self.sms_search_box),"Olivier")
+        self.for_click(self.wait_for_element(self.select_send_to))
+        self.for_click(self.wait_for_element(self.add_button))
+        self.scroll_upto_element(self.send_sms_individual)
+        self.for_click(self.wait_for_element(self.send_sms_individual))
+
+    
+
+    def verify_sms_send_to_individual_patient(self):
+        search_result_text = self.wait_for_element(self.assert_sms).text
+        return search_result_text == "Message sent successfully"
+    
+
+    def verify_unsucessful_message_for_send_through_sms(self):
+        search_result_text = self.wait_for_element(self.assert_sms).text
+        return search_result_text == "The Send Through field is required."
+    
+    def fill_send_sms_form_without_title(self,title,template_id,sms_text):
+        self.for_click(self.wait_for_element(self.send_sms))
+        self.for_send_keys(self.wait_for_element(self.sms_template),template_id)
+        self.for_send_keys(self.wait_for_element(self.text_area),sms_text)
+        self.for_click(self.wait_for_element(self.sms_checkbox))
+        self.for_click(self.wait_for_element(self.admin_check_box))
+        self.for_click(self.wait_for_element(self.Pharmacist_check_box))
+        self.for_click(self.wait_for_element(self.send_sms_btn))
+
+    def verify_unsucessful_message_for_sms_title(self):
+        search_result_text = self.wait_for_element(self.assert_sms).text
+        return search_result_text == "The Title field is required."
+
+
+    def fill_post_new_message_form_with_invalid_notification_date(self,title,publish_date,message_body):
+        self.for_click(self.wait_for_element(self.post_new_message))
+        self.for_send_keys(self.wait_for_element(self.title_locator),title)
+        self.for_send_keys(self.wait_for_element(self.publish_on),publish_date)
+        self._driver.switch_to.frame(self.wait_for_element(self.messaging_frame))
+        self.for_send_keys(self.wait_for_element(self.msg_body),message_body)
+        self._driver.switch_to.default_content()
+        self.for_click(self.wait_for_element(self.send_btn))
+
+    
+
+    def verify_unsucessful_message_for_invalid_notification_date(self):
+        search_result_text = self.wait_for_element(self.required_notice_date).text
+        return search_result_text == "The Notice Date field is required."
+    
+
+    def fill_post_new_message_form_with_no_message_body(self,title,notification_date,publish_date):
+        self.for_click(self.wait_for_element(self.post_new_message))
+        self.for_send_keys(self.wait_for_element(self.title_locator),title)
+        self.for_send_keys(self.wait_for_element(self.notice_date),notification_date)
+        self.for_send_keys(self.wait_for_element(self.publish_on),publish_date)
+        self.for_click(self.wait_for_element(self.send_btn))
+
+    def verify_unsucessful_message_for_invalid_message_body(self):
+        self.scroll_upto_element(self.required_msg_body)
+        search_result_text = self.wait_for_element(self.required_msg_body).text
+        return search_result_text == "The Message field is required."
+    
+    def fill_send_sms_form_without_send_through(self,title,template_id,sms_text):
+        self.for_click(self.wait_for_element(self.send_sms))
+        self.for_send_keys(self.wait_for_element(self.sms_title),title)
+        self.for_send_keys(self.wait_for_element(self.sms_template),template_id)
+        self.for_send_keys(self.wait_for_element(self.text_area),sms_text)
         self.for_click(self.wait_for_element(self.admin_check_box))
         self.for_click(self.wait_for_element(self.doctor_check_box))
         self.for_click(self.wait_for_element(self.Pharmacist_check_box))

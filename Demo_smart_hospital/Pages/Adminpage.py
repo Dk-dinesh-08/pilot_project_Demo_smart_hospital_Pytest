@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 
 
-
 @pytest.mark.usefixtures("test_setup_and_teardown")
 class AdminPage(BasePage):  
 
@@ -41,7 +40,7 @@ class AdminPage(BasePage):
 
     inventory=By.XPATH,'//i[@class="fas fa-luggage-cart"]//parent::a'
     add_item_stock=By.XPATH,'//a[@class="btn btn-primary btn-sm additemstock"]'
-    item_category=By.XPATH,'(//div[@class="form-group"])[1]//select[@name="item_category_id"]'
+    item_category=By.XPATH,'//form[@id="form1"]//select[@name="item_category_id"]'
     item=By.XPATH,'(//div[@class="form-group"])[2]//select[@name="item_id"]'
     store=By.XPATH,'(//div[@class="form-group"])[4]//select[@name="store_id"]'
     supplier=By.XPATH,'(//div[@class="form-group"])[3]//select[@name="supplier_id"]'
@@ -60,6 +59,15 @@ class AdminPage(BasePage):
     invalid_slot_field=By.XPATH,'(//span[@class="text-danger"])[4]'
     invalid_slot_field_text="The Slot field is required."
 
+    incorrect_admin_login=By.CSS_SELECTOR,'div[class="alert alert-danger"]'
+    incorrect_admin_login_txt="Invalid Username or Password"
+
+    required_username_field=By.XPATH,'(//span[@class="text-danger"])[1]'
+    required_username_text="The Username field is required."
+
+    required_password_field=By.XPATH,'(//span[@class="text-danger"])[2]'
+    required_password_text="The Password field is required."
+    
 
     def __init__(self, driver):
         super().__init__(driver)
@@ -103,12 +111,10 @@ class AdminPage(BasePage):
 
 
     def verify_search_results(self):
-        self.wait_for_element(self.search_result)
         search_result_text = self.wait_for_element(self.search_result).text
         return search_result_text == self.verify_text
     
     def verify_invalid_search_results(self):
-        self.wait_for_element(self.invalid_search_loc)
         search_result_text = self.wait_for_element(self.invalid_search_loc).text
         return search_result_text == self.invalid_search_text
     
@@ -134,16 +140,34 @@ class AdminPage(BasePage):
         self.for_click(self.wait_for_element(self.inventory))
         self.for_click(self.wait_for_element(self.add_item_stock))
     
-    def fill_add_stock_item_form(self):
-        self.for_send_keys(self.wait_for_element(self.item_category),"Bed Sheets")
-        self.select_element_by_visible_text(self.item,"Bed Sheet")
-        self.for_send_keys(self.wait_for_element(self.supplier),"VK Supplier")
-        self.for_send_keys(self.wait_for_element(self.store),"Vinay Pharmacy")
-        self.for_send_keys(self.wait_for_element(self.quantity),"13")
-        self.for_send_keys(self.wait_for_element(self.puchase_price),"250")
+    def fill_add_stock_item_form(self,ItemCategory,Item,Supplier,Store,Quantity,Price):
+        self.for_click(self.wait_for_element(self.item_category))
+        self.select_element_by_visible_text(self.item_category,ItemCategory)
+        self.select_element_by_visible_text(self.item,Item)
+        self.for_send_keys(self.wait_for_element(self.supplier),Supplier)
+        self.for_send_keys(self.wait_for_element(self.store),Store)
+        self.for_send_keys(self.wait_for_element(self.quantity),Quantity)
+        self.for_send_keys(self.wait_for_element(self.puchase_price),Price)
+        self.for_click(self.wait_for_element(self.save_btn))
+
+    def fill_add_stock_item_form_with_invalid_supplier(self,ItemCategory,Item,Supplier,Store,Quantity,Price):
+        self.for_click(self.wait_for_element(self.item_category))
+        self.select_element_by_visible_text(self.item_category,ItemCategory)
+        self.select_element_by_visible_text(self.item,Item)
+        self.for_send_keys(self.wait_for_element(self.store),Store)
+        self.for_send_keys(self.wait_for_element(self.quantity),Quantity)
+        self.for_send_keys(self.wait_for_element(self.puchase_price),Price)
         self.for_click(self.wait_for_element(self.save_btn))
        
+
+
+    def verify_supplier_field_required_msg_in_additionof_stock(self):
+        self.wait_for_element(self.table_result)
+        search_result_text = self.wait_for_element(self.table_result).text
+        return search_result_text == "Bed Sheet"
+
     def verify_successful_additionof_stock(self):
+        self.wait_for_element(self.table_result)
         search_result_text = self.wait_for_element(self.table_result).text
         return search_result_text == "Bed Sheet"
     
@@ -154,3 +178,22 @@ class AdminPage(BasePage):
     def verify_invalid_queue_search_result(self):
         search_result_text = self.wait_for_element(self.invalid_slot_field).text
         return search_result_text == self.invalid_slot_field_text
+    
+
+    def verify_incorrect_admin_login(self):
+        search_result_text = self.wait_for_element(self.incorrect_admin_login).text
+        return search_result_text == self.incorrect_admin_login_txt
+    
+    def verify_login_with_blank_username_and_valid_password(self):
+        search_result_text = self.wait_for_element(self.required_username_field).text
+        return search_result_text == self.required_username_text
+    
+    def verify_login_with_valid_username_and_blank_password(self):
+        search_result_text = self.wait_for_element(self.required_password_field).text
+        return search_result_text == self.required_password_text
+    
+    def verify_login_with_blank_username_and_blank_password(self):
+        search_result_text_username = self.wait_for_element(self.required_username_field).text
+        search_result_text_password = self.wait_for_element(self.required_password_field).text
+        assert search_result_text_username == self.required_username_text
+        assert search_result_text_password == self.required_password_text

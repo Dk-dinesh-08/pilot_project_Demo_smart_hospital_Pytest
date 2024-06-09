@@ -58,6 +58,25 @@
 2024-06-07 19:44:16,335 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
 2024-06-07 19:51:21,356 : INFO : test_valid_search_user_appointment : Record Search sucessfully
 2024-06-07 19:51:40,888 : INFO : test_Invalid_search_user_appointmen : Invalid Record Search sucessfully
+2024-06-08 15:39:33,021 : INFO : test_valid_add_appointment : New appointment Added Successfully
+2024-06-08 15:53:52,995 : INFO : test_Invalid_add_appointment : New appointment Added Successfully
+2024-06-08 15:56:22,243 : INFO : test_Invalid_add_appointment : New appointment Added Successfully
+2024-06-08 17:39:31,179 : INFO : test_Empty_add_appointment : empty assert sucessfully
+2024-06-08 19:24:39,004 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:44:06,222 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:46:33,014 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 19:50:31,082 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 19:54:31,646 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:54:58,533 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 19:55:33,079 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 19:56:00,752 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 23:45:19,008 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-08 23:46:09,289 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-08 23:46:55,543 : INFO : test_empty_Payment : Empty Payment sucessfully
+2024-06-09 20:23:13,661 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-09 20:23:36,226 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-09 20:23:58,928 : INFO : test_empty_Payment : Empty Payment sucessfully
+2024-06-09 20:43:09,642 : INFO : test_valid_Delete_appointment : appointment Delted sucessfully
 2024-06-08 12:58:46,381 : INFO : test_valid_billsearch : Successfull bill search
 2024-06-08 12:59:14,563 : INFO : test_invalid_billsearch : Invalid bill search asserted successfully
 2024-06-08 13:00:13,391 : INFO : test_valid_doctorlogin : Doctor logged in successfully
