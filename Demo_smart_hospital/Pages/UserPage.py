@@ -7,8 +7,8 @@ from selenium.common.exceptions import TimeoutException
 
 class UserPage(BasePage):
 
-    def init(self, driver):
-        super()._init_(driver)
+    def _init_(self, driver):
+        super().__init__(driver)
         self.driver = driver
 
         
@@ -62,7 +62,7 @@ class UserPage(BasePage):
     view_detail_assert=By.XPATH,"//h5[text()='Bill No : PHARMAB307']"
     norecord=By.XPATH,"//td[@class='dataTables_empty']"
     card_pincode=By.CSS_SELECTOR,"input[id='billing-zip']"
-    addnewappointment_invalidalert=By.CSS_SELECTOR,"div[class='toast-message'] p"
+    bill_records=By.XPATH,"//tbody//tr[@role='row']"
 
     def test_next_page_button(self):
         element = self.wait_for_element(self.next_page_button)
@@ -222,3 +222,9 @@ class UserPage(BasePage):
     def click_delete_button(self):
         element=self.wait_for_element(self.user_Appointment_delete_button)
         self.for_click(element)
+    def total_count_of_bill_records_assert(self):
+        self.for_click(self.wait_for_element(self.pharmacy_option))
+        rows = self.wait_for_element(self.bill_records)
+        total_records = len(rows)
+        print("Total number of bills:", total_records)
+        assert total_records >0

@@ -77,3 +77,37 @@
 2024-06-09 20:23:36,226 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
 2024-06-09 20:23:58,928 : INFO : test_empty_Payment : Empty Payment sucessfully
 2024-06-09 20:43:09,642 : INFO : test_valid_Delete_appointment : appointment Delted sucessfully
+2024-06-08 12:58:46,381 : INFO : test_valid_billsearch : Successfull bill search
+2024-06-08 12:59:14,563 : INFO : test_invalid_billsearch : Invalid bill search asserted successfully
+2024-06-08 13:00:13,391 : INFO : test_valid_doctorlogin : Doctor logged in successfully
+2024-06-08 13:00:43,259 : INFO : test_invalid_doctorlogin_by_clicking_invalid_option : Invalid doctor login asserted successfully
+2024-06-08 13:01:03,842 : INFO : test_invalidlogin_with_blank_username : Invalid doctor login asserted successfully
+2024-06-08 13:01:26,502 : INFO : test_invalidlogin_with_blank_password : Invalid doctor login asserted successfully
+2024-06-08 13:01:50,500 : INFO : test_invalidlogin_with_invalid_credentials : Invalid doctor login asserted successfully
+2024-06-08 13:02:14,689 : INFO : test_invalidlogin_with_blank_username_and_password : Invalid doctor login asserted successfully
+2024-06-08 13:05:33,586 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-06-08 13:06:26,038 : INFO : test_valid_totalbillcount : Bill records counted successfully
+2024-06-08 13:09:29,216 : INFO : test_valid_userlogin_by_default_credentials : User logged in successfully
+2024-06-08 13:10:13,098 : INFO : test_valid_viewbilldetails : Bill details viewed successfully
+2024-06-08 14:21:27,018 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-08 14:25:14,328 : INFO : test_invalid_addnewpatient : Invalid addtion of new patient asserted successfully
+2024-06-08 14:30:15,750 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-08 14:45:22,263 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-08 14:48:40,183 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-08 14:59:08,799 : INFO : test_valid_doctorlogin : Doctor logged in successfully
+2024-06-08 15:00:10,475 : INFO : test_invalid_doctorlogin_by_clicking_invalid_option : Invalid doctor login asserted successfully
+2024-06-08 15:02:54,090 : INFO : test_valid_userlogin_by_default_credentials : User logged in successfully
+2024-06-08 15:15:57,726 : INFO : test_valid_userlogin_by_default_credentials : User logged in successfully
+2024-06-08 15:16:16,824 : INFO : test_invalidlogin_with_blank_username : Invalid user login asserted successfully
+2024-06-08 15:16:35,049 : INFO : test_invalidlogin_with_blank_password : Invalid user login asserted successfully
+2024-06-08 15:16:52,580 : INFO : test_invalidlogin_with_invalid_credentials : Invalid user login asserted successfully
+2024-06-08 15:44:30,742 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-08 15:57:08,091 : INFO : test_invalid_update_bedstatus : Invalid updation of bed status asserted successfully
+2024-06-08 16:14:36,519 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-08 16:15:07,009 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-08 16:18:31,846 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-08 17:00:36,368 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-08 17:07:15,132 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-08 17:14:32,991 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-08 17:15:00,331 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-08 17:21:28,659 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully

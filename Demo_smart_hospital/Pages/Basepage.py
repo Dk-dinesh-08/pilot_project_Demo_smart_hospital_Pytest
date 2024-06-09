@@ -25,7 +25,6 @@ class BasePage:
     required_password_message=By.CSS_SELECTOR,"input[name='password']+span>p"
     invalid_credentials_message=By.CSS_SELECTOR,"div[class='alert alert-danger']" 
 
-
     Admin_signin_button=(By.XPATH,"(//a[@class='btn btn-primary width50'])[1]")
     admin_img_icon = By.XPATH,"//img[@class='topuser-image']"
     admin_text = By.XPATH,"//div[@class='sstopuser-test']/h5"
@@ -44,6 +43,9 @@ class BasePage:
 
     def wait_for_element(self, locator):
         return self._wait.until(EC.visibility_of_element_located(locator))
+
+    def wait_for_elements(self,locator):
+        return self._wait.until(EC.visibility_of_all_elements_located(locator))
     
     def click_Home_login_button(self):
         self.for_click(self.wait_for_element(self.Home_login_button))
@@ -69,7 +71,10 @@ class BasePage:
         element.click()
         element=self.wait_for_element(self.profile_name)
         return element.text
-      
+    def clear_login_field(self):
+        self.wait_for_element(self.username_field).clear()
+        self.wait_for_element(self.password_field).clear()
+        
     def fill_login_using_login_credentials(self,username,password):
         self.for_send_keys(self.wait_for_element(self.username_field),username)
         self.for_send_keys(self.wait_for_element(self.password_field),password)
