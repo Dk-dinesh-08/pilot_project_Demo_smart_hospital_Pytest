@@ -1,5 +1,4 @@
 import pytest
-import time
 from Utility import Consolelogger
 from Pages.DoctorPage import DoctorPage
 from Utility import read_config
