@@ -92,3 +92,5 @@
 2024-06-08 17:14:32,991 : INFO : test_valid_update_bedstatus : Bed status updated successfully
 2024-06-08 17:15:00,331 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
 2024-06-08 17:21:28,659 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-09 22:15:21,363 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-09 22:15:56,192 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully

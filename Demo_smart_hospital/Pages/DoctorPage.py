@@ -214,7 +214,7 @@ class DoctorPage(BasePage):
     def verify_the_successfull_updation_of_the_bedstatus(self):
         toast_message_element = self.wait_for_element((By.CSS_SELECTOR, "div[class='toast-message']"))
         actual_message = toast_message_element.text
-        print("Actual message:", actual_message)  # Add debug output
+        print("Actual message:", actual_message)  
         expected_message = "Patient Added Successfully"
         assert actual_message == expected_message, f"Expected message: {expected_message}, Actual message: {actual_message}"
 
