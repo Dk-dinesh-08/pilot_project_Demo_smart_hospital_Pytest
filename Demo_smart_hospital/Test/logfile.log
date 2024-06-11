@@ -579,3 +579,31 @@ Stacktrace:
 2024-06-11 23:20:43,818 : INFO : test_valid_add_stock_item : Stock item is added sucessfully
 2024-06-11 23:21:00,354 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
 2024-06-11 23:21:19,384 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+=======
+2024-06-09 22:15:21,363 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-09 22:15:56,192 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-11 20:08:06,908 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-06-11 20:10:02,650 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-11 20:11:04,191 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:14:40,080 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:18:07,874 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:22:21,574 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:24:24,415 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:26:56,688 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:31:13,953 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:32:20,554 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-11 20:33:44,726 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 20:57:41,894 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-11 21:00:44,453 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-11 21:20:28,384 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-11 21:21:54,740 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-11 21:23:04,315 : INFO : test_invalid_update_bedstatus_without_consultant : Invalid updation of bed status asserted successfully
+2024-06-11 21:24:11,798 : INFO : test_invalid_update_bedstatus_without_appointment_date : Invalid updation of bed status asserted successfully
+2024-06-11 21:24:37,844 : INFO : test_invalid_update_bedstatus_without_patient : Invalid updation of bed status asserted successfully
+2024-06-11 21:28:57,826 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-11 21:32:26,063 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-11 21:33:42,355 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-11 21:34:52,804 : INFO : test_invalid_update_bedstatus_without_consultant : Invalid updation of bed status asserted successfully
+2024-06-11 21:36:08,000 : INFO : test_invalid_update_bedstatus_without_appointment_date : Invalid updation of bed status asserted successfully
+2024-06-11 21:37:01,625 : INFO : test_invalid_update_bedstatus_without_patient : Invalid updation of bed status asserted successfully
+
