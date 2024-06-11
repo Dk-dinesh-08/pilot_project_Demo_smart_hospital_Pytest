@@ -43,7 +43,7 @@ class UserPage(BasePage):
     user_Appointment_delete_button=(By.CSS_SELECTOR,"i[class='fa fa-trash']")
     payment_frame=(By.CLASS_NAME,"stripe_checkout_app")
 
-
+    #pharmacy
     pharmacy_bill_search_field=By.CSS_SELECTOR,"input[type='search']"
     show_field=By.CSS_SELECTOR,"i[class='fa fa-reorder']"
     pay_button=By.CSS_SELECTOR,"button[class='btn btn-primary btn-xs']"
@@ -151,6 +151,9 @@ class UserPage(BasePage):
     def successfull_search_by_bill_number(self):
         self.for_click(self.wait_for_element(self.pharmacy_option))
         self.for_send_keys(self.wait_for_element(self.pharmacy_bill_search_field),"PHARMAB307")
+        required_data =self.wait_for_element((By.XPATH,"//table[@id='DataTables_Table_0']//tbody//tr[1]"))
+        print(required_data.text)
+        return  required_data.text
 
     def unsuccessfull_search_by_bill_number(self):
         self.for_click(self.wait_for_element(self.pharmacy_option))
@@ -167,6 +170,8 @@ class UserPage(BasePage):
 
     def successfull_view_of_bill_details(self):
         self.for_click(self.wait_for_element(self.pharmacy_view_details))
+        due_amount=self.wait_for_element((By.XPATH,"//table[@class='printablea4']//th[normalize-space()='Due Amount ($)']//following-sibling::td"))
+        return due_amount.text
 
     def verify_successfull_view_bill_details(self):
         detail_element = self.wait_for_element(self.view_detail_assert)
@@ -227,4 +232,5 @@ class UserPage(BasePage):
         rows = self.wait_for_element(self.bill_records)
         total_records = len(rows)
         print("Total number of bills:", total_records)
-        assert total_records >0
+        assert total_records > 0
+        return total_records

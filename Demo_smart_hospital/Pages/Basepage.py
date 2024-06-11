@@ -4,7 +4,6 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import NoAlertPresentException, TimeoutException
-from selenium.webdriver import ActionChains
 
 class BasePage:
     def __init__(self,driver):
@@ -132,3 +131,5 @@ class BasePage:
     def handle_alert(self):
         alert = self._driver.switch_to.alert
         alert.accept()
+    def getting_element(self,element):
+        self._driver.execute_script(element)

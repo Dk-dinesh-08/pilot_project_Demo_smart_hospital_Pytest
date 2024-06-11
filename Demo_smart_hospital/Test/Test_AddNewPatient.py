@@ -71,4 +71,4 @@ class TestAddnewpatient:
         Doctorpage.go_to_new_patient_form()
         Doctorpage.fill_new_patient_form(patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_Id, TPA_Validity, ni_number, alternate_number)
         Doctorpage.verify_unsuccessfull_addnewpatient_without_patient_age()
-        log.info("Invalid addtion of new patient asserted successfully")
+        log.info("Invalid addtion of new patient asserted successfully") 
