@@ -78,6 +78,7 @@ class BasePage:
         except Exception as e:
             print(f"Exception occurred while clicking Doctor login button: {e}")
 
+
     def click_Sign_in_button(self):
         try:
             self.for_click(self.wait_for_element(self.Sign_in_button))
@@ -189,6 +190,18 @@ class BasePage:
             print(f"Exception occurred while clicking alert OK: {e}")
 
     def Double_Click(self, element):
+        action = ActionChains(self._driver)
+        action.double_click(element).perform()
+
+    def click_elefunction(self,element):
+        self._driver.execute_script("arguments[0].click()",element)
+
+    def type_text(self,element, input_text):
+        self._driver.execute_script("arguments[0].value='"+input_text+"'", element)
+
+    def handle_alert(self):
+        alert = self._driver.switch_to.alert
+        alert.accept()
         try:
             action = ActionChains(self._driver)
             action.double_click(element).perform()
@@ -206,3 +219,4 @@ class BasePage:
             self._driver.execute_script("arguments[0].value='" + input_text + "'", element)
         except WebDriverException as e:
             print(f"Exception occurred while typing text: {e}")
+
