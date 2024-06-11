@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoAlertPresentException, TimeoutException
+from selenium.common.exceptions import NoAlertPresentException, TimeoutException,NoSuchElementException
 from selenium.webdriver import ActionChains
 
 class BasePage:
@@ -26,9 +26,7 @@ class BasePage:
     invalid_credentials_message=By.CSS_SELECTOR,"div[class='alert alert-danger']" 
 
     Admin_signin_button=(By.XPATH,"(//a[@class='btn btn-primary width50'])[1]")
-    admin_img_icon = By.XPATH,"//img[@class='topuser-image']"
-    admin_text = By.XPATH,"//div[@class='sstopuser-test']/h5"
-    expected_text = "Admin"
+    admin_page_url = "https://demo.smart-hospital.in/admin/admin/dashboard"
 
     username_field = By.XPATH,"//input[@name='username']"
     password_field = By.XPATH,"//input[@name='password']"
@@ -42,7 +40,10 @@ class BasePage:
         element.click()
 
     def wait_for_element(self, locator):
-        return self._wait.until(EC.visibility_of_element_located(locator))
+        try:
+            return self._wait.until(EC.visibility_of_element_located(locator))
+        except TimeoutException:
+            print(f"Element is not visible")
 
     def wait_for_elements(self,locator):
         return self._wait.until(EC.visibility_of_all_elements_located(locator))
@@ -71,6 +72,8 @@ class BasePage:
         element.click()
         element=self.wait_for_element(self.profile_name)
         return element.text
+
+    
     def clear_login_field(self):
         self.wait_for_element(self.username_field).clear()
         self.wait_for_element(self.password_field).clear()
@@ -100,13 +103,19 @@ class BasePage:
         select = Select(self.wait_for_element(locator))
         select.select_by_value(text)
 
-    def scroll_upto_element(self,locator):
-        element=self._driver.find_element(*locator)
-        self._driver.execute_script("arguments[0].scrollIntoView(true);", element)
-    
+    def scroll_upto_element(self, locator):
+        try:
+            element = self._driver.find_element(*locator)
+            self._driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        except NoSuchElementException:
+            print(f"Element with locator {locator} not found")
+
+
     def verify_admin_page_opens(self):
-        self.for_click(self.wait_for_element(self.admin_img_icon))
-        return self.wait_for_element(self.admin_text).text
+        page_url = str(self._driver.execute_script("return document.URL"))
+        print(page_url)
+        return page_url.__eq__(self.admin_page_url)
+      
     
     def enter_login_details(self,username,password):
         self.for_send_keys(self.wait_for_element(self.username_field),username)
@@ -123,3 +132,10 @@ class BasePage:
     def Double_Click(self, element):
         action = ActionChains(self._driver)
         action.double_click(element).perform()
+
+
+    def click_elefunction(self,element):
+        self._driver.execute_script("arguments[0].click()",element)
+
+    def type_text(self,element, input_text):
+        self._driver.execute_script("arguments[0].value='"+input_text+"'", element)
