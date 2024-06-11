@@ -56,7 +56,6 @@ class BasePage:
     def click_Doctor_login_button(self):
         self.for_click(self.wait_for_element(self.Doctor_login_button))
 
-
     def click_Sign_in_button(self):
         self.for_click(self.wait_for_element(self.Sign_in_button))
     
@@ -123,3 +122,13 @@ class BasePage:
     def Double_Click(self, element):
         action = ActionChains(self._driver)
         action.double_click(element).perform()
+
+    def click_elefunction(self,element):
+        self._driver.execute_script("arguments[0].click()",element)
+
+    def type_text(self,element, input_text):
+        self._driver.execute_script("arguments[0].value='"+input_text+"'", element)
+
+    def handle_alert(self):
+        alert = self._driver.switch_to.alert
+        alert.accept()
