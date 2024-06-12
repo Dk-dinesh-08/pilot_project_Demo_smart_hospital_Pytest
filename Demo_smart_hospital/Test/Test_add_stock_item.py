@@ -8,6 +8,7 @@ from Utility import excel_reader
 
 class TestAddStockItem():
 
+    @pytest.mark.smoke
     def test_valid_add_stock_item(self,ItemCategory,Item,Supplier,Store,Quantity,Price):
         admin=AdminPage(self.driver)
         log=Consolelogger.get_logger()
@@ -22,6 +23,7 @@ class TestAddStockItem():
         assert admin.verify_successful_additionof_stock()
         log.info("Stock item is added sucessfully")
 
+    @pytest.mark.smoke
     def test_invalid_add_stock_item(self,ItemCategory,Item,Supplier,Store,Quantity,Price):
         admin=AdminPage(self.driver)
         log=Consolelogger.get_logger()
