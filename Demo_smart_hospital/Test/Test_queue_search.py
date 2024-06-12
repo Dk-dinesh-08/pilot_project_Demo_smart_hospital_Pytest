@@ -6,7 +6,8 @@ from Utility import Consolelogger
 @pytest.mark.usefixtures("test_setup_and_setdown")
 
 class TestQueueSearch():
-    def test_valid_appointment_search(self):
+    @pytest.mark.regression
+    def test_valid_queue_search(self):
         admin=AdminPage(self.driver)
         log=Consolelogger.get_logger()
         log.info("To test valid Queue search results")
@@ -19,6 +20,7 @@ class TestQueueSearch():
         admin.fill_queue_searchform()
         log.info("valid queue search results is verified successfully")
 
+    @pytest.mark.smoke
     def test_invalid_queue_search(self):
         admin=AdminPage(self.driver)
         log=Consolelogger.get_logger()
@@ -31,4 +33,4 @@ class TestQueueSearch():
         admin.click_queue_search()
         admin.fill_queue_searchform_with_invalid_details()
         admin.verify_invalid_queue_search_result()
-        log.info("valid Queue search results is verified successfully")
+        log.info("Invalid Queue search results is verified successfully")

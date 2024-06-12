@@ -6,12 +6,29 @@ from selenium.webdriver.support.ui import Select
 from selenium.common.exceptions import  NoAlertPresentException, TimeoutException, NoSuchElementException, ElementNotInteractableException,    WebDriverException
 
 
+
 class BasePage:
     def __init__(self, driver):
         self._driver = driver
         self._wait = WebDriverWait(self._driver, 20)
         self.action = ActionChains(self._driver)
     
+    Home_login_button=(By.XPATH,"//ul[@class='top-right']//a")
+    Admin_login_button=(By.XPATH,"(//a[@class='forgot pull-right'])[1]")
+    Doctor_login_button=(By.XPATH,"(//a[@class='btn btn-primary width100'])[2]")
+    Sign_in_button=(By.CSS_SELECTOR,"button[class='btn']")
+    pofile_icon=By.CSS_SELECTOR,"a[class='dropdown-toggle']"
+    profile_name=By.CSS_SELECTOR,"div[class='sstopuser-test'] h5"
+    invalid_doctor_button=By.XPATH,"//a[text()='Pharmacist']"
+    username_field=By.CSS_SELECTOR,"input[name='username']"
+    password_field=By.CSS_SELECTOR,"input[name='password']"
+    required_username_message=By.CSS_SELECTOR,"input[name='username']+span>p"
+    required_password_message=By.CSS_SELECTOR,"input[name='password']+span>p"
+    invalid_credentials_message=By.CSS_SELECTOR,"div[class='alert alert-danger']" 
+
+    Admin_signin_button=(By.XPATH,"(//a[@class='btn btn-primary width50'])[1]")
+    admin_page_url = "https://demo.smart-hospital.in/admin/admin/dashboard"
+
     Home_login_button = (By.XPATH, "//ul[@class='top-right']//a")
     Admin_login_button = (By.XPATH, "(//a[@class='forgot pull-right'])[1]")
     Doctor_login_button = (By.XPATH, "(//a[@class='btn btn-primary width100'])[2]")
@@ -29,7 +46,6 @@ class BasePage:
     admin_img_icon = By.XPATH, "//img[@class='topuser-image']"
     admin_text = By.XPATH, "//div[@class='sstopuser-test']/h5"
     expected_text = "Admin"
-
     username_field = By.XPATH, "//input[@name='username']"
     password_field = By.XPATH, "//input[@name='password']"
     signin_button = By.XPATH, "//button[@class='btn']"
@@ -46,12 +62,6 @@ class BasePage:
         except (NoSuchElementException, ElementNotInteractableException) as e:
             print(f"Exception occurred while clicking element: {e}")
 
-    def wait_for_element(self, locator):
-        try:
-            return self._wait.until(EC.visibility_of_element_located(locator))
-        except TimeoutException as e:
-            print(f"Exception occurred while waiting for element: {e}")
-            return None
 
     def wait_for_elements(self, locator):
         try:
@@ -77,6 +87,7 @@ class BasePage:
             self.for_click(self.wait_for_element(self.Doctor_login_button))
         except Exception as e:
             print(f"Exception occurred while clicking Doctor login button: {e}")
+
 
     def click_Sign_in_button(self):
         try:
@@ -105,6 +116,7 @@ class BasePage:
         except Exception as e:
             print(f"Exception occurred while verifying successful login: {e}")
             return None
+
 
     def clear_login_field(self):
         try:
@@ -165,6 +177,19 @@ class BasePage:
         except NoSuchElementException as e:
             print(f"Exception occurred while scrolling to element: {e}")
 
+    def scroll_upto_element(self, locator):
+        try:
+            element = self._driver.find_element(*locator)
+            self._driver.execute_script("arguments[0].scrollIntoView(true);", element)
+        except NoSuchElementException:
+            print(f"Element with locator {locator} not found")
+      
+    
+    def enter_login_details(self,username,password):
+        self.for_send_keys(self.wait_for_element(self.username_field),username)
+        self.for_send_keys(self.wait_for_element(self.password_field),password)
+        self.click_Sign_in_button()
+
     def verify_admin_page_opens(self):
         try:
             self.for_click(self.wait_for_element(self.admin_img_icon))
@@ -181,6 +206,7 @@ class BasePage:
         except Exception as e:
             print(f"Exception occurred while entering login details: {e}")
 
+
     def click_alert_ok(self):
         try:
             alert = self._wait.until(EC.alert_is_present())
@@ -189,6 +215,13 @@ class BasePage:
             print(f"Exception occurred while clicking alert OK: {e}")
 
     def Double_Click(self, element):
+        action = ActionChains(self._driver)
+        action.double_click(element).perform()
+
+
+    def handle_alert(self):
+        alert = self._driver.switch_to.alert
+        alert.accept()
         try:
             action = ActionChains(self._driver)
             action.double_click(element).perform()
@@ -206,3 +239,4 @@ class BasePage:
             self._driver.execute_script("arguments[0].value='" + input_text + "'", element)
         except WebDriverException as e:
             print(f"Exception occurred while typing text: {e}")
+
