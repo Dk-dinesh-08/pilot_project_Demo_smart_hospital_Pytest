@@ -1,8 +1,7 @@
 from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
 from selenium.webdriver.support.ui import Select
-from selenium.webdriver import ActionChains
-from selenium.common.exceptions import NoSuchElementException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, TimeoutException, NoSuchWindowException
 
 
 class DoctorPage(BasePage):
@@ -42,15 +41,15 @@ class DoctorPage(BasePage):
     Appointment=By.XPATH,"//i[@class='fa fa-calendar-check-o']//following-sibling::span"
     IPD_in_patient=By.XPATH,"//i[@class='fas fa-procedures']//parent::a"
     notification_icon=By.XPATH,"//i[@class='fa fa-bell-o']//parent::a"
-    language_icon=By.XPATH,"//button[@class='btn dropdown-toggle selectpicker btn-default']"
+    #language_icon=By.XPATH,"//button[@class='btn dropdown-toggle selectpicker btn-default']"
+    language_icon=By.CLASS_NAME,"btn dropdown-toggle selectpicker btn-default"
     betstatus_icon=By.XPATH,"//i[@class='fas fa-bed cal15']//parent::a"
-    delete_notification_button=By.XPATH,"//i[@class='fa fa-trash']//parent::button"
     valid_hindi_language=By.XPATH,"//a[normalize-space()='Hindi']"
     invalid_hindi_language=By.XPATH,"//a[normalize-space()='Spanish']"
+
     #add new patient form
-    add_patient_button=By.CSS_SELECTOR,"a[id='addp']"
     new_patient_button=By.CSS_SELECTOR,"a[id='addpip']"
-    name_field=By.CSS_SELECTOR,"input[id='name']"
+    name_field=By.ID,"name"
     guardian_name_field=By.CSS_SELECTOR,"div[class='col-lg-6 col-md-6 col-sm-6'] input[name='guardian_name']"
     dob_field=By.XPATH,"//div[@class='col-sm-4']//input[@name='dob']"
     blood_group_field=By.CSS_SELECTOR,"div[class='col-sm-3'] select[name='blood_group']"
@@ -62,25 +61,29 @@ class DoctorPage(BasePage):
     remarks=By.CSS_SELECTOR,"textarea[id='note']"
     known_allergies_field=By.CSS_SELECTOR,"div[class='col-lg-12 col-md-12 col-sm-12'] textarea[name='known_allergies']"
     TPA_ID_field=By.CSS_SELECTOR,"input[name='insurance_id']"
-    TPA_validity_field=By.CSS_SELECTOR,"input[name='validity']"
+    TPA_validity_field=By.NAME,"validity"
     national_identity_number_field=By.CSS_SELECTOR,"input[name='identification_number']"
     alternate_number_field=By.CSS_SELECTOR,"input[id='custom_fields[patient][3]']"
-    save_button=By.CSS_SELECTOR,"button[id='formaddpabtn']"
     addnewpatient_validalert=By.CSS_SELECTOR,"div[class='toast-message']"
     addnewpatient_invalidalert=By.CSS_SELECTOR,"div[class='toast-message'] p"
+
     #betstatus
-    bed_145=By.XPATH,"//div[text()='FF - 145']"
-    bed_146=By.XPATH,"//div[text()='FF - 146']"
+    bed_145=By.LINK_TEXT,"FF - 145"
+    bed_146=By.PARTIAL_LINK_TEXT,"146"
     Addmision_date=By.CSS_SELECTOR,"input[id='admission_date']"
     patientSelect_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-addpatient_id-container']"
     patientinput_field=By.CSS_SELECTOR,"input[class='select2-search__field']"
     consultant_select_field=By.XPATH,"//span[@class='select2-selection select2-selection--single' and @aria-labelledby='select2-consultant_doctor-container']"
     bed_status_save_button=By.CSS_SELECTOR,"button[id='formaddbtn']" 
     doctal_consultant_select=By.XPATH,"//select[@id='consultant_doctor']"
-    add_patient_name=By.XPATH,"//span[@class='select2-results']//ul//li[@class='select2-results__option select2-results__option--highlighted']"
-
+    add_patient_name=By.CSS_SELECTOR,".select2-results__option.select2-results__option--highlighted"
     
-      #post-msg
+    #js locators
+    add_patient_button="document.getElementById('addp').click()"
+    save_button="document.getElementById('formaddpabtn').click()"
+    delete_notification_button="document.getElementsByClassName('btn btn-primary btn-sm checkbox-toggle delete_all')[0].click()"
+
+    #post-msg
     messaging_btn=By.XPATH,"//span[text()='Messaging']"
     post_new_message=By.XPATH,"(//a[@class='btn btn-primary btn-sm'])[1]"
     send_sms=By.XPATH," (//a[@class='btn btn-primary btn-sm'])[2]"
@@ -105,7 +108,6 @@ class DoctorPage(BasePage):
     Pathologist_check_box  =By.XPATH,'(//input[@type="checkbox"])[8]]'   
     Pharmacist_check_box  =By.XPATH,'(//input[@type="checkbox"])[7]'   
     assert_sms  =By.XPATH,'//div[@class="toast-message"]'   
-    add_patient_name=By.XPATH,"//li[@class='select2-results_option select2-results_option--highlighted']"
     required_notice_date=By.XPATH,'(//span[@class="text-danger"])[3]'
     required_msg_body=By.XPATH,'(//span[@class="text-danger"])[2]'
     
@@ -298,7 +300,9 @@ class DoctorPage(BasePage):
             self.for_click(self.wait_for_element(self.bed_145))
             self.for_click(self.wait_for_element(self.patientSelect_field))
             self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
-            self.for_click(self.wait_for_element(self.add_patient_name))
+            patient=self.wait_for_element(self.add_patient_name)
+            self.action.move_to_element(patient).perform()
+            self.action.click(patient).perform()
             self.for_click(self.wait_for_element(self.Addmision_date))
             select_element=self.wait_for_element(self.doctal_consultant_select)
             select=Select(select_element)
@@ -324,7 +328,9 @@ class DoctorPage(BasePage):
             self.for_click(self.wait_for_element(self.bed_146))
             self.for_click(self.wait_for_element(self.patientSelect_field))
             self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
-            self.for_click(self.wait_for_element(self.add_patient_name))
+            patient=self.wait_for_element(self.add_patient_name)
+            self.action.move_to_element(patient).perform()
+            self.action.click(patient).perform()
             self.for_click(self.wait_for_element(self.Addmision_date))
             select_element=self.wait_for_element(self.doctal_consultant_select)
             select=Select(select_element)
@@ -335,19 +341,19 @@ class DoctorPage(BasePage):
     
     def unsuccessfull_update_of_the_bedstatus_without_consultant(self,patient_name):
         try:
-            self.for_click(self.wait_for_element(self.betstatus_icon))
-            self.for_click(self.wait_for_element(self.bed_146))
-            self.for_click(self.wait_for_element(self.patientSelect_field))
+            self.action.click(self.wait_for_element(self.betstatus_icon)).perform()
+            self.action.click(self.wait_for_element(self.bed_146)).perform()
+            self.action.click(self.wait_for_element(self.patientSelect_field)).perform()
             self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
-            self.for_click(self.wait_for_element(self.add_patient_name))
-            self.for_click(self.wait_for_element(self.Addmision_date))
-            self.for_click(self.wait_for_element(self.bed_status_save_button))
+            self.action.click(self.wait_for_element(self.add_patient_name)).perform()
+            self.action.click(self.wait_for_element(self.Addmision_date)).perform()
+            self.action.click(self.wait_for_element(self.bed_status_save_button)).perform()
         except (TimeoutException, NoSuchElementException) as e:
             print(f"Error in unsuccessfull_update_of_the_bedstatus_without_consultant: {str(e)}")
 
     def unsuccessfull_update_of_the_bedstatus_without_appointment_date(self,patient_name):
         try:
-            self.for_click(self.wait_for_element(self.betstatus_icon))
+            self.action.click(self.wait_for_element(self.betstatus_icon)).perform()
             self.for_click(self.wait_for_element(self.bed_146))
             self.for_click(self.wait_for_element(self.patientSelect_field))
             self.for_send_keys(self.wait_for_element(self.patientinput_field),patient_name)
@@ -361,12 +367,12 @@ class DoctorPage(BasePage):
 
     def unsuccessfull_update_of_the_bedstatus_without_patient(self):
         try:
-            self.for_click(self.wait_for_element(self.betstatus_icon))
-            self.for_click(self.wait_for_element(self.bed_146))
+            self.action.click(self.wait_for_element(self.betstatus_icon)).perform()
+            self.action.click(self.wait_for_element(self.bed_146)).perform()
             select_element=self.wait_for_element(self.doctal_consultant_select)
             select=Select(select_element)
             select.select_by_value("11")
-            self.for_click(self.wait_for_element(self.bed_status_save_button))
+            self.action.click(self.wait_for_element(self.bed_status_save_button)).perform()
         except (TimeoutException, NoSuchElementException) as e:
             print(f"Error in unsuccessfull_update_of_the_bedstatus_without_patient: {str(e)}")
 
@@ -397,14 +403,14 @@ class DoctorPage(BasePage):
     def successfull_notification_delete(self):
         try:
             self.click_elefunction(self.wait_for_element(self.notification_icon))
-            self.click_elefunction(self.wait_for_element(self.delete_notification_button))
+            self.getting_element(self.delete_notification_button)
             self.handle_alert()
-        except (TimeoutException, NoSuchElementException) as e:
+        except (TimeoutException, NoSuchElementException,NoSuchWindowException) as e:
             print(f"Error in successfull_notification_delete: {str(e)}")
 
     def verify_successfull_notification_delete(self):
         try:
-            self.for_click(self.wait_for_element(self.notification_icon))
+            self.action.click(self.wait_for_element(self.notification_icon)).perform()
             assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='alert alert-danger']"))).text=="No Record Found"
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in verify_successfull_notification_delete: {str(e)}")
@@ -412,15 +418,13 @@ class DoctorPage(BasePage):
     def go_to_new_patient_form(self):
         try:
             ipd_in_patient_element = self.wait_for_element(self.IPD_in_patient)
-            add_patient_button_element = self.wait_for_element(self.add_patient_button)
-            action = ActionChains(self.driver)
-            action.move_to_element(ipd_in_patient_element).perform()
-            self.click_elefunction(add_patient_button_element)
+            self.action.move_to_element(ipd_in_patient_element).perform()
+            self.action.click(ipd_in_patient_element).perform()
+            self.getting_element(self.add_patient_button)
             new_patient_button_element = self.wait_for_element(self.new_patient_button)
-            self.click_elefunction(new_patient_button_element)
+            self.action.click(new_patient_button_element).perform()
         except (TimeoutException, NoSuchElementException) as e:
             print(f"Error in go_to_new_patient_form: {str(e)}")
-
     
     def fill_new_patient_form(self, patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number):
         try:
@@ -435,7 +439,7 @@ class DoctorPage(BasePage):
             self.type_text(self.wait_for_element(self.TPA_validity_field), TPA_Validity)
             self.for_send_keys(self.wait_for_element(self.national_identity_number_field), ni_number)
             self.for_send_keys(self.wait_for_element(self.alternate_number_field), alternate_number)
-            self.click_elefunction(self.wait_for_element(self.save_button))
+            self.getting_element(self.save_button)
         except (TimeoutException, NoSuchElementException) as e:
             print(f"Error in fill_new_patient_form: {str(e)}")
 
@@ -584,9 +588,6 @@ class DoctorPage(BasePage):
             return search_result_text == "The Title field is required."
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in verify_unsucessful_message_for_sms_title: {str(e)}")
-
-    
-
 
     def fill_post_new_message_form_with_invalid_notification_date(self,title,publish_date,message_body):
         try:

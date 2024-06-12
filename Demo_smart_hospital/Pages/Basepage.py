@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoAlertPresentException, TimeoutException
 from selenium.common.exceptions import  NoAlertPresentException, TimeoutException, NoSuchElementException, ElementNotInteractableException,    WebDriverException
 
 
@@ -61,6 +62,15 @@ class BasePage:
             element.click()
         except (NoSuchElementException, ElementNotInteractableException) as e:
             print(f"Exception occurred while clicking element: {e}")
+
+
+    def wait_for_element(self, locator):
+        try:
+            return self._wait.until(EC.visibility_of_element_located(locator))
+        except TimeoutException as e:
+            print(f"Exception occurred while waiting for element: {e}")
+            return None
+
 
 
     def wait_for_elements(self, locator):
@@ -176,13 +186,6 @@ class BasePage:
             self._driver.execute_script("arguments[0].scrollIntoView(true);", element)
         except NoSuchElementException as e:
             print(f"Exception occurred while scrolling to element: {e}")
-
-    def scroll_upto_element(self, locator):
-        try:
-            element = self._driver.find_element(*locator)
-            self._driver.execute_script("arguments[0].scrollIntoView(true);", element)
-        except NoSuchElementException:
-            print(f"Element with locator {locator} not found")
       
     
     def enter_login_details(self,username,password):
@@ -240,3 +243,6 @@ class BasePage:
         except WebDriverException as e:
             print(f"Exception occurred while typing text: {e}")
 
+
+    def getting_element(self,element):
+        self._driver.execute_script(element)

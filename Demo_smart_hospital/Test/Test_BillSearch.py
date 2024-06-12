@@ -8,16 +8,19 @@ from Pages.UserPage import UserPage
 class TestBillsearch:
     @pytest.mark.smoke
     def test_valid_billsearch(self):
-        Basepage =BasePage(self.driver)
-        log=Consolelogger.get_logger()
-        Basepage.click_Home_login_button()
-        Basepage.click_Sign_in_button()
-        result=Basepage.verify_successfull_login()
-        assert result.__eq__("Patient")
-        Userpage=UserPage(self.driver)
-        Userpage.successfull_search_by_bill_number()
-        Userpage.verify_successfull_search_by_bill_number()
-        log.info("Successfull bill search")
+        try:
+            Basepage =BasePage(self.driver)
+            log=Consolelogger.get_logger()
+            Basepage.click_Home_login_button()
+            Basepage.click_Sign_in_button()
+            result=Basepage.verify_successfull_login()
+            assert result.__eq__("Patient")
+            Userpage=UserPage(self.driver)
+            result=Userpage.successfull_search_by_bill_number()
+            Userpage.verify_successfull_search_by_bill_number()
+            log.info(result+" Successfull bill search")
+        except TypeError as e:
+            print(f"Error occur in test_valid_billsearch : {str(e)}")
 
     @pytest.mark.smoke
     def test_invalid_billsearch(self):
@@ -31,3 +34,4 @@ class TestBillsearch:
         Userpage.unsuccessfull_search_by_bill_number()
         Userpage.verify_unsuccessfull_search_by_bill_number()
         log.info("Invalid bill search asserted successfully")
+

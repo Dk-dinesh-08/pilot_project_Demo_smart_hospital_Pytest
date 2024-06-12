@@ -585,7 +585,6 @@ Stacktrace:
 2024-06-11 23:20:43,818 : INFO : test_valid_add_stock_item : Stock item is added sucessfully
 2024-06-11 23:21:00,354 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
 2024-06-11 23:21:19,384 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
-=======
 2024-06-09 22:15:21,363 : INFO : test_valid_update_bedstatus : Bed status updated successfully
 2024-06-09 22:15:56,192 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
 2024-06-11 20:08:06,908 : INFO : test_valid_notification_delete : All notification deleted  successfully
@@ -612,5 +611,38 @@ Stacktrace:
 2024-06-11 21:34:52,804 : INFO : test_invalid_update_bedstatus_without_consultant : Invalid updation of bed status asserted successfully
 2024-06-11 21:36:08,000 : INFO : test_invalid_update_bedstatus_without_appointment_date : Invalid updation of bed status asserted successfully
 2024-06-11 21:37:01,625 : INFO : test_invalid_update_bedstatus_without_patient : Invalid updation of bed status asserted successfully
+2024-06-12 00:11:48,339 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-06-12 00:23:36,790 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 00:47:06,003 : INFO : test_valid_doctorlogin : Doctor logged in successfully
+2024-06-12 00:59:37,273 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 01:00:49,466 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 01:02:57,352 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-12 01:16:17,610 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 01:24:24,113 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 01:35:30,092 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 01:36:42,702 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 01:37:35,146 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-12 01:52:18,912 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-06-12 01:53:53,735 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-06-12 02:06:23,417 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 02:07:11,322 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-12 02:09:21,379 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-12 02:10:17,613 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-12 02:54:19,305 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-12 03:14:29,555 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-12 03:18:10,862 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-12 03:18:38,089 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-12 03:19:05,252 : INFO : test_invalid_update_bedstatus_without_consultant : Invalid updation of bed status asserted successfully
+2024-06-12 03:19:32,285 : INFO : test_invalid_update_bedstatus_without_appointment_date : Invalid updation of bed status asserted successfully
+2024-06-12 03:19:57,133 : INFO : test_invalid_update_bedstatus_without_patient : Invalid updation of bed status asserted successfully
+2024-06-12 03:33:33,280 : INFO : test_invalid_billsearch : Invalid bill search asserted successfully
+2024-06-12 03:41:11,124 : INFO : test_valid_billsearch : Successfull bill search
+2024-06-12 03:58:14,311 : INFO : test_valid_billsearch : PHARMAB307 115 10/22/2023 12:44 PM Reyan Jain (9011) 210.00 210.00 0.00 PaySuccessfull bill search
+2024-06-12 03:59:28,238 : INFO : test_valid_billsearch : PHARMAB307 115 10/22/2023 12:44 PM Reyan Jain (9011) 210.00 210.00 0.00 Pay Successfull bill search
+2024-06-12 03:59:50,265 : INFO : test_invalid_billsearch : Invalid bill search asserted successfully
+2024-06-12 04:19:33,861 : INFO : test_valid_viewbilldetails : Due Amount: 0.00 Bill details viewed successfully
+2024-06-12 04:21:51,223 : INFO : test_valid_viewbilldetails : Due Amount: 0.00 Bill details viewed successfully
+2024-06-12 04:45:42,521 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-06-12 04:46:07,393 : INFO : test_valid_notification_delete : All notification deleted  successfully
 
 >>>>>>> 6b7959b5c0961377f98844fecd08ec00e028720d
