@@ -3,6 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select
+from selenium.common.exceptions import NoAlertPresentException, TimeoutException
 from selenium.common.exceptions import  NoAlertPresentException, TimeoutException, NoSuchElementException, ElementNotInteractableException,    WebDriverException
 
 
@@ -240,3 +241,6 @@ class BasePage:
         except WebDriverException as e:
             print(f"Exception occurred while typing text: {e}")
 
+
+    def getting_element(self,element):
+        self._driver.execute_script(element)
