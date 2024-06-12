@@ -190,8 +190,7 @@ class UserPage(BasePage):
 
     def click_save_button(self):
         try:
-            element = self.wait_for_element(self.User_Appointment_save_button)
-            self.click_elefunction(element)
+            self.driver.execute_script("document.getElementById('formaddbtn').click()")
         except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
             print(f"Error in click_save_button: {str(e)}")
 
@@ -317,9 +316,11 @@ class UserPage(BasePage):
     def click_delete_button(self):
         try:
             element = self.wait_for_element(self.user_Appointment_delete_button)
-            self.click_elefunction(element)
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            print(f"Error in click_delete_button: {str(e)}")
+            if element:
+                self._driver.execute_script("arguments[0].click();", element)
+        except Exception as e:
+            print(f"Exception occurred while clicking user appointment delete button: {e}")
+
 
     def total_count_of_bill_records_assert(self):
         try:
@@ -333,8 +334,10 @@ class UserPage(BasePage):
 
     def Empty_assert(self):
         try:
-            element = self.wait_for_element(self.user_Appointment_assert).text
-            assert element == "The Date field is required."
+            element = self.wait_for_element(self.user_Appointment_assert)
+            if element:
+                element_text = self._driver.execute_script("return arguments[0].textContent;", element)
+                assert element_text == "The Date field is required."
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Invalid_Assert_search_Appointment: {str(e)}")
+            print(f"Error in Empty_assert: {str(e)}")
 
