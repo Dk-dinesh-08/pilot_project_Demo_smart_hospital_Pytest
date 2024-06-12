@@ -35,5 +35,5 @@ class TestAddStockItem():
         admin.click_Sign_in_button()
         admin.click_inventory_button()
         admin.fill_add_stock_item_form_with_invalid_supplier(ItemCategory,Item,Supplier,Store,Quantity,Price)
-        assert admin.verify_supplier_field_required_msg_in_additionof_stock
+        assert admin.verify_supplier_field_required_msg_in_additionof_stock()
         log.info("unsuccessfull addition of stock item is verified")
