@@ -4,7 +4,7 @@ from Pages.UserPage import UserPage
 from Utility import read_config
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
-class TestPayment:
+class TestAppointment:
     @pytest.mark.smoke
     def test_valid_Add_appointment(self):
         user_page=UserPage(self.driver)
@@ -12,6 +12,7 @@ class TestPayment:
         user_page.click_Home_login_button()
         user_page.click_Sign_in_button()
         user_page.click_user_appointment()
+        user_page.Click_Add_appointment()
         user_page.Enter_user_date(read_config.get_config("valid_Add_appointment","valid_date"))
         user_page.Enter_Specialist()
         user_page.Enter_Doctor()
@@ -30,6 +31,7 @@ class TestPayment:
         user_page.click_Home_login_button()
         user_page.click_Sign_in_button()
         user_page.click_user_appointment()
+        user_page.Click_Add_appointment()
         user_page.Enter_user_date(read_config.get_config("Invalid_Add_appointment","Invalid_date"))
         user_page.Enter_Specialist()
         user_page.Enter_Doctor()
@@ -49,5 +51,6 @@ class TestPayment:
         user_page.click_Home_login_button()
         user_page.click_Sign_in_button()
         user_page.click_user_appointment()
+        user_page.Click_Add_appointment()
         user_page.click_save_button()
         log.info("Appointment Added sucessfully")

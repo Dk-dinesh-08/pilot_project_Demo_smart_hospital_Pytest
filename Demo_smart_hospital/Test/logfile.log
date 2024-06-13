@@ -111,6 +111,12 @@
 2024-06-08 17:14:32,991 : INFO : test_valid_update_bedstatus : Bed status updated successfully
 2024-06-08 17:15:00,331 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
 2024-06-08 17:21:28,659 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+<<<<<<< HEAD
+2024-06-11 22:44:25,366 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+2024-06-11 23:06:50,604 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-06-11 23:07:20,612 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-06-11 23:07:51,196 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+=======
 2024-06-10 17:13:07,648 : INFO : test_valid_login : Login with valid username and Password
 2024-06-10 17:16:46,241 : INFO : test_valid_login : Successfully logged in as admin
 2024-06-10 17:16:56,339 : INFO : test_invalid_login_with_invalid_data : Login with invalid data /nUsername: jasson@gmail.com and password: passsword
@@ -639,3 +645,4 @@ Stacktrace:
 2024-06-12 04:45:42,521 : INFO : test_valid_notification_delete : All notification deleted  successfully
 2024-06-12 04:46:07,393 : INFO : test_valid_notification_delete : All notification deleted  successfully
 
+>>>>>>> 6b7959b5c0961377f98844fecd08ec00e028720d
