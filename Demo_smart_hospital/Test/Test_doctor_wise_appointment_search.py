@@ -5,7 +5,7 @@ from Utility import Consolelogger
 @pytest.mark.usefixtures("test_setup_and_setdown")
 
 class TestAppointmentSearch():
-
+    @pytest.mark.smoke
     def test_valid_appointment_search(self):
         admin=AdminPage(self.driver)
         log=Consolelogger.get_logger()
@@ -20,7 +20,7 @@ class TestAppointmentSearch():
         assert admin.verify_search_results()
         log.info("valid appointment search results using doctor info is verified successfully")
 
-
+    @pytest.mark.smoke
     def test_invalid_appointment_search(self):
         admin=AdminPage(self.driver)
         log=Consolelogger.get_logger()

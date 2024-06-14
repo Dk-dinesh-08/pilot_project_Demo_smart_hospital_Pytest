@@ -95,7 +95,7 @@ class UserPage(BasePage):
     def Invalid_Assert_search_Appointment(self):
         try:
             element = self.wait_for_element(self.no_data_availbale_assert).text
-            assert element == "No matching records found"
+            assert element.__eq__("No matching records found")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Invalid_Assert_search_Appointment: {str(e)}")
 
