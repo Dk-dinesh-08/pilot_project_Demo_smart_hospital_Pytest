@@ -27,14 +27,14 @@ class DoctorPage(BasePage):
     fathers_name=(By.ID,"father_name")
     birth_Report=(By.ID,"birth_report")
     death_report=(By.ID,"death_report")
-    save_button=(By.ID,"formaddbtn")
+    death_record_save_button=(By.ID,"formaddbtn")
     patient_not_found=(By.CLASS_NAME,"toast-message")
     empty_assert=(By.XPATH,"//div[@class='toast-message']/p[1]")
     search_feild_death_record=(By.XPATH,"//div[@class='toast-message']/p[1]")
     Search_record=(By.CSS_SELECTOR,"input[type='search']")
     no_data_available = (By.XPATH, "//span[@class='text-success bolds']")
     valid_birth_search_assert=(By.XPATH,"//td[text()='BREF62']")
-    valid_death_search_assert=(By.XPATH,"//td[text()='DREF50']")
+    valid_death_search_assert=(By.XPATH,"//td[text()='DREF47']")
 
     #Home page 
     Dashboard=By.CSS_SELECTOR,"i[class='fas fa-television']"
@@ -220,28 +220,28 @@ class DoctorPage(BasePage):
 
     def click_save_button(self):
         try:
-            self.for_click(self.wait_for_element(self.save_button))
+            self.for_click(self.wait_for_element(self.death_record_save_button))
         except (TimeoutException, NoSuchElementException) as e:
             print(f"Error in click_save_button: {str(e)}")
     
     def Assert_patient_not_found(self):
         try:
             element=self.wait_for_element(self.patient_not_found).text
-            assert element.eq("Patient Not Found")
+            assert element.__eq__("Patient Not Found")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Assert_patient_not_found: {str(e)}")
 
     def Assert_empty_Field(self):
         try:
             element=self.wait_for_element(self.patient_not_found).text
-            assert element.eq("Patient Not Found")
+            assert element.__eq__("Patient Not Found")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Assert_empty_Field: {str(e)}")
         
     def Assert_variable_id(self):
         try:
             element=self.wait_for_element(self.patient_not_found).text
-            assert element.eq("Case Id Not Valid")
+            assert element.__eq__("Case Id Not Valid")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Assert_variable_id: {str(e)}")
     
@@ -262,7 +262,7 @@ class DoctorPage(BasePage):
     def Assert_death_Empty_record(self):
         try:
             element = self.wait_for_element(self.empty_assert).text
-            assert element.eq("The Patient field is required.")
+            assert element.__eq__("The Patient field is required.")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Assert_death_Empty_record: {str(e)}")
 
@@ -276,21 +276,21 @@ class DoctorPage(BasePage):
     def Assert_no_data_availble(self):
         try:
             element = self.wait_for_element(self.no_data_available).text
-            assert element.eq("Add new record or search with different criteria.")
+            assert element.__eq__("Add new record or search with different criteria.")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Assert_no_data_availble: {str(e)}")
 
     def Assert_valid_birth_search_assert(self):
         try:
             element = self.wait_for_element(self.valid_birth_search_assert).text
-            assert element.eq("BREF62")
+            assert element.__eq__("DREF47")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Assert_valid_birth_search_assert: {str(e)}")
 
     def Assert_valid_death_search_assert(self):
         try:
             element = self.wait_for_element(self.valid_death_search_assert).text
-            assert element.eq("DREF50")
+            assert element.__eq__("DREF50")
         except (TimeoutException, NoSuchElementException, AssertionError) as e:
             print(f"Error in Assert_valid_death_search_assert: {str(e)}")
         
@@ -404,7 +404,7 @@ class DoctorPage(BasePage):
         try:
             self.click_elefunction(self.wait_for_element(self.notification_icon))
             self.getting_element(self.delete_notification_button)
-            self.handle_alert()
+            self.click_alert_ok()
         except (TimeoutException, NoSuchElementException,NoSuchWindowException) as e:
             print(f"Error in successfull_notification_delete: {str(e)}")
 

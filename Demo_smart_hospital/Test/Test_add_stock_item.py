@@ -2,9 +2,10 @@ import pytest
 from Pages.Adminpage import AdminPage
 from Utility import Consolelogger
 from Utility import excel_reader
+from Utility import read_config
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
-@pytest.mark.parametrize("ItemCategory,Item,Supplier,Store,Quantity,Price",excel_reader.get_data( "D:\\Branch_kiruthika\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","AddStock"))
+@pytest.mark.parametrize("ItemCategory,Item,Supplier,Store,Quantity,Price",excel_reader.get_data( "D:\\Dinesh_branch_pytest_demo_smart_hospital\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","AddStock"))
 
 class TestAddStockItem():
 
@@ -20,7 +21,7 @@ class TestAddStockItem():
         admin.click_Sign_in_button()
         admin.click_inventory_button()
         admin.fill_add_stock_item_form(ItemCategory,Item,Supplier,Store,Quantity,Price)
-        assert admin.verify_successful_additionof_stock()
+        assert admin.verify_stock_list_page_opens(read_config.get_config("assert_valid_stock_item","stock_list_page_url"))
         log.info("Stock item is added sucessfully")
 
     @pytest.mark.smoke

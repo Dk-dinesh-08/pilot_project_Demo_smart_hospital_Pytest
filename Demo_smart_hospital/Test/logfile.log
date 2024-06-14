@@ -646,3 +646,111 @@ Stacktrace:
 2024-06-12 04:46:07,393 : INFO : test_valid_notification_delete : All notification deleted  successfully
 
 >>>>>>> 6b7959b5c0961377f98844fecd08ec00e028720d
+2024-06-14 14:07:41,577 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-06-14 14:10:18,214 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-14 14:11:15,637 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-14 14:11:33,559 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-06-14 14:11:56,527 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-06-14 14:12:17,569 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+2024-06-14 14:20:34,636 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-14 14:25:11,960 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-06-14 14:25:37,478 : INFO : test_Invalid_add_birth_record : Invalid birth record Asserted sucessfully
+2024-06-14 14:26:06,029 : INFO : test_Invalid_case_Id : Invalid case Id Asserted sucessfully
+2024-06-14 14:26:32,964 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-06-14 14:28:46,976 : INFO : test_valid_add_death_record : death record Added sucessfully
+2024-06-14 14:29:13,060 : INFO : test_Invalid_add_death_record : Invalid death record Asserted sucessfully
+2024-06-14 14:29:45,992 : INFO : test_Invalid_case_Id : Invalid case ID death record Asserted sucessfully
+2024-06-14 14:30:13,667 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-06-14 14:39:11,447 : INFO : test_valid_Payment : Payment sucessfully
+2024-06-14 14:39:51,358 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-06-14 14:40:20,010 : INFO : test_empty_Payment : Empty Payment sucessfully
+2024-06-14 14:40:58,055 : INFO : test_valid_add_stock_item : To test add stock item
+2024-06-14 14:41:11,679 : INFO : <module> : Search result text: Uniform (Patient-Staff)
+2024-06-14 14:41:19,743 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
+2024-06-14 14:41:31,563 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+2024-06-14 14:44:45,931 : INFO : test_valid_add_stock_item : To test add stock item
+2024-06-14 14:44:58,393 : INFO : <module> : Search result text: Uniform (Patient-Staff)
+2024-06-14 14:45:06,614 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
+2024-06-14 14:45:19,859 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+2024-06-14 14:51:11,193 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-06-14 14:52:04,503 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-06-14 14:52:40,059 : INFO : test_valid_login : Login with valid username and Password
+2024-06-14 14:52:50,083 : INFO : test_valid_login : Successfully logged in as admin
+2024-06-14 14:53:01,647 : INFO : test_invalid_login_with_invalid_data : Login with invalid data /nUsername: jasson@gmail.com and password: passsword
+2024-06-14 14:53:06,702 : INFO : test_invalid_login_with_invalid_data : Verified incorrect admin login
+2024-06-14 14:53:19,469 : INFO : test_login_with_blank_username_and_valid_password : Login with blank username /nUsername:  and password: password
+2024-06-14 14:53:24,065 : INFO : test_login_with_blank_username_and_valid_password : Verified login with blank username and valid password
+2024-06-14 14:53:32,728 : INFO : test_login_with_valid_username_and_blank_password : Login with blank password /nUsername: jason@gmail.com and password: 
+2024-06-14 14:53:37,824 : INFO : test_login_with_valid_username_and_blank_password : Verified login with valid username and blank password
+2024-06-14 14:53:49,027 : INFO : test_login_with_blank_username_and_blank_password : Login with blank data /nUsername:  and password: 
+2024-06-14 14:53:53,793 : INFO : test_login_with_blank_username_and_blank_password : Verified login with blank username and blank password
+2024-06-14 14:54:32,160 : INFO : test_valid_billsearch : PHARMAB307 115 10/22/2023 12:44 PM Reyan Jain (9011) 210.00 210.00 0.00 Pay Successfull bill search
+2024-06-14 14:54:49,622 : INFO : test_invalid_billsearch : Invalid bill search asserted successfully
+2024-06-14 14:55:42,400 : INFO : test_valid_Delete_appointment : appointment Delted sucessfully
+2024-06-14 14:56:13,017 : INFO : test_valid_appointment_search : To test valid appointment search results using doctor info
+2024-06-14 14:56:29,144 : INFO : test_valid_appointment_search : valid appointment search results using doctor info is verified successfully
+2024-06-14 14:56:41,049 : INFO : test_invalid_appointment_search : To test invalid appointment search results using doctor info
+2024-06-14 14:56:54,819 : INFO : test_invalid_appointment_search : Invalid appointment search results using doctor info is verified
+2024-06-14 14:58:12,170 : INFO : test_valid_doctorlogin : Doctor logged in successfully
+2024-06-14 14:58:35,922 : INFO : test_invalid_doctorlogin_by_clicking_invalid_option : Invalid doctor login asserted successfully
+2024-06-14 14:58:56,933 : INFO : test_invalidlogin_with_blank_username : Invalid doctor login asserted successfully
+2024-06-14 14:59:13,693 : INFO : test_invalidlogin_with_blank_password : Invalid doctor login asserted successfully
+2024-06-14 14:59:30,240 : INFO : test_invalidlogin_with_invalid_credentials : Invalid doctor login asserted successfully
+2024-06-14 14:59:55,800 : INFO : test_invalidlogin_with_blank_username_and_password : Invalid doctor login asserted successfully
+2024-06-14 15:08:19,061 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-06-14 15:08:53,246 : INFO : test_valid_patient_search : To test search results by patient name
+2024-06-14 15:09:04,782 : INFO : test_valid_patient_search : search results by patient name is verified successfully
+2024-06-14 15:09:16,331 : INFO : test_invalid_patient_search : To test search results by invalid patient name
+2024-06-14 15:09:30,603 : INFO : test_invalid_patient_search : search results by invalid patient name is verified successfully
+2024-06-14 15:09:55,243 : INFO : test_valid_post_new_message : To test post new message functionality
+2024-06-14 15:10:37,019 : INFO : test_valid_post_new_message : Notification send successfully
+2024-06-14 15:10:48,745 : INFO : test_invalid_post_new_message : To test unsucessful post new message functionality
+2024-06-14 15:11:20,246 : INFO : test_invalid_post_new_message : unsucessful post new message is verified
+2024-06-14 15:11:31,844 : INFO : test_invalid_post_new_message_for_msg_body : To test unsucessful post new message functionality
+2024-06-14 15:11:45,181 : INFO : test_invalid_post_new_message_for_msg_body : unsucessful post new message is verified
+2024-06-14 15:13:17,532 : INFO : test_valid_queue_search : To test valid Queue search results
+2024-06-14 15:13:41,259 : INFO : test_invalid_queue_search : To test invalid Queue search results
+2024-06-14 15:13:52,773 : INFO : test_invalid_queue_search : Invalid Queue search results is verified successfully
+2024-06-14 15:20:51,256 : INFO : test_valid_queue_search : To test valid Queue search results
+2024-06-14 15:21:02,541 : INFO : test_valid_queue_search : valid queue search results is verified successfully
+2024-06-14 15:21:11,290 : INFO : test_invalid_queue_search : To test invalid Queue search results
+2024-06-14 15:21:22,940 : INFO : test_invalid_queue_search : Invalid Queue search results is verified successfully
+2024-06-14 15:21:57,988 : INFO : test_valid_birth_search_record : Searched Birth Record Sucessfully
+2024-06-14 15:22:21,546 : INFO : test_Invalid_birth_search_record : Searched Invalid Birth Record asserted Sucessfully
+2024-06-14 15:23:55,124 : INFO : test_Invalid_death_search_record : Searched Invalid Birth Record asserted Sucessfully
+2024-06-14 15:33:59,178 : INFO : test_valid_add_stock_item : To test add stock item
+2024-06-14 15:34:17,832 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
+2024-06-14 15:34:29,161 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+2024-06-14 15:35:23,952 : INFO : test_valid_add_stock_item : To test add stock item
+2024-06-14 15:35:41,836 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
+2024-06-14 15:35:51,684 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+2024-06-14 15:37:19,205 : INFO : test_valid_add_stock_item : To test add stock item
+2024-06-14 15:37:37,233 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
+2024-06-14 15:37:55,512 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+2024-06-14 15:38:23,152 : INFO : test_valid_add_stock_item : To test add stock item
+2024-06-14 15:39:12,880 : INFO : test_valid_add_stock_item : Stock item is added sucessfully
+2024-06-14 15:39:21,488 : INFO : test_invalid_add_stock_item : To test unsuccessfull addition of stock item
+2024-06-14 15:39:33,550 : INFO : test_invalid_add_stock_item : unsuccessfull addition of stock item is verified
+2024-06-14 15:47:11,164 : INFO : test_valid_death_search_record : Searched Birth Record Sucessfully
+2024-06-14 15:47:35,129 : INFO : test_Invalid_death_search_record : Searched Invalid Birth Record asserted Sucessfully
+2024-06-14 15:48:05,354 : INFO : test_valid_send_sms : To test send sms functionality
+2024-06-14 15:48:17,120 : INFO : test_valid_send_sms : send sms functionality is verified successfully
+2024-06-14 15:48:28,436 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
+2024-06-14 15:48:57,136 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
+2024-06-14 15:49:05,894 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
+2024-06-14 15:49:17,295 : INFO : test_invalid_send_sms_without_sendthrough : Unsucessful send sms functionality is verified
+2024-06-14 15:49:26,220 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
+2024-06-14 15:49:37,359 : INFO : test_invalid_send_sms_without_title : Unsucessful send sms functionality is verified
+2024-06-14 15:50:52,063 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-06-14 15:51:17,006 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-06-14 15:51:44,974 : INFO : test_invalid_update_bedstatus_without_consultant : Invalid updation of bed status asserted successfully
+2024-06-14 15:52:21,147 : INFO : test_invalid_update_bedstatus_without_appointment_date : Invalid updation of bed status asserted successfully
+2024-06-14 15:52:45,827 : INFO : test_invalid_update_bedstatus_without_patient : Invalid updation of bed status asserted successfully
+2024-06-14 15:53:30,132 : INFO : test_valid_search_user_appointment : Record Search sucessfully
+2024-06-14 15:59:21,618 : INFO : test_valid_search_user_appointment : Record Search sucessfully
+2024-06-14 15:59:53,242 : INFO : test_Invalid_search_user_appointmen : Invalid Record Search sucessfully
+2024-06-14 16:00:48,821 : INFO : test_valid_userlogin_by_default_credentials : User logged in successfully
+2024-06-14 16:01:02,673 : INFO : test_invalidlogin_with_blank_username : Invalid user login asserted successfully
+2024-06-14 16:01:16,433 : INFO : test_invalidlogin_with_blank_password : Invalid user login asserted successfully
+2024-06-14 16:01:30,008 : INFO : test_invalidlogin_with_invalid_credentials : Invalid user login asserted successfully
+2024-06-14 16:02:04,760 : INFO : test_valid_viewbilldetails : Due Amount: 0.00 Bill details viewed successfully

@@ -222,15 +222,6 @@ class BasePage:
         action.double_click(element).perform()
 
 
-    def handle_alert(self):
-        alert = self._driver.switch_to.alert
-        alert.accept()
-        try:
-            action = ActionChains(self._driver)
-            action.double_click(element).perform()
-        except WebDriverException as e:
-            print(f"Exception occurred while performing double click: {e}")
-
     def click_elefunction(self, element):
         try:
             self._driver.execute_script("arguments[0].click()", element)
