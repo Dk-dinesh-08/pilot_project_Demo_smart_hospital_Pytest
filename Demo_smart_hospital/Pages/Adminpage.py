@@ -85,7 +85,7 @@ class AdminPage(BasePage):
     
 
 
-    def select_slot(self,element):
+    def queue_select_slot(self,element):
         try:
             slot_element = self.wait_for_element(element)
             self.action.move_to_element(slot_element).click().perform()
@@ -99,7 +99,7 @@ class AdminPage(BasePage):
             self.select_element_by_visible_text(self.doctor_locator,self.doctor_name)
             self.select_element_by_visible_text(self.shift_locator,self.select_shift)
             self.for_send_keys(self.wait_for_element(self.queue_date_locator),self.date_entry)
-            self.select_slot(self.slot_locator)
+            self.queue_select_slot(self.slot_locator)
             self.click_elefunction(self.wait_for_element(self.queue_search))
         except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
             log.error(f"Error in queue search form: {e}")
@@ -239,15 +239,12 @@ class AdminPage(BasePage):
         except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
             log.error(f"Error in  verifying the supplier field required msg in additionof stock: {str(e)}")
 
-    def verify_successful_additionof_stock(self):
+    def verify_stock_list_page_opens(self,url):
         try:
-            self._driver.execute_script("history.go(0)")
-            self.wait_for_element(self.table_result)
-            search_result_text = self.wait_for_element(self.table_result).text
-            log.info(f"Search result text: {search_result_text}")
-            return search_result_text == "Bed Sheet"
+            page_url = str(self._driver.execute_script("return document.URL"))
+            return page_url.__eq__(url)
         except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in verifying the successful addition of stock: {str(e)}")
+            log.error(f"Error in verifying stock list page opens : {str(e)}")
 
     def verify_invalid_admin_login(self):
         try:

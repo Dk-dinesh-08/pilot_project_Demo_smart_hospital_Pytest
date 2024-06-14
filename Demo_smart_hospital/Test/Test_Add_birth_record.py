@@ -49,9 +49,6 @@ class TestAddBirthRecord:
         Doctor_page.Enter_address(read_config.get_config("Invalid_birth_record","Invalid_Adress"))
         Doctor_page.Enter_case_id(read_config.get_config("Invalid_birth_record","Invalid_caseId"))
         Doctor_page.Assert_patient_not_found()
-        Doctor_page.Enter_Father_name(read_config.get_config("Invalid_birth_record","Invalid_FatherName"))
-        Doctor_page.Enter_report(read_config.get_config("Invalid_birth_record","Invalid_report"))
-        Doctor_page.click_save_button()
         log.info("Invalid birth record Asserted sucessfully")
 
     @pytest.mark.smoke
@@ -74,9 +71,6 @@ class TestAddBirthRecord:
         Doctor_page.Enter_address(read_config.get_config("Invalid_birth_record","Invalid_Adress"))
         Doctor_page.Enter_case_id(read_config.get_config("Invalid_birth_record","variable_case_id"))
         Doctor_page.Assert_variable_id()
-        Doctor_page.Enter_Father_name(read_config.get_config("Invalid_birth_record","Invalid_FatherName"))
-        Doctor_page.Enter_report(read_config.get_config("Invalid_birth_record","Invalid_report"))
-        Doctor_page.click_save_button()
         log.info("Invalid case Id Asserted sucessfully")
 
     @pytest.mark.regression
