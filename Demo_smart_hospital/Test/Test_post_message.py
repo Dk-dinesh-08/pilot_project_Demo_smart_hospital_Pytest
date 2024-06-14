@@ -5,9 +5,10 @@ from Utility import Consolelogger
 
 
 
-@pytest.mark.parametrize("title,notification_date,publish_date,message_body",excel_reader.get_data( "D:\\Branch_kiruthika\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","ValidPostMessage"))
+@pytest.mark.parametrize("title,notification_date,publish_date,message_body",excel_reader.get_data( "D:\\Dinesh_branch_pytest_demo_smart_hospital\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","ValidPostMessage"))
 @pytest.mark.usefixtures("test_setup_and_setdown")
 class TestPostMessage:
+    @pytest.mark.regression
     def test_valid_post_new_message(self,title,notification_date,publish_date,message_body):
         Doctor_page=DoctorPage(self.driver)
         log=Consolelogger.get_logger()
@@ -22,7 +23,7 @@ class TestPostMessage:
         Doctor_page.verify_record_saved_successfully()
         log.info("Notification send successfully")
     
-
+    @pytest.mark.regression
     def test_invalid_post_new_message(self,notification_date,title,publish_date,message_body):
         Doctor_page=DoctorPage(self.driver)
         log=Consolelogger.get_logger()
@@ -37,7 +38,7 @@ class TestPostMessage:
         Doctor_page.verify_unsucessful_message_for_invalid_notification_date()
         log.info("unsucessful post new message is verified")
     
-
+    @pytest.mark.regression
     def test_invalid_post_new_message_for_msg_body(self,title,notification_date,publish_date,message_body):
         Doctor_page=DoctorPage(self.driver)
         log=Consolelogger.get_logger()
