@@ -33,7 +33,8 @@ class TestLogin():
         admin.click_Admin_login_button()
         admin.switch_to_window()
         admin.enter_login_details(username,password)
-        assert admin.verify_incorrect_admin_login()
+        incorrect_admin_login_txt=read_config.get_config("invalid admin login info","incorrect_admin_login_txt")
+        assert admin.verify_incorrect_admin_login(incorrect_admin_login_txt)
         log.info("Verified incorrect admin login")
 
     @pytest.mark.regression
@@ -47,7 +48,8 @@ class TestLogin():
         admin.click_Admin_login_button()
         admin.switch_to_window()
         admin.enter_login_details(username,password)
-        assert admin.verify_login_with_blank_username_and_valid_password()
+        required_username_text=read_config.get_config("invalid admin login info","required_username_text")
+        assert admin.verify_login_with_blank_username_and_valid_password(required_username_text)
         log.info("Verified login with blank username and valid password")
 
     @pytest.mark.regression
@@ -61,7 +63,8 @@ class TestLogin():
         admin.click_Admin_login_button()
         admin.switch_to_window()
         admin.enter_login_details(username,password)
-        assert admin.verify_login_with_valid_username_and_blank_password()
+        required_password_text=read_config.get_config("invalid admin login info","required_password_text")
+        assert admin.verify_login_with_valid_username_and_blank_password(required_password_text)
         log.info("Verified login with valid username and blank password")
 
     @pytest.mark.regression
@@ -75,5 +78,7 @@ class TestLogin():
         admin.click_Admin_login_button()
         admin.switch_to_window()
         admin.enter_login_details(username,password)
-        admin.verify_login_with_blank_username_and_blank_password()
+        required_username_text=read_config.get_config("invalid admin login info","required_username_text")
+        required_password_text=read_config.get_config("invalid admin login info","required_password_text")
+        admin.verify_login_with_blank_username_and_blank_password(required_username_text,required_password_text)
         log.info("Verified login with blank username and blank password")
