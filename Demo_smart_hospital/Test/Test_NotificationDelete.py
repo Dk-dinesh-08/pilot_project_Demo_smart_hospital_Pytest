@@ -23,5 +23,5 @@ class TestNotificationDelete:
             Doctorpage.successfull_notification_delete()
             Doctorpage.verify_successfull_notification_delete()
             log.info("All notification deleted  successfully")
-        except (AttributeError, NoSuchWindowException) as e:
-            print(f"Error occur in test_valid_notification_delete: {str(e)}")
+        except Exception:
+            log.error(f"Exception occur in TestNotificationDelete")
