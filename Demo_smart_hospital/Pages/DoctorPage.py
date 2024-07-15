@@ -1,16 +1,18 @@
+from Utility import Consolelogger
 from selenium.webdriver.common.by import By
 from Pages.Basepage import BasePage
 from selenium.webdriver.support.ui import Select
-from selenium.common.exceptions import NoSuchElementException, TimeoutException, NoSuchWindowException
-
+log=Consolelogger.get_logger()
 
 class DoctorPage(BasePage):
 
     def init(self, driver):
         super().__init__(driver)
         self.driver = driver
-
-    Birth_and_death_record=(By.XPATH,"//a/i[@class='fa fa-birthday-cake']")
+    
+    
+    
+    Birth_and_death_record=(By.XPATH,"[@class='fa fa-birthday-cake']")
     Birth_record=(By.XPATH,"//a[text()= ' Birth Record ']")
     Death_record=(By.XPATH,"//a[text()= ' Death Record']")
     Add_birth_record=(By.XPATH,"//a[@class='btn btn-primary btn-sm birthrecord']")
@@ -128,171 +130,171 @@ class DoctorPage(BasePage):
     def click_Birth_and_death_record(self):
         try:
             self.for_click(self.wait_for_element(self.Birth_and_death_record))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_Birth_and_death_record: {str(e)}")   
-
+        except Exception as e:
+            log.error(f"click birth and death record fails:{str(e)}")
+    
     def click_birth_record(self):
         try:
             self.for_click(self.wait_for_element(self.Birth_record))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_birth_record: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in click_birth_record: {str(e)}")
 
     def click_death_record(self):
         try:
             self.for_click(self.wait_for_element(self.Death_record))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_death_record: {str(e)}")    
+        except Exception as e:
+            log.error(f"Error in click_death_record: {str(e)}")    
 
     def click_add_death_record(self):
         try:
             self.for_click(self.wait_for_element(self.Add_death_record))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_add_death_record: {str(e)}")    
+        except Exception as e:
+            log.error(f"Error in click_add_death_record: {str(e)}")    
         
     def click_add_birth_record(self):
         try:
             self.for_click(self.wait_for_element(self.Add_birth_record))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_add_birth_record: {str(e)}")   
+        except Exception as e:
+            log.error(f"Error in click_add_birth_record: {str(e)}")   
 
     def Enter_child_name(self,childname):
         try:
             element = self.wait_for_element(self.Child_name)
             self.for_send_keys(element, childname)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_child_name: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_child_name: {str(e)}")
     
     def click_gender(self):
         try:
             self.for_click(self.wait_for_element(self.Gender_drop_down))
             self.for_click(self.wait_for_element(self.Male_gender_option))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_gender: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in click_gender: {str(e)}")
     
     def Enter_weight(self,weight):
         try:
             element = self.wait_for_element(self.weight)
             self.for_send_keys(element, weight)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_weight: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_weight: {str(e)}")
 
     def Enter_birth_date(self,birthDate):
         try:
             element = self.wait_for_element(self.birth_date)
             self.for_send_keys(element, birthDate)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_birth_date: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_birth_date: {str(e)}")
 
     def Enter_contact(self,phone):
         try:
             element = self.wait_for_element(self.contact)
             self.for_send_keys(element, phone)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_contact: {str(e)}") 
+        except Exception as e:
+            log.error(f"Error in Enter_contact: {str(e)}") 
                         
     def Enter_address(self,address):
         try:
             element = self.wait_for_element(self.adress)
             self.for_send_keys(element, address)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_address: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_address: {str(e)}")
 
     def Enter_case_id(self,caseId):
         try:
             element = self.wait_for_element(self.case_id)
             self.for_send_keys(element, caseId)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_case_id: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_case_id: {str(e)}")
 
     def Enter_Father_name(self,fatherName):
         try:
             element = self.wait_for_element(self.fathers_name)
             self.for_send_keys(element, fatherName)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_Father_name: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_Father_name: {str(e)}")
 
     def Enter_report(self,report):
         try:
             element = self.wait_for_element(self.birth_Report)
             self.for_send_keys(element, report)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_report: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_report: {str(e)}")
 
     def click_save_button(self):
         try:
             self.for_click(self.wait_for_element(self.death_record_save_button))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_save_button: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in click_save_button: {str(e)}")
     
     def Assert_patient_not_found(self):
         try:
             element=self.wait_for_element(self.patient_not_found).text
             assert element.__eq__("Patient Not Found")
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Assert_patient_not_found: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Assert_patient_not_found: {str(e)}")
 
     def Assert_empty_Field(self):
         try:
             element=self.wait_for_element(self.patient_not_found).text
             assert element.__eq__("Patient Not Found")
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Assert_empty_Field: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Assert_empty_Field: {str(e)}")
         
     def Assert_variable_id(self):
         try:
             element=self.wait_for_element(self.patient_not_found).text
             assert element.__eq__("Case Id Not Valid")
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Assert_variable_id: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Assert_variable_id: {str(e)}")
     
     def Enter_death_date(self,deathDate):
         try:
             element = self.wait_for_element(self.death_date)
             self.for_send_keys(element, deathDate)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_death_date: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_death_date: {str(e)}")
 
     def Enter_death_report(self,deathreport):
         try:
             element = self.wait_for_element(self.death_report)
             self.for_send_keys(element, deathreport)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in Enter_death_report: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Enter_death_report: {str(e)}")
 
     def Assert_death_Empty_record(self):
         try:
             element = self.wait_for_element(self.empty_assert).text
             assert element.__eq__("The Patient field is required.")
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Assert_death_Empty_record: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Assert_death_Empty_record: {str(e)}")
 
     def search_record(self,record):
         try:
             element = self.wait_for_element(self.Search_record)
             self.for_send_keys(element,record)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in search_record: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in search_record: {str(e)}")
 
     def Assert_no_data_availble(self):
         try:
             element = self.wait_for_element(self.no_data_available).text
             assert element.__eq__("Add new record or search with different criteria.")
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Assert_no_data_availble: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Assert_no_data_availble: {str(e)}")
 
     def Assert_valid_birth_search_assert(self):
         try:
             element = self.wait_for_element(self.valid_birth_search_assert).text
             assert element.__eq__("DREF47")
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Assert_valid_birth_search_assert: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Assert_valid_birth_search_assert: {str(e)}")
 
     def Assert_valid_death_search_assert(self):
         try:
             element = self.wait_for_element(self.valid_death_search_assert).text
             assert element.__eq__("DREF50")
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in Assert_valid_death_search_assert: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in Assert_valid_death_search_assert: {str(e)}")
         
     def successfull_update_of_the_bedstatus(self,patient_name):
         try:
@@ -308,8 +310,8 @@ class DoctorPage(BasePage):
             select=Select(select_element)
             select.select_by_value("11")
             self.for_click(self.wait_for_element(self.bed_status_save_button))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in successfull_update_of_the_bedstatus: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in successfull_update_of_the_bedstatus: {str(e)}")
     
     def verify_the_successfull_updation_of_the_bedstatus(self):
         try:
@@ -318,8 +320,8 @@ class DoctorPage(BasePage):
             print("Actual message:", actual_message)  
             expected_message = "Patient Added Successfully"
             assert actual_message == expected_message, f"Expected message: {expected_message}, Actual message: {actual_message}"
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_the_successfull_updation_of_the_bedstatus: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_the_successfull_updation_of_the_bedstatus: {str(e)}")
 
 
     def unsuccessfull_update_of_the_bedstatus_with_existing_patient(self,patient_name):
@@ -336,8 +338,8 @@ class DoctorPage(BasePage):
             select=Select(select_element)
             select.select_by_value("11")
             self.for_click(self.wait_for_element(self.bed_status_save_button))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in unsuccessfull_update_of_the_bedstatus_with_existing_patient: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in unsuccessfull_update_of_the_bedstatus_with_existing_patient: {str(e)}")
     
     def unsuccessfull_update_of_the_bedstatus_without_consultant(self,patient_name):
         try:
@@ -348,8 +350,8 @@ class DoctorPage(BasePage):
             self.action.click(self.wait_for_element(self.add_patient_name)).perform()
             self.action.click(self.wait_for_element(self.Addmision_date)).perform()
             self.action.click(self.wait_for_element(self.bed_status_save_button)).perform()
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in unsuccessfull_update_of_the_bedstatus_without_consultant: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in unsuccessfull_update_of_the_bedstatus_without_consultant: {str(e)}")
 
     def unsuccessfull_update_of_the_bedstatus_without_appointment_date(self,patient_name):
         try:
@@ -362,8 +364,8 @@ class DoctorPage(BasePage):
             select=Select(select_element)
             select.select_by_value("11")
             self.for_click(self.wait_for_element(self.bed_status_save_button))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in unsuccessfull_update_of_the_bedstatus_without_appointment_date: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in unsuccessfull_update_of_the_bedstatus_without_appointment_date: {str(e)}")
 
     def unsuccessfull_update_of_the_bedstatus_without_patient(self):
         try:
@@ -373,47 +375,47 @@ class DoctorPage(BasePage):
             select=Select(select_element)
             select.select_by_value("11")
             self.action.click(self.wait_for_element(self.bed_status_save_button)).perform()
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in unsuccessfull_update_of_the_bedstatus_without_patient: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in unsuccessfull_update_of_the_bedstatus_without_patient: {str(e)}")
 
     def verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient(self):
         try:
             assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="The Patient field is required."
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient: {str(e)}")
     
     def verify_the_unsuccessfull_updation_of_the_bedstatus_with_existing_patient(self):
         try:
             assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="Patient already in IPD"
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_with_existing_patient: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_with_existing_patient: {str(e)}")
 
     def verify_the_unsuccessfull_updation_of_the_bedstatus_without_consultant(self):
         try:
             assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="The Consultant Doctor field is required."
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_consultant: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_consultant: {str(e)}")
 
     def verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date(self):
         try:
             assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='toast-message']"))).text=="The Appointment Date field is required."
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date: {str(e)}")
 
     def successfull_notification_delete(self):
         try:
             self.click_elefunction(self.wait_for_element(self.notification_icon))
             self.getting_element(self.delete_notification_button)
             self.click_alert_ok()
-        except (TimeoutException, NoSuchElementException,NoSuchWindowException) as e:
-            print(f"Error in successfull_notification_delete: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in successfull_notification_delete: {str(e)}")
 
     def verify_successfull_notification_delete(self):
         try:
             self.action.click(self.wait_for_element(self.notification_icon)).perform()
             assert (self.wait_for_element((By.CSS_SELECTOR,"div[class='alert alert-danger']"))).text=="No Record Found"
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_successfull_notification_delete: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_successfull_notification_delete: {str(e)}")
     
     def go_to_new_patient_form(self):
         try:
@@ -423,8 +425,8 @@ class DoctorPage(BasePage):
             self.getting_element(self.add_patient_button)
             new_patient_button_element = self.wait_for_element(self.new_patient_button)
             self.action.click(new_patient_button_element).perform()
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in go_to_new_patient_form: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in go_to_new_patient_form: {str(e)}")
     
     def fill_new_patient_form(self, patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number):
         try:
@@ -440,8 +442,8 @@ class DoctorPage(BasePage):
             self.for_send_keys(self.wait_for_element(self.national_identity_number_field), ni_number)
             self.for_send_keys(self.wait_for_element(self.alternate_number_field), alternate_number)
             self.getting_element(self.save_button)
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_new_patient_form: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_new_patient_form: {str(e)}")
 
 
     def verify_successfull_addnewpatient(self):
@@ -450,8 +452,8 @@ class DoctorPage(BasePage):
             expected_text="Record Saved Successfully"
             print(result_element)
             assert result_element==expected_text
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_successfull_addnewpatient: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_successfull_addnewpatient: {str(e)}")
 
         
     def verify_unsuccessfull_addnewpatient_without_patient_name(self):
@@ -460,8 +462,8 @@ class DoctorPage(BasePage):
             expected_text="The Name field is required."
             print(result_element)
             assert result_element==expected_text
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_unsuccessfull_addnewpatient_without_patient_name: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_unsuccessfull_addnewpatient_without_patient_name: {str(e)}")
 
 
     def verify_unsuccessfull_addnewpatient_without_patient_age(self):
@@ -470,16 +472,16 @@ class DoctorPage(BasePage):
             expected_text="The Age field is required.The Year field is required.The Month field is required.The Day field is required."
             print(result_element)
             assert result_element in expected_text
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_unsuccessfull_addnewpatient_without_patient_age: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_unsuccessfull_addnewpatient_without_patient_age: {str(e)}")
 
 
     def click_messaging_btn(self):
         try:
             self.scroll_upto_element(self.messaging_btn)
             self.for_click(self.wait_for_element(self.messaging_btn))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in click_messaging_btn: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in click_messaging_btn: {str(e)}")
 
     def fill_post_new_message_form(self,title,notification_date,publish_date,message_body):
         try:
@@ -491,8 +493,8 @@ class DoctorPage(BasePage):
             self.for_send_keys(self.wait_for_element(self.msg_body),message_body)
             self._driver.switch_to.default_content()
             self.for_click(self.wait_for_element(self.send_btn))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_post_new_message_form: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_post_new_message_form: {str(e)}")
 
 
     def verify_record_saved_successfully(self):
@@ -500,8 +502,8 @@ class DoctorPage(BasePage):
             self.wait_for_element(self.sucess_msg)
             search_result_text = self.wait_for_element(self.sucess_msg).text
             return search_result_text == self.verification_text
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_record_saved_successfully: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_record_saved_successfully: {str(e)}")
 
     
     
@@ -510,8 +512,8 @@ class DoctorPage(BasePage):
             self.wait_for_element(self.assert_sms)
             search_result_text = self.wait_for_element(self.assert_sms).text
             return search_result_text == self.verification_text
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_sms_record_saved_successfully: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_sms_record_saved_successfully: {str(e)}")
 
     
     
@@ -526,8 +528,8 @@ class DoctorPage(BasePage):
             self.for_click(self.wait_for_element(self.doctor_check_box))
             self.for_click(self.wait_for_element(self.Pharmacist_check_box))
             self.for_click(self.wait_for_element(self.send_sms_btn))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_send_sms_form: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_send_sms_form: {str(e)}")
 
     
 
@@ -547,8 +549,8 @@ class DoctorPage(BasePage):
             self.for_click(self.wait_for_element(self.add_button))
             self.scroll_upto_element(self.send_sms_individual)
             self.for_click(self.wait_for_element(self.send_sms_individual))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_send_sms_form_to_individual: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_send_sms_form_to_individual: {str(e)}")
 
     
 
@@ -556,8 +558,8 @@ class DoctorPage(BasePage):
         try:
             search_result_text = self.wait_for_element(self.assert_sms).text
             return search_result_text == "Message sent successfully"
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_sms_send_to_individual_patient: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_sms_send_to_individual_patient: {str(e)}")
 
     
 
@@ -565,8 +567,8 @@ class DoctorPage(BasePage):
         try:
             search_result_text = self.wait_for_element(self.assert_sms).text
             return search_result_text == "The Send Through field is required."
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_unsucessful_message_for_send_through_sms: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_unsucessful_message_for_send_through_sms: {str(e)}")
 
     
     def fill_send_sms_form_without_title(self,title,template_id,sms_text):
@@ -578,16 +580,16 @@ class DoctorPage(BasePage):
             self.for_click(self.wait_for_element(self.admin_check_box))
             self.for_click(self.wait_for_element(self.Pharmacist_check_box))
             self.for_click(self.wait_for_element(self.send_sms_btn))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_send_sms_form_without_title: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_send_sms_form_without_title: {str(e)}")
 
 
     def verify_unsucessful_message_for_sms_title(self):
         try:
             search_result_text = self.wait_for_element(self.assert_sms).text
             return search_result_text == "The Title field is required."
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_unsucessful_message_for_sms_title: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_unsucessful_message_for_sms_title: {str(e)}")
 
     def fill_post_new_message_form_with_invalid_notification_date(self,title,publish_date,message_body):
         try:
@@ -598,16 +600,16 @@ class DoctorPage(BasePage):
             self.for_send_keys(self.wait_for_element(self.msg_body),message_body)
             self._driver.switch_to.default_content()
             self.for_click(self.wait_for_element(self.send_btn))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_post_new_message_form_with_invalid_notification_date: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_post_new_message_form_with_invalid_notification_date: {str(e)}")
 
 
     def verify_unsucessful_message_for_invalid_notification_date(self):
         try:
             search_result_text = self.wait_for_element(self.required_notice_date).text
             return search_result_text == "The Notice Date field is required."
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_unsucessful_message_for_invalid_notification_date: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_unsucessful_message_for_invalid_notification_date: {str(e)}")
 
 
     def fill_post_new_message_form_with_no_message_body(self,title,notification_date,publish_date):
@@ -617,16 +619,16 @@ class DoctorPage(BasePage):
             self.for_send_keys(self.wait_for_element(self.notice_date),notification_date)
             self.for_send_keys(self.wait_for_element(self.publish_on),publish_date)
             self.for_click(self.wait_for_element(self.send_btn))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_post_new_message_form_with_no_message_body: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_post_new_message_form_with_no_message_body: {str(e)}")
 
     def verify_unsucessful_message_for_invalid_message_body(self):
         try:
             self.scroll_upto_element(self.required_msg_body)
             search_result_text = self.wait_for_element(self.required_msg_body).text
             return search_result_text == "The Message field is required."
-        except (TimeoutException, NoSuchElementException, AssertionError) as e:
-            print(f"Error in verify_unsucessful_message_for_invalid_message_body: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in verify_unsucessful_message_for_invalid_message_body: {str(e)}")
 
     
     def fill_send_sms_form_without_send_through(self,title,template_id,sms_text):
@@ -639,5 +641,5 @@ class DoctorPage(BasePage):
             self.for_click(self.wait_for_element(self.doctor_check_box))
             self.for_click(self.wait_for_element(self.Pharmacist_check_box))
             self.for_click(self.wait_for_element(self.send_sms_btn))
-        except (TimeoutException, NoSuchElementException) as e:
-            print(f"Error in fill_send_sms_form_without_send_through: {str(e)}")
+        except Exception as e:
+            log.error(f"Error in fill_send_sms_form_without_send_through: {str(e)}")
