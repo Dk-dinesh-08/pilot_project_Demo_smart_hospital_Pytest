@@ -754,3 +754,458 @@ Stacktrace:
 2024-06-14 16:01:16,433 : INFO : test_invalidlogin_with_blank_password : Invalid user login asserted successfully
 2024-06-14 16:01:30,008 : INFO : test_invalidlogin_with_invalid_credentials : Invalid user login asserted successfully
 2024-06-14 16:02:04,760 : INFO : test_valid_viewbilldetails : Due Amount: 0.00 Bill details viewed successfully
+2024-07-12 19:57:52,065 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-12 19:58:52,970 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addtion of new patient asserted successfully
+2024-07-13 21:11:34,469 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-15 18:15:05,181 : ERROR : test_valid_add_birth_record : error due to element not found
+2024-07-15 18:17:21,192 : ERROR : <module> : Error in click_Birth_and_death_record:
+2024-07-15 18:25:32,008 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+Traceback (most recent call last):
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Test\Test_Add_birth_record.py", line 18, in test_valid_add_birth_record
+    Doctor_page.click_Birth_and_death_record()
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\DoctorPage.py", line 138, in click_Birth_and_death_record
+    self.for_click(self.wait_for_element(self.Birth_and_death_record))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\Basepage.py", line 69, in wait_for_element
+    return self._wait.until(EC.visibility_of_element_located(locator))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 156, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 18:26:40,452 : ERROR : <module> : Error in click_Birth_and_death_record:
+Traceback (most recent call last):
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\DoctorPage.py", line 138, in click_Birth_and_death_record
+    self.for_click(self.wait_for_element(self.Birth_and_death_record))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\Basepage.py", line 69, in wait_for_element
+    return self._wait.until(EC.visibility_of_element_located(locator))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 156, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 18:26:40,460 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+Traceback (most recent call last):
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Test\Test_Add_birth_record.py", line 18, in test_valid_add_birth_record
+    Doctor_page.click_Birth_and_death_record()
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\DoctorPage.py", line 138, in click_Birth_and_death_record
+    self.for_click(self.wait_for_element(self.Birth_and_death_record))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\Basepage.py", line 69, in wait_for_element
+    return self._wait.until(EC.visibility_of_element_located(locator))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 156, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 18:26:58,290 : ERROR : <module> : Error in click_Birth_and_death_record:
+Traceback (most recent call last):
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\DoctorPage.py", line 138, in click_Birth_and_death_record
+    self.for_click(self.wait_for_element(self.Birth_and_death_record))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\Basepage.py", line 69, in wait_for_element
+    return self._wait.until(EC.visibility_of_element_located(locator))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 156, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 18:27:17,029 : ERROR : <module> : Error in click_Birth_and_death_record:
+Traceback (most recent call last):
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\DoctorPage.py", line 138, in click_Birth_and_death_record
+    self.for_click(self.wait_for_element(self.Birth_and_death_record))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\Basepage.py", line 69, in wait_for_element
+    return self._wait.until(EC.visibility_of_element_located(locator))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 156, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 18:27:35,443 : ERROR : <module> : Error in click_Birth_and_death_record:
+Traceback (most recent call last):
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\DoctorPage.py", line 138, in click_Birth_and_death_record
+    self.for_click(self.wait_for_element(self.Birth_and_death_record))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Dinesh_branch_pytest_demo_smart_hospital\pilot_project_Demo_smart_hospital_Pytest\Demo_smart_hospital\Pages\Basepage.py", line 69, in wait_for_element
+    return self._wait.until(EC.visibility_of_element_located(locator))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\wait.py", line 96, in until
+    value = method(self._driver)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\support\expected_conditions.py", line 156, in _predicate
+    return _element_if_visible(driver.find_element(*locator))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+  File "D:\python installer\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidSelectorException: Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 18:38:58,272 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 18:40:37,242 : ERROR : <module> : Error in click_Birth_and_death_record:
+2024-07-15 18:40:57,591 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 18:42:16,013 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 18:45:02,105 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 18:46:34,190 : ERROR : <module> : click birtha nd death record fails
+2024-07-15 18:46:54,448 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 18:47:13,054 : ERROR : <module> : click birtha nd death record fails
+2024-07-15 18:47:48,113 : ERROR : <module> : click birtha nd death record fails
+2024-07-15 18:48:26,526 : ERROR : <module> : click birtha nd death record fails
+2024-07-15 18:53:36,407 : ERROR : <module> : click birtha nd death record fails
+2024-07-15 18:53:56,662 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 18:56:14,663 : ERROR : <module> : click birtha nd death record fails
+2024-07-15 18:56:34,987 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 19:03:18,426 : ERROR : <module> : click birth and death record fails:Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 19:03:39,206 : ERROR : test_valid_add_birth_record : Test failed due to an exception:
+2024-07-15 19:04:18,137 : ERROR : <module> : click birth and death record fails:Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 19:05:11,004 : ERROR : <module> : click birth and death record fails:Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 19:06:11,153 : ERROR : <module> : click birth and death record fails:Message: invalid selector
+from javascript error: {"status":32,"value":"Unable to locate an element with the xpath expression [@class='fa fa-birthday-cake'] because of the following error:\nSyntaxError: Failed to execute 'evaluate' on 'Document': The string '[@class='fa fa-birthday-cake']' is not a valid XPath expression."}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF7AF3FEEA2+31554]
+	(No symbol) [0x00007FF7AF377ED9]
+	(No symbol) [0x00007FF7AF23872A]
+	(No symbol) [0x00007FF7AF23E55E]
+	(No symbol) [0x00007FF7AF240EB1]
+	(No symbol) [0x00007FF7AF240F50]
+	(No symbol) [0x00007FF7AF287F6C]
+	(No symbol) [0x00007FF7AF28853C]
+	(No symbol) [0x00007FF7AF2CF6A7]
+	(No symbol) [0x00007FF7AF2AD06F]
+	(No symbol) [0x00007FF7AF2CC977]
+	(No symbol) [0x00007FF7AF2ACDD3]
+	(No symbol) [0x00007FF7AF27A33B]
+	(No symbol) [0x00007FF7AF27AED1]
+	GetHandleVerifier [0x00007FF7AF708B1D+3217341]
+	GetHandleVerifier [0x00007FF7AF755AE3+3532675]
+	GetHandleVerifier [0x00007FF7AF74B0E0+3489152]
+	GetHandleVerifier [0x00007FF7AF4AE776+750614]
+	(No symbol) [0x00007FF7AF38375F]
+	(No symbol) [0x00007FF7AF37EB14]
+	(No symbol) [0x00007FF7AF37ECA2]
+	(No symbol) [0x00007FF7AF36E16F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-15 21:11:33,351 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:12:10,935 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-07-15 21:12:39,737 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:17:59,116 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:18:35,831 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-07-15 21:19:08,996 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:23:55,551 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:25:07,133 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-07-15 21:25:48,352 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:31:43,746 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:32:23,461 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-07-15 21:32:54,768 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:34:09,921 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-07-15 21:34:47,615 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-07-15 21:35:14,691 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
