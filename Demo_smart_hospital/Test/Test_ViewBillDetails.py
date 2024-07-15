@@ -21,5 +21,5 @@ class TestViewBilldetails:
             due_amount=Userpage.successfull_view_of_bill_details()
             Userpage.verify_successfull_view_bill_details()
             log.info("Due Amount: "+due_amount+" Bill details viewed successfully")
-        except TypeError as e:
-            print(f"Error occur in test_valid_billsearch : {str(e)}")
+        except Exception as e:
+            log.error("Error occured in test valid view bill details")

@@ -4,9 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 from Utility import Consolelogger
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException, NoSuchElementException, ElementNotInteractableException
-
-
 
 log=Consolelogger.get_logger()
 
@@ -71,8 +68,8 @@ class AdminPage(BasePage):
             self.action.move_to_element(slot_element).click().perform()
             customOption = self._driver.find_element(By.XPATH, value="//option[text()='06:00 AM - 07:00 AM']")
             self.for_click(customOption)
-        except  (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in select_slot: {e}")
+        except Exception as e:
+            log.error(f"Error in select_slot: {str(e)}")
     
     def fill_queue_searchform(self,doctor_name,select_shift,date_entry):
         try:
@@ -81,8 +78,8 @@ class AdminPage(BasePage):
             self.for_send_keys(self.wait_for_element(self.queue_date_locator),date_entry)
             self.queue_select_slot(self.slot_locator)
             self.click_elefunction(self.wait_for_element(self.queue_search))
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in queue search form: {e}")
+        except Exception as e:
+            log.error(f"Error in queue search form: {str(e)}")
 
        
     def fill_queue_searchform_with_invalid_details(self,doctor_name,select_shift,date_entry):
@@ -91,16 +88,16 @@ class AdminPage(BasePage):
             self.select_element_by_visible_text(self.shift_locator,select_shift)
             self.for_send_keys(self.wait_for_element(self.queue_date_locator),date_entry)
             self.click_elefunction(self.wait_for_element(self.queue_search))
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in fill_queue_searchform_with_invalid_details: {e}")
+        except Exception as e:
+            log.error(f"Error in fill_queue_searchform_with_invalid_details: {str(e)}")
 
 
     def click_doctor_wise_appointment_search(self):
         try:
             self.click_elefunction(self.wait_for_element(self.appointment_link))
             self.click_elefunction(self.wait_for_element(self.doctor_wise_appionment_btn))
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in click_doctor_wise_appointment_search: {e}")
+        except Exception as e:
+            log.error(f"Error in click_doctor_wise_appointment_search: {str(e)}")
 
 
     def click_queue_search(self):
@@ -108,8 +105,8 @@ class AdminPage(BasePage):
             self.click_elefunction(self.wait_for_element(self.appointment_link))
             self.click_elefunction(self.wait_for_element(self.queue_search_button))
 
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in click_queue_search: {e}")
+        except Exception as e:
+            log.error(f"Error in click_queue_search:{str(e)}")
 
 
     def fill_doctorwise_search_form(self,date_entry):
@@ -119,30 +116,30 @@ class AdminPage(BasePage):
             self.action.click(self.wait_for_element(self.select_doctor_option)).perform()
             self.enter_date_in_appointment_search(self.date_locator,date_entry)
             self.action.click(self.wait_for_element(self.search_button)).perform()
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in fill_doctorwise_search_form: {e}")
+        except Exception as e:
+            log.error(f"Error in fill_doctorwise_search_form: {str(e)}")
     
 
     def fill_doctorwise_search_form_without_doctor_field(self,date_entry):
         try:
             self.enter_date_in_appointment_search(self.date_locator,date_entry)
             self.action.click(self.wait_for_element(self.search_button)).perform()
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
-            log.error(f"Error in fill_doctorwise_search_form_without_doctor_field: {e}")
+        except Exception as e:
+            log.error(f"Error in fill_doctorwise_search_form_without_doctor_field:{str(e)}")
         
 
     def verify_search_results(self,verify_text):
         try:
             search_result_text = self.wait_for_element(self.search_result).text
             return search_result_text == verify_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in verifying verifying the search results: {str(e)}")
 
     def verify_invalid_search_results(self,invalid_search_text):
         try:
             search_result_text = self.wait_for_element(self.invalid_search_loc).text
             return search_result_text == invalid_search_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in verifying invalid sarch results: {str(e)}")
 
 
@@ -150,28 +147,28 @@ class AdminPage(BasePage):
         try:
             self.type_text(self.wait_for_element(self.patient_search),patient_name)
             self.click_elefunction(self.wait_for_element(self.patient_search_button))
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
            log.error(f"Error in entering the patient name: {str(e)}")
 
     def verify_patient_search_result(self,expected_search_text):
         try:
             search_result_text = self.wait_for_element(self.patient_search_result).text
             return search_result_text == expected_search_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in verifying the patient search result: {str(e)}")
 
     def enter_invalid_patient_name(self,invalid_patient_name):
         try:
             self.for_send_keys(self.wait_for_element(self.patient_search),invalid_patient_name)
             self.action.click(self.wait_for_element(self.patient_search_button)).perform()
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in entering invalid patient name: {str(e)}")
 
     def verify_invalid_patient_search_result(self,invalid_patient_search_text):
         try:
             search_result_text = (self.wait_for_element(self.invalid_search_result)).text
             return search_result_text == invalid_patient_search_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in verifying invalid patient search result: {str(e)}")
 
     def click_inventory_button(self):
@@ -179,7 +176,7 @@ class AdminPage(BasePage):
             self.scroll_upto_element(self.inventory)
             self.click_elefunction(self.wait_for_element(self.inventory))
             self.click_elefunction(self.wait_for_element(self.add_item_stock))
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in clicking the inventory button: {str(e)}")
 
     def fill_add_stock_item_form(self,ItemCategory,Item,Supplier,Store,Quantity,Price):
@@ -191,9 +188,6 @@ class AdminPage(BasePage):
             self.type_text(self.wait_for_element(self.quantity), Quantity)
             self.type_text(self.wait_for_element(self.puchase_price), Price)
             self._driver.execute_script("document.getElementById('form1btn').click();")
-           
-        except ElementNotInteractableException:
-            log.error("Select Element is not interactable")
         except Exception as e:
             log.error(f"Error in fill_add_stock_item_form: {str(e)}")
 
@@ -215,28 +209,28 @@ class AdminPage(BasePage):
             self.wait_for_element(self.table_result)
             search_result_text = (self.wait_for_element(self.assert_suppiler_required)).text
             return search_result_text == "The Supplier field is required."
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in  verifying the supplier field required msg in additionof stock: {str(e)}")
 
     def verify_stock_list_page_opens(self,url):
         try:
             page_url = str(self._driver.execute_script("return document.URL"))
             return page_url.__eq__(url)
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in verifying stock list page opens : {str(e)}")
 
     def verify_invalid_admin_login(self):
         try:
             search_result_text = self.wait_for_element(self.verify_invalid_login).text
             return search_result_text == self.verification_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
            log.error(f"Error in verifying invalid admin login: {str(e)}")
 
     def verify_invalid_queue_search_result(self,invalid_slot_field_text):
         try:
             search_result_text = self.wait_for_element(self.invalid_slot_field).text
             return search_result_text == invalid_slot_field_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
            log.error(f"Error in verifying invalid queue search result: {str(e)}")
 
 
@@ -244,14 +238,14 @@ class AdminPage(BasePage):
         try:
             search_result_text = self.wait_for_element(self.incorrect_admin_login).text
             return search_result_text == incorrect_admin_login_txt
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
            log.error(f"Error in verifying incorrect_admin_login: {str(e)}")
 
     def verify_login_with_blank_username_and_valid_password(self,required_username_text):
         try:
             search_result_text = self.wait_for_element(self.required_username_field).text
             return search_result_text == required_username_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
            log.error(f"Error in verifying login_with_blank_username_and_valid_password: {str(e)}")
 
     
@@ -259,7 +253,7 @@ class AdminPage(BasePage):
         try:
             search_result_text = self.wait_for_element(self.required_password_field).text
             return search_result_text == required_password_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in verifying the login with valid username and blank password: {str(e)}")
 
     def verify_login_with_blank_username_and_blank_password(self,required_username_text,required_password_text):
@@ -268,12 +262,12 @@ class AdminPage(BasePage):
             search_result_text_password = self.wait_for_element(self.required_password_field).text
             assert search_result_text_username == required_username_text
             assert search_result_text_password == required_password_text
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
             log.error(f"Error in verifying the login with blank username and blank password : {str(e)}")
 
 
     def enter_date_in_appointment_search(self,date_locator,date_entry):
         try:
             self._driver.execute_script(f"document.querySelector('{date_locator}').value = '{date_entry}';")
-        except (TimeoutException, NoSuchElementException, ElementNotInteractableException) as e:
+        except Exception as e:
              log.error(f"Error in entering date in appointment earch: {str(e)}")
