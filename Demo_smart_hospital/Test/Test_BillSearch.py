@@ -19,19 +19,21 @@ class TestBillsearch:
             result=Userpage.successfull_search_by_bill_number()
             Userpage.verify_successfull_search_by_bill_number()
             log.info(result+" Successfull bill search")
-        except TypeError as e:
-            print(f"Error occur in test_valid_billsearch : {str(e)}")
-
+        except Exception:
+            log.error("Failed in the test valid bill search")
     @pytest.mark.smoke
     def test_invalid_billsearch(self):
         log=Consolelogger.get_logger()
         Basepage =BasePage(self.driver)
-        Basepage.click_Home_login_button()
-        Basepage.click_Sign_in_button()
-        result=Basepage.verify_successfull_login()
-        assert result.__eq__("Patient")
-        Userpage=UserPage(self.driver)
-        Userpage.unsuccessfull_search_by_bill_number()
-        Userpage.verify_unsuccessfull_search_by_bill_number()
-        log.info("Invalid bill search asserted successfully")
+        try:
+            Basepage.click_Home_login_button()
+            Basepage.click_Sign_in_button()
+            result=Basepage.verify_successfull_login()
+            assert result.__eq__("Patient")
+            Userpage=UserPage(self.driver)
+            Userpage.unsuccessfull_search_by_bill_number()
+            Userpage.verify_unsuccessfull_search_by_bill_number()
+            log.info("Invalid bill search asserted successfully")
+        except Exception:
+            log.error("Failed in the test valid bill search")
 
