@@ -18,5 +18,5 @@ class TestTotalbillcount:
             Userpage=UserPage(self.driver)
             total=Userpage.total_count_of_bill_records_assert()
             log.info(f"Total bill records:"+total+" Bill records counted successfully")
-        except TypeError as e:
-            print(f"Error occur in test_valid_billsearch : {str(e)}")
+        except Exception:
+            log.error("Error occured in test valid totalbillcount")

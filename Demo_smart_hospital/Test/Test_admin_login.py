@@ -26,6 +26,7 @@ class TestLogin():
     def test_invalid_login_with_invalid_data(self):
         admin=AdminPage(self.driver)
         log=Consolelogger.get_logger()
+
         try:
             username=read_config.get_config("invalid admin login info","invalid_username")
             password=read_config.get_config("invalid admin login info","invalid_password")
@@ -38,6 +39,7 @@ class TestLogin():
             log.info("Verified incorrect admin login")
         except Exception:
             log.error("Failed in the test Invalid login with invalid data")
+
 
     @pytest.mark.regression
     def test_login_with_blank_username_and_valid_password(self):
@@ -56,6 +58,7 @@ class TestLogin():
         except Exception:
             log.error("Failed in the test login with blank username and valid password")
 
+
     @pytest.mark.regression
     def test_login_with_valid_username_and_blank_password(self):
         admin=AdminPage(self.driver)
@@ -73,6 +76,7 @@ class TestLogin():
         except:
             log.error("Failed in the test login with valid username and blank password")
 
+
     @pytest.mark.regression
     def test_login_with_blank_username_and_blank_password(self):
         admin=AdminPage(self.driver)
@@ -89,3 +93,4 @@ class TestLogin():
             log.info("Verified login with blank username and blank password")
         except Exception:
             log.error("Failed in the test login with blank username blank password")
+

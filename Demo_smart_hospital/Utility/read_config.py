@@ -2,7 +2,8 @@ import configparser
 from configparser import ConfigParser
 def get_config(category,key):
     config=ConfigParser()
-    config.read("C:\\Project\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\Configurations\\config.ini")
+
+    config.read("D:\\Branch_kiruthika\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\Configurations\\config.ini")
     print("Available sections:", config.sections())  # Debugging output
     if not config.has_section(category):
         raise configparser.NoSectionError(category)
