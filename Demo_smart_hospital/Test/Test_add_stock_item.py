@@ -5,7 +5,7 @@ from Utility import excel_reader
 from Utility import read_config
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
-@pytest.mark.parametrize("ItemCategory,Item,Supplier,Store,Quantity,Price",excel_reader.get_data( "D:\\Dinesh_branch_pytest_demo_smart_hospital\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","AddStock"))
+@pytest.mark.parametrize("ItemCategory,Item,Supplier,Store,Quantity,Price",excel_reader.get_data( "C:\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\ExcelReader\\test_data.xlsx","AddStock"))
 
 class TestAddStockItem():
 
