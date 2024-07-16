@@ -3,7 +3,7 @@ from Pages.DoctorPage import DoctorPage
 from Utility import excel_reader
 from Utility import Consolelogger
 
-@pytest.mark.parametrize("title,notification_date,publish_date,message_body",excel_reader.get_data( "C:\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\ExcelReader\\test_data.xlsx","ValidPostMessage"))
+@pytest.mark.parametrize("title,notification_date,publish_date,message_body",excel_reader.get_data( "C:\\Project\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","ValidPostMessage"))
 @pytest.mark.usefixtures("test_setup_and_setdown")
 class TestPostMessage:
     @pytest.mark.regression

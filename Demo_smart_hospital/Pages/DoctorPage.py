@@ -12,7 +12,7 @@ class DoctorPage(BasePage):
     
     
     
-    Birth_and_death_record=(By.XPATH,"[@class='fa fa-birthday-cake']")
+    Birth_and_death_record=(By.XPATH,"//i[@class='fa fa-birthday-cake']")
     Birth_record=(By.XPATH,"//a[text()= ' Birth Record ']")
     Death_record=(By.XPATH,"//a[text()= ' Death Record']")
     Add_birth_record=(By.XPATH,"//a[@class='btn btn-primary btn-sm birthrecord']")

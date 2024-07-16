@@ -8,7 +8,7 @@ from Utility import excel_reader
 @pytest.mark.usefixtures("test_setup_and_setdown")
 class TestAddnewpatient:
     @pytest.mark.smoke
-    @pytest.mark.parametrize("patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number",excel_reader.get_data("C:\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\NewPatientData.xlsx","Valid_data"))
+    @pytest.mark.parametrize("patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number",excel_reader.get_data("C:\\Project\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\NewPatientData.xlsx","Valid_data"))
     def test_valid_addnewpatient(self,patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number):
         Basepage =BasePage(self.driver)
         log=Consolelogger.get_logger()
@@ -30,7 +30,7 @@ class TestAddnewpatient:
 
 
     @pytest.mark.smoke
-    @pytest.mark.parametrize("patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number",excel_reader.get_data("C:\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\NewPatientData.xlsx","Invalid_data"))
+    @pytest.mark.parametrize("patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number",excel_reader.get_data("C:\\Project\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\NewPatientData.xlsx","Invalid_data"))
     def test_invalid_addnewpatient_without_patientname(self,patient_name, guardian_name, dob, bloodgroup, marital_status, phone_number, email, address, known_allergies, TPA_ID, TPA_Validity, ni_number, alternate_number):
         Basepage =BasePage(self.driver)
         log=Consolelogger.get_logger()
