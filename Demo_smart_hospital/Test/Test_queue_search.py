@@ -1,6 +1,7 @@
 import pytest
 from Pages.Adminpage import AdminPage
 from Utility import Consolelogger
+from Utility import read_config
 
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
@@ -40,3 +41,4 @@ class TestQueueSearch:
             log.info("Invalid Queue search results is verified successfully")
         except Exception:
             log.error(f"Exception occured in TestQueueSearch")
+

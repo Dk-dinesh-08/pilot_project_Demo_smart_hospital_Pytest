@@ -1,5 +1,6 @@
 import pytest
 from Pages.Adminpage import AdminPage
+from Utility import read_config
 from Utility import Consolelogger
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
@@ -40,6 +41,7 @@ class TestAppointmentSearch:
             log.info("Invalid appointment search results using doctor info is verified")
         except Exception:
             log.error(f"Exception occured in TestAppointmentSearch")
+
 
 
 
