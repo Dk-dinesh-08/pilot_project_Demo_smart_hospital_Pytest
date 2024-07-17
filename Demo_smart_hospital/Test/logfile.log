@@ -1311,3 +1311,810 @@ Stacktrace:
 2024-07-15 21:34:47,615 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
 2024-07-15 21:35:14,691 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
 
+2024-07-17 11:31:49,691 : ERROR : <module> : Error in verify_successfull_addnewpatient: 
+2024-07-17 11:31:49,691 : ERROR : <module> : Error in verify_successfull_addnewpatient: 
+2024-07-17 11:31:49,691 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-17 11:36:10,926 : INFO : test_valid_add_stock_item : To test add stock item
+2024-07-17 11:36:19,899 : INFO : test_valid_add_stock_item : Stock item is added successfully
+2024-07-17 11:36:30,775 : INFO : test_invalid_add_stock_item : To test unsuccessful addition of stock item
+2024-07-17 11:36:40,777 : INFO : test_invalid_add_stock_item : Unsuccessful addition of stock item is verified
+2024-07-17 11:39:49,023 : INFO : test_valid_post_new_message : To test post new message functionality
+2024-07-17 11:39:58,050 : INFO : test_valid_post_new_message : Notification send successfully
+2024-07-17 11:40:08,199 : INFO : test_invalid_post_new_message : To test unsuccessful post new message functionality
+2024-07-17 11:40:16,407 : ERROR : test_invalid_post_new_message : Exception occurred in TestPostMessage
+2024-07-17 11:40:26,709 : INFO : test_invalid_post_new_message_for_msg_body : To test unsuccessful post new message functionality
+2024-07-17 11:40:35,977 : ERROR : test_invalid_post_new_message_for_msg_body : Exception occurred in TestPostMessage
+2024-07-17 11:44:36,560 : INFO : test_valid_send_sms : To test send sms functionality
+2024-07-17 11:44:44,402 : INFO : test_valid_send_sms : send sms functionality is verified successfully
+2024-07-17 11:44:54,498 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
+2024-07-17 11:45:03,906 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
+2024-07-17 11:45:14,308 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
+2024-07-17 11:45:23,036 : ERROR : test_invalid_send_sms_without_sendthrough : Error in test invalid send sms without sendthrough
+2024-07-17 11:45:33,361 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
+2024-07-17 11:45:41,960 : ERROR : test_invalid_send_sms_without_title : Error in test invalid send sms without title
+2024-07-17 11:48:23,006 : INFO : test_valid_add_stock_item : To test add stock item
+2024-07-17 11:48:34,729 : INFO : test_valid_add_stock_item : Stock item is added successfully
+2024-07-17 11:48:44,872 : INFO : test_invalid_add_stock_item : To test unsuccessful addition of stock item
+2024-07-17 11:48:53,624 : INFO : test_invalid_add_stock_item : Unsuccessful addition of stock item is verified
+2024-07-17 11:49:41,016 : ERROR : <module> : Error in verify_successfull_addnewpatient: 
+2024-07-17 11:49:41,016 : ERROR : <module> : Error in verify_successfull_addnewpatient: 
+2024-07-17 11:49:41,016 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-17 11:50:26,858 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addition of new patient asserted successfully
+2024-07-17 11:56:40,658 : ERROR : <module> : Error in verify_successfull_addnewpatient: 
+2024-07-17 11:56:40,658 : ERROR : <module> : Error in verify_successfull_addnewpatient: 
+2024-07-17 11:56:40,658 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-17 11:57:30,800 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addition of new patient asserted successfully
+2024-07-17 12:00:20,976 : INFO : test_valid_post_new_message : To test post new message functionality
+2024-07-17 12:00:35,685 : INFO : test_valid_post_new_message : Notification send successfully
+2024-07-17 12:00:46,220 : INFO : test_invalid_post_new_message : To test unsuccessful post new message functionality
+2024-07-17 12:00:56,785 : ERROR : test_invalid_post_new_message : Exception occurred in TestPostMessage
+2024-07-17 12:01:07,481 : INFO : test_invalid_post_new_message_for_msg_body : To test unsuccessful post new message functionality
+2024-07-17 12:01:16,850 : ERROR : test_invalid_post_new_message_for_msg_body : Exception occurred in TestPostMessage
+2024-07-17 12:05:35,404 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-17 12:06:51,321 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addition of new patient asserted successfully
+2024-07-17 12:08:24,918 : INFO : test_valid_post_new_message : To test post new message functionality
+2024-07-17 12:08:41,175 : INFO : test_valid_post_new_message : Notification send successfully
+2024-07-17 12:08:55,039 : INFO : test_invalid_post_new_message : To test unsuccessful post new message functionality
+2024-07-17 12:09:14,052 : INFO : test_invalid_post_new_message : Unsuccessful post new message is verified
+2024-07-17 12:09:27,769 : INFO : test_invalid_post_new_message_for_msg_body : To test unsuccessful post new message functionality
+2024-07-17 12:09:49,011 : INFO : test_invalid_post_new_message_for_msg_body : Unsuccessful post new message is verified
+2024-07-17 12:10:57,020 : INFO : test_valid_send_sms : To test send sms functionality
+2024-07-17 12:11:09,995 : INFO : test_valid_send_sms : send sms functionality is verified successfully
+2024-07-17 12:11:22,149 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
+2024-07-17 12:11:42,873 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
+2024-07-17 12:11:55,027 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
+2024-07-17 12:12:39,913 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:12:39,913 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:12:39,913 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 12:12:39,913 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 12:12:39,916 : ERROR : <module> : Exception occurred while switching to window: list index out of range
+2024-07-17 12:12:39,916 : ERROR : <module> : Exception occurred while switching to window: list index out of range
+2024-07-17 12:13:05,497 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:13:05,497 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:13:05,497 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 12:13:05,497 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 12:13:16,130 : ERROR : <module> : Exception occurred while scrolling to element: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Messaging']"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:13:16,130 : ERROR : <module> : Exception occurred while scrolling to element: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='Messaging']"}
+  (Session info: chrome=126.0.6478.127); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:13:39,652 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:13:39,652 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF6B600EEB2+31554]
+	(No symbol) [0x00007FF6B5F87EE9]
+	(No symbol) [0x00007FF6B5E4872A]
+	(No symbol) [0x00007FF6B5E98434]
+	(No symbol) [0x00007FF6B5E9853C]
+	(No symbol) [0x00007FF6B5EDF6A7]
+	(No symbol) [0x00007FF6B5EBD06F]
+	(No symbol) [0x00007FF6B5EDC977]
+	(No symbol) [0x00007FF6B5EBCDD3]
+	(No symbol) [0x00007FF6B5E8A33B]
+	(No symbol) [0x00007FF6B5E8AED1]
+	GetHandleVerifier [0x00007FF6B6318B2D+3217341]
+	GetHandleVerifier [0x00007FF6B6365AF3+3532675]
+	GetHandleVerifier [0x00007FF6B635B0F0+3489152]
+	GetHandleVerifier [0x00007FF6B60BE786+750614]
+	(No symbol) [0x00007FF6B5F9376F]
+	(No symbol) [0x00007FF6B5F8EB24]
+	(No symbol) [0x00007FF6B5F8ECB2]
+	(No symbol) [0x00007FF6B5F7E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 12:13:39,652 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 12:13:39,652 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 13:02:02,563 : INFO : test_valid_send_sms : To test send sms functionality
+2024-07-17 13:02:21,414 : INFO : test_valid_send_sms : send sms functionality is verified successfully
+2024-07-17 13:02:41,606 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
+2024-07-17 13:03:00,704 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
+2024-07-17 13:03:14,729 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
+2024-07-17 13:03:32,292 : ERROR : test_invalid_send_sms_without_sendthrough : Error in test invalid send sms without sendthrough
+2024-07-17 13:03:46,118 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
+2024-07-17 13:04:06,650 : ERROR : test_invalid_send_sms_without_title : Error in test invalid send sms without title
+2024-07-17 13:05:28,550 : INFO : test_valid_send_sms : To test send sms functionality
+2024-07-17 13:05:44,301 : INFO : test_valid_send_sms : send sms functionality is verified successfully
+2024-07-17 13:05:57,906 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
+2024-07-17 13:06:45,253 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
+2024-07-17 13:07:01,025 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
+2024-07-17 13:07:28,022 : INFO : test_invalid_send_sms_without_sendthrough : Unsuccessful send sms functionality is verified
+2024-07-17 13:07:42,156 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
+2024-07-17 13:08:04,612 : INFO : test_invalid_send_sms_without_title : Unsuccessful send sms functionality is verified
+2024-07-17 15:23:37,660 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-17 15:23:49,601 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,601 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,601 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,601 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,607 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,607 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,607 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,607 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while switching to window: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F9AE90F]
+	(No symbol) [0x00007FF64F9AF47F]
+	(No symbol) [0x00007FF64F9C8D53]
+	(No symbol) [0x00007FF64F99D47C]
+	(No symbol) [0x00007FF64FA4C4F7]
+	(No symbol) [0x00007FF64FA3CFF0]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while switching to window: Message: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F9AE90F]
+	(No symbol) [0x00007FF64F9AF47F]
+	(No symbol) [0x00007FF64F9C8D53]
+	(No symbol) [0x00007FF64F99D47C]
+	(No symbol) [0x00007FF64FA4C4F7]
+	(No symbol) [0x00007FF64FA3CFF0]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,610 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,616 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,616 : ERROR : <module> : Exception occurred while clicking element: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,616 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,616 : ERROR : <module> : Exception occurred while waiting for element: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=126.0.6478.127)
+Stacktrace:
+	GetHandleVerifier [0x00007FF64FB8EEB2+31554]
+	(No symbol) [0x00007FF64FB07EE9]
+	(No symbol) [0x00007FF64F9C872A]
+	(No symbol) [0x00007FF64F99D995]
+	(No symbol) [0x00007FF64FA444D7]
+	(No symbol) [0x00007FF64FA5C051]
+	(No symbol) [0x00007FF64FA3CDD3]
+	(No symbol) [0x00007FF64FA0A33B]
+	(No symbol) [0x00007FF64FA0AED1]
+	GetHandleVerifier [0x00007FF64FE98B2D+3217341]
+	GetHandleVerifier [0x00007FF64FEE5AF3+3532675]
+	GetHandleVerifier [0x00007FF64FEDB0F0+3489152]
+	GetHandleVerifier [0x00007FF64FC3E786+750614]
+	(No symbol) [0x00007FF64FB1376F]
+	(No symbol) [0x00007FF64FB0EB24]
+	(No symbol) [0x00007FF64FB0ECB2]
+	(No symbol) [0x00007FF64FAFE17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 15:23:49,616 : ERROR : <module> : Exception occurred while verifying successful login: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,616 : ERROR : <module> : Exception occurred while verifying successful login: 'NoneType' object has no attribute 'click'
+2024-07-17 15:23:49,618 : ERROR : test_invalid_addnewpatient_without_patientname : Failed in the test Invalid add new patient without patient name
+2024-07-17 16:33:26,630 : INFO : test_valid_addnewpatient : New patient added successfully
+2024-07-17 16:34:10,253 : INFO : test_invalid_addnewpatient_without_patient_age : Invalid addition of new patient asserted successfully
+2024-07-17 16:34:23,330 : INFO : test_valid_Add_appointment : Appointment Added sucessfully
+2024-07-17 16:34:41,705 : INFO : test_Invalid_Add_appointment : Invalid Appointment executed sucessfully
+2024-07-17 16:35:03,152 : INFO : test_empty_Add_appointment : Appointment Added sucessfully
+2024-07-17 16:35:17,298 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-07-17 16:35:36,593 : INFO : test_Invalid_add_birth_record : Invalid birth record Asserted sucessfully
+2024-07-17 16:35:58,336 : INFO : test_Invalid_case_Id : Invalid case Id Asserted sucessfully
+2024-07-17 16:36:17,197 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 16:36:17,197 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 16:36:17,197 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 16:36:17,197 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 16:36:17,199 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-07-17 16:36:32,249 : INFO : test_valid_add_death_record : death record Added sucessfully
+2024-07-17 16:36:52,546 : INFO : test_Invalid_add_death_record : Invalid death record Asserted sucessfully
+2024-07-17 16:37:11,856 : INFO : test_Invalid_case_Id : Invalid case ID death record Asserted sucessfully
+2024-07-17 16:37:11,856 : INFO : test_Invalid_case_Id : Invalid case ID death record Asserted sucessfully
+2024-07-17 16:37:31,417 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-07-17 16:37:31,417 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-07-17 16:37:48,072 : INFO : test_valid_Payment : Payment sucessfully
+2024-07-17 16:38:07,396 : INFO : test_Invalid_Payment : Invalid Payment sucessfully
+2024-07-17 16:38:28,382 : INFO : test_empty_Payment : Empty Payment sucessfully
+2024-07-17 16:38:41,731 : INFO : test_valid_billsearch : PHARMAB307 115 10/22/2023 12:44 PM Reyan Jain (9011) 210.00 210.00 0.00 Pay Successfull bill search
+2024-07-17 16:39:00,946 : ERROR : <module> : Error in verify_unsuccessfull_search_by_bill_number: 
+2024-07-17 16:39:00,946 : ERROR : <module> : Error in verify_unsuccessfull_search_by_bill_number: 
+2024-07-17 16:39:00,946 : ERROR : <module> : Error in verify_unsuccessfull_search_by_bill_number: 
+2024-07-17 16:39:00,946 : ERROR : <module> : Error in verify_unsuccessfull_search_by_bill_number: 
+2024-07-17 16:39:00,946 : INFO : test_invalid_billsearch : Invalid bill search asserted successfully
+2024-07-17 16:39:13,703 : INFO : test_valid_Delete_appointment : appointment Delted sucessfully
+2024-07-17 16:39:26,202 : INFO : test_valid_doctorlogin : Doctor logged in successfully
+2024-07-17 16:39:43,565 : INFO : test_invalid_doctorlogin_by_clicking_invalid_option : Invalid doctor login asserted successfully
+2024-07-17 16:39:57,408 : INFO : test_invalidlogin_with_blank_username : Invalid doctor login asserted successfully
+2024-07-17 16:40:11,201 : INFO : test_invalidlogin_with_blank_password : Invalid doctor login asserted successfully
+2024-07-17 16:40:26,689 : INFO : test_invalidlogin_with_invalid_credentials : Invalid doctor login asserted successfully
+2024-07-17 16:40:48,861 : INFO : test_invalidlogin_with_blank_username_and_password : Invalid doctor login asserted successfully
+2024-07-17 16:41:18,687 : INFO : test_valid_notification_delete : All notification deleted  successfully
+2024-07-17 16:41:43,493 : ERROR : <module> : Error in total_count_of_bill_records_assert: object of type 'WebElement' has no len()
+2024-07-17 16:41:43,493 : ERROR : <module> : Error in total_count_of_bill_records_assert: object of type 'WebElement' has no len()
+2024-07-17 16:41:43,493 : ERROR : <module> : Error in total_count_of_bill_records_assert: object of type 'WebElement' has no len()
+2024-07-17 16:41:43,493 : ERROR : <module> : Error in total_count_of_bill_records_assert: object of type 'WebElement' has no len()
+2024-07-17 16:41:43,493 : ERROR : test_valid_totalbillcount : Error occured in test valid totalbillcount
+2024-07-17 16:41:59,429 : ERROR : <module> : Error in verify_the_successfull_updation_of_the_bedstatus: Expected message: Patient Added Successfully, Actual message: The Patient field is required.
+2024-07-17 16:41:59,429 : ERROR : <module> : Error in verify_the_successfull_updation_of_the_bedstatus: Expected message: Patient Added Successfully, Actual message: The Patient field is required.
+2024-07-17 16:41:59,429 : ERROR : <module> : Error in verify_the_successfull_updation_of_the_bedstatus: Expected message: Patient Added Successfully, Actual message: The Patient field is required.
+2024-07-17 16:41:59,429 : ERROR : <module> : Error in verify_the_successfull_updation_of_the_bedstatus: Expected message: Patient Added Successfully, Actual message: The Patient field is required.
+2024-07-17 16:41:59,430 : INFO : test_valid_update_bedstatus : Bed status updated successfully
+2024-07-17 16:42:21,212 : INFO : test_invalid_update_bedstatus_with_existing_patient : Invalid updation of bed status asserted successfully
+2024-07-17 16:42:50,048 : INFO : test_invalid_update_bedstatus_without_consultant : Invalid updation of bed status asserted successfully
+2024-07-17 16:43:18,352 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date: 
+2024-07-17 16:43:18,352 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date: 
+2024-07-17 16:43:18,352 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date: 
+2024-07-17 16:43:18,352 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_appointment_date: 
+2024-07-17 16:43:18,353 : INFO : test_invalid_update_bedstatus_without_appointment_date : Invalid updation of bed status asserted successfully
+2024-07-17 16:43:38,878 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient: 
+2024-07-17 16:43:38,878 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient: 
+2024-07-17 16:43:38,878 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient: 
+2024-07-17 16:43:38,878 : ERROR : <module> : Error in verify_the_unsuccessfull_updation_of_the_bedstatus_without_patient: 
+2024-07-17 16:43:38,879 : INFO : test_invalid_update_bedstatus_without_patient : Invalid updation of bed status asserted successfully
+2024-07-17 16:43:51,489 : INFO : test_valid_userlogin_by_default_credentials : User logged in successfully
+2024-07-17 16:44:04,299 : INFO : test_invalidlogin_with_blank_username : Invalid user login asserted successfully
+2024-07-17 16:44:04,299 : INFO : test_invalidlogin_with_blank_username : Invalid user login asserted successfully
+2024-07-17 16:44:17,093 : INFO : test_invalidlogin_with_blank_password : Invalid user login asserted successfully
+2024-07-17 16:44:17,093 : INFO : test_invalidlogin_with_blank_password : Invalid user login asserted successfully
+2024-07-17 16:44:29,765 : INFO : test_invalidlogin_with_invalid_credentials : Invalid user login asserted successfully
+2024-07-17 16:44:29,765 : INFO : test_invalidlogin_with_invalid_credentials : Invalid user login asserted successfully
+2024-07-17 16:44:42,282 : INFO : test_valid_viewbilldetails : Due Amount: 0.00 Bill details viewed successfully
+2024-07-17 16:44:48,366 : INFO : test_valid_add_stock_item : To test add stock item
+2024-07-17 16:44:56,352 : INFO : test_valid_add_stock_item : Stock item is added successfully
+2024-07-17 16:45:06,643 : INFO : test_invalid_add_stock_item : To test unsuccessful addition of stock item
+2024-07-17 16:45:15,099 : INFO : test_invalid_add_stock_item : Unsuccessful addition of stock item is verified
+2024-07-17 16:45:21,239 : INFO : test_valid_login : Login with valid username and Password
+2024-07-17 16:45:27,819 : INFO : test_valid_login : Successfully logged in as admin
+2024-07-17 16:45:38,105 : INFO : test_invalid_login_with_invalid_data : Login with invalid data /nUsername: jasson@gmail.com and password: passsword
+2024-07-17 16:45:42,297 : ERROR : test_invalid_login_with_invalid_data : Failed in the test Invalid login with invalid data
+2024-07-17 16:45:54,209 : INFO : test_login_with_blank_username_and_valid_password : Login with blank username /nUsername:  and password: password
+2024-07-17 16:45:59,380 : ERROR : test_login_with_blank_username_and_valid_password : Failed in the test login with blank username and valid password
+2024-07-17 16:46:09,913 : INFO : test_login_with_valid_username_and_blank_password : Login with blank password /nUsername: jason@gmail.com and password: 
+2024-07-17 16:46:12,934 : ERROR : test_login_with_valid_username_and_blank_password : Failed in the test login with valid username and blank password
+2024-07-17 16:46:23,304 : INFO : test_login_with_blank_username_and_blank_password : Login with blank data /nUsername:  and password: 
+2024-07-17 16:46:26,676 : ERROR : test_login_with_blank_username_and_blank_password : Failed in the test login with blank username blank password
+2024-07-17 16:46:33,193 : INFO : test_valid_appointment_search : To test valid appointment search results using doctor info
+2024-07-17 16:46:40,955 : ERROR : test_valid_appointment_search : Exception occured in TestAppointmentSearch
+2024-07-17 16:46:51,879 : INFO : test_invalid_appointment_search : To test invalid appointment search results using doctor info
+2024-07-17 16:47:00,265 : ERROR : test_invalid_appointment_search : Exception occured in TestAppointmentSearch
+2024-07-17 16:47:06,732 : INFO : test_valid_patient_search : To test search results by patient name
+2024-07-17 16:47:13,199 : ERROR : test_valid_patient_search : Exception occured in TestPatientSearch
+2024-07-17 16:47:23,503 : INFO : test_invalid_patient_search : To test search results by invalid patient name
+2024-07-17 16:47:31,857 : ERROR : test_invalid_patient_search : Exception occured in TestPatientSearch
+2024-07-17 16:47:38,173 : INFO : test_valid_post_new_message : To test post new message functionality
+2024-07-17 16:47:47,492 : INFO : test_valid_post_new_message : Notification send successfully
+2024-07-17 16:47:57,978 : INFO : test_invalid_post_new_message : To test unsuccessful post new message functionality
+2024-07-17 16:48:18,853 : INFO : test_invalid_post_new_message : Unsuccessful post new message is verified
+2024-07-17 16:48:29,315 : INFO : test_invalid_post_new_message_for_msg_body : To test unsuccessful post new message functionality
+2024-07-17 16:48:37,713 : INFO : test_invalid_post_new_message_for_msg_body : Unsuccessful post new message is verified
+2024-07-17 16:48:44,074 : INFO : test_valid_queue_search : To test valid Queue search results
+2024-07-17 16:48:57,458 : ERROR : test_valid_queue_search : Exception occured in TestQueueSearch
+2024-07-17 16:49:07,986 : INFO : test_invalid_queue_search : To test invalid Queue search results
+2024-07-17 16:49:15,824 : ERROR : test_invalid_queue_search : Exception occured in TestQueueSearch
+2024-07-17 16:49:28,849 : ERROR : <module> : Error in Assert_valid_birth_search_assert: 
+2024-07-17 16:49:28,849 : ERROR : <module> : Error in Assert_valid_birth_search_assert: 
+2024-07-17 16:49:28,849 : ERROR : <module> : Error in Assert_valid_birth_search_assert: 
+2024-07-17 16:49:28,849 : ERROR : <module> : Error in Assert_valid_birth_search_assert: 
+2024-07-17 16:49:28,849 : INFO : test_valid_birth_search_record : Searched Birth Record Sucessfully
+2024-07-17 16:49:47,661 : INFO : test_Invalid_birth_search_record : Searched Invalid Birth Record asserted Sucessfully
+2024-07-17 16:50:01,806 : ERROR : <module> : Error in Assert_valid_death_search_assert: 
+2024-07-17 16:50:01,806 : ERROR : <module> : Error in Assert_valid_death_search_assert: 
+2024-07-17 16:50:01,806 : ERROR : <module> : Error in Assert_valid_death_search_assert: 
+2024-07-17 16:50:01,806 : ERROR : <module> : Error in Assert_valid_death_search_assert: 
+2024-07-17 16:50:01,806 : INFO : test_valid_death_search_record : Searched Birth Record Sucessfully
+2024-07-17 16:50:21,381 : INFO : test_Invalid_death_search_record : Searched Invalid Birth Record asserted Sucessfully
+2024-07-17 16:50:27,710 : INFO : test_valid_send_sms : To test send sms functionality
+2024-07-17 16:50:38,310 : INFO : test_valid_send_sms : send sms functionality is verified successfully
+2024-07-17 16:50:48,876 : INFO : test_valid_send_sms_to_individual : To test send sms to individual patient/doctor
+2024-07-17 16:50:58,741 : INFO : test_valid_send_sms_to_individual : send sms to individual patient/doctor is verified successfully
+2024-07-17 16:51:09,949 : INFO : test_invalid_send_sms_without_sendthrough : To test unsuccessful send sms without send through
+2024-07-17 16:51:21,481 : INFO : test_invalid_send_sms_without_sendthrough : Unsuccessful send sms functionality is verified
+2024-07-17 16:51:31,600 : INFO : test_invalid_send_sms_without_title : To test unsuccessful send sms without title
+2024-07-17 16:51:39,962 : INFO : test_invalid_send_sms_without_title : Unsuccessful send sms functionality is verified
+2024-07-17 16:51:57,421 : INFO : test_valid_search_user_appointment : Record Search sucessfully
+2024-07-17 16:52:37,100 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7827DEEB2+31554]
+	(No symbol) [0x00007FF782757EE9]
+	(No symbol) [0x00007FF78261872A]
+	(No symbol) [0x00007FF782668434]
+	(No symbol) [0x00007FF78266853C]
+	(No symbol) [0x00007FF7826AF6A7]
+	(No symbol) [0x00007FF78268D06F]
+	(No symbol) [0x00007FF7826AC977]
+	(No symbol) [0x00007FF78268CDD3]
+	(No symbol) [0x00007FF78265A33B]
+	(No symbol) [0x00007FF78265AED1]
+	GetHandleVerifier [0x00007FF782AE8B2D+3217341]
+	GetHandleVerifier [0x00007FF782B35AF3+3532675]
+	GetHandleVerifier [0x00007FF782B2B0F0+3489152]
+	GetHandleVerifier [0x00007FF78288E786+750614]
+	(No symbol) [0x00007FF78276376F]
+	(No symbol) [0x00007FF78275EB24]
+	(No symbol) [0x00007FF78275ECB2]
+	(No symbol) [0x00007FF78274E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 16:52:37,100 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7827DEEB2+31554]
+	(No symbol) [0x00007FF782757EE9]
+	(No symbol) [0x00007FF78261872A]
+	(No symbol) [0x00007FF782668434]
+	(No symbol) [0x00007FF78266853C]
+	(No symbol) [0x00007FF7826AF6A7]
+	(No symbol) [0x00007FF78268D06F]
+	(No symbol) [0x00007FF7826AC977]
+	(No symbol) [0x00007FF78268CDD3]
+	(No symbol) [0x00007FF78265A33B]
+	(No symbol) [0x00007FF78265AED1]
+	GetHandleVerifier [0x00007FF782AE8B2D+3217341]
+	GetHandleVerifier [0x00007FF782B35AF3+3532675]
+	GetHandleVerifier [0x00007FF782B2B0F0+3489152]
+	GetHandleVerifier [0x00007FF78288E786+750614]
+	(No symbol) [0x00007FF78276376F]
+	(No symbol) [0x00007FF78275EB24]
+	(No symbol) [0x00007FF78275ECB2]
+	(No symbol) [0x00007FF78274E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 16:52:37,100 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7827DEEB2+31554]
+	(No symbol) [0x00007FF782757EE9]
+	(No symbol) [0x00007FF78261872A]
+	(No symbol) [0x00007FF782668434]
+	(No symbol) [0x00007FF78266853C]
+	(No symbol) [0x00007FF7826AF6A7]
+	(No symbol) [0x00007FF78268D06F]
+	(No symbol) [0x00007FF7826AC977]
+	(No symbol) [0x00007FF78268CDD3]
+	(No symbol) [0x00007FF78265A33B]
+	(No symbol) [0x00007FF78265AED1]
+	GetHandleVerifier [0x00007FF782AE8B2D+3217341]
+	GetHandleVerifier [0x00007FF782B35AF3+3532675]
+	GetHandleVerifier [0x00007FF782B2B0F0+3489152]
+	GetHandleVerifier [0x00007FF78288E786+750614]
+	(No symbol) [0x00007FF78276376F]
+	(No symbol) [0x00007FF78275EB24]
+	(No symbol) [0x00007FF78275ECB2]
+	(No symbol) [0x00007FF78274E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 16:52:37,100 : ERROR : <module> : Exception occurred while waiting for element: Message: 
+Stacktrace:
+	GetHandleVerifier [0x00007FF7827DEEB2+31554]
+	(No symbol) [0x00007FF782757EE9]
+	(No symbol) [0x00007FF78261872A]
+	(No symbol) [0x00007FF782668434]
+	(No symbol) [0x00007FF78266853C]
+	(No symbol) [0x00007FF7826AF6A7]
+	(No symbol) [0x00007FF78268D06F]
+	(No symbol) [0x00007FF7826AC977]
+	(No symbol) [0x00007FF78268CDD3]
+	(No symbol) [0x00007FF78265A33B]
+	(No symbol) [0x00007FF78265AED1]
+	GetHandleVerifier [0x00007FF782AE8B2D+3217341]
+	GetHandleVerifier [0x00007FF782B35AF3+3532675]
+	GetHandleVerifier [0x00007FF782B2B0F0+3489152]
+	GetHandleVerifier [0x00007FF78288E786+750614]
+	(No symbol) [0x00007FF78276376F]
+	(No symbol) [0x00007FF78275EB24]
+	(No symbol) [0x00007FF78275ECB2]
+	(No symbol) [0x00007FF78274E17F]
+	BaseThreadInitThunk [0x00007FFF134C257D+29]
+	RtlUserThreadStart [0x00007FFF1496AA48+40]
+
+2024-07-17 16:52:37,100 : ERROR : <module> : Error in Invalid_Assert_search_Appointment: 'NoneType' object has no attribute 'text'
+2024-07-17 16:52:37,100 : ERROR : <module> : Error in Invalid_Assert_search_Appointment: 'NoneType' object has no attribute 'text'
+2024-07-17 16:52:37,100 : ERROR : <module> : Error in Invalid_Assert_search_Appointment: 'NoneType' object has no attribute 'text'
+2024-07-17 16:52:37,100 : ERROR : <module> : Error in Invalid_Assert_search_Appointment: 'NoneType' object has no attribute 'text'
+2024-07-17 16:52:37,100 : INFO : test_Invalid_search_user_appointment : Invalid Record Search sucessfully
+2024-07-17 17:44:52,584 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-07-17 17:45:24,153 : INFO : test_Invalid_add_birth_record : Invalid birth record Asserted sucessfully
+2024-07-17 17:45:49,559 : INFO : test_Invalid_case_Id : Invalid case Id Asserted sucessfully
+2024-07-17 17:46:12,683 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 17:46:12,683 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 17:46:12,684 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-07-17 17:49:23,135 : INFO : test_valid_add_birth_record : Birth Record Added sucessfully
+2024-07-17 17:49:49,395 : INFO : test_Invalid_add_birth_record : Invalid birth record Asserted sucessfully
+2024-07-17 17:50:13,323 : INFO : test_Invalid_case_Id : Invalid case Id Asserted sucessfully
+2024-07-17 17:50:36,130 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 17:50:36,130 : ERROR : <module> : Error in Assert_empty_Field: 
+2024-07-17 17:50:36,130 : INFO : test_blank_add_birth_data : Empty record Assert Sucessfully
+2024-07-17 18:48:12,769 : INFO : test_valid_add_death_record : death record Added sucessfully
