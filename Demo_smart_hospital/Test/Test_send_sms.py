@@ -6,8 +6,7 @@ from Utility import Consolelogger
 
 
 @pytest.mark.usefixtures("test_setup_and_setdown")
-
-@pytest.mark.parametrize("title,template_id,sms_text",excel_reader.get_data("D:\\Branch_kiruthika\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","SendSMS"))
+@pytest.mark.parametrize("title,template_id,sms_text",excel_reader.get_data( "C:\\Project\\Final_Pytest\\pilot_project_Demo_smart_hospital_Pytest\\Demo_smart_hospital\\ExcelReader\\test_data.xlsx","SendSMS"))
 
 class TestSendSMS:
 
